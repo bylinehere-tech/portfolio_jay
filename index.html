@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -130,9 +131,9 @@ function NavBar({ activeSection }) {
   const scroll = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   const navItems = [
     { id: "hero", label: "Home" },
-    { id: "portfolio", label: "Editorial" },
     { id: "strategy", label: "Strategy" },
     { id: "career", label: "Career" },
+    { id: "portfolio", label: "Editorial" },
     { id: "apply", label: "Apply" },
     { id: "contact", label: "Contact" },
   ];
@@ -704,7 +705,7 @@ function Contact() {
 function App() {
   const [activeSection, setActiveSection] = useState("hero");
   useEffect(() => {
-    const sections = ["hero", "portfolio", "strategy", "career", "apply", "contact"];
+    const sections = ["hero", "strategy", "career", "portfolio", "apply", "contact"];
     const handler = () => {
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
@@ -718,9 +719,9 @@ function App() {
     <div style={{ background: COLORS.bg }}>
       <NavBar activeSection={activeSection} />
       <Hero />
-      <Portfolio />
       <BrandStrategy />
       <Career />
+      <Portfolio />
       <Apply />
       <Contact />
     </div>
