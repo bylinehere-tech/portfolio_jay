@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>문수진 Jay Moon — Brand Architect & Hospitality Marketer</title>
-<meta name="description" content="브랜드의 언어를 만들고, 공간의 경험을 설계합니다. 16년차 호텔·F&B 통합 마케팅 리더 문수진 포트폴리오.">
+<title>문수진 Jay Moon — Hotel & F&B Integrated Marketing Leader</title>
+<meta name="description" content="브랜드의 이야기를 콘텐츠와 고객 경험으로 구현해온 통합 마케터. 16년차 호텔·F&B 마케팅 리더 문수진 포트폴리오.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600&family=Noto+Serif+KR:wght@200;300;400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600&family=Noto+Serif+KR:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
@@ -25,6 +24,11 @@ const { useState, useEffect, useRef } = React;
 
 
 
+/* ══════════════════════════════════════════════════════
+   JAY MOON — PORTFOLIO MICROSITE
+   Repositioned: Hotel/F&B Branding × CX Integrated Marketing Leader
+   ══════════════════════════════════════════════════════ */
+
 const COLORS = {
   bg: "#F7F3EE",
   bgDark: "#1A1612",
@@ -41,86 +45,168 @@ const COLORS = {
   accent: "#8B4513",
 };
 
+/* ── 1) Editorial Categories ── */
 const categories = [
   { id: "identity", label: "Brand Identity & Space", description: "호텔 공간이 곧 브랜드입니다. 건축·인테리어·공간 연출에서 브랜드 아이덴티티를 발견하고, USP와 메시지 체계로 언어화하는 역량을 보여줍니다." },
-  { id: "experience", label: "Guest Experience Design", description: "F&B, 서비스, 고객 여정의 모든 접점을 설계합니다. 취재에서 관찰한 글로벌 호텔의 터치포인트 전략이 브랜드 가이드라인과 패키지 기획의 토대가 되었습니다." },
-  { id: "storytelling", label: "Brand Storytelling & Communication", description: "문화·예술·엔터테인먼트를 브랜드 서사로 엮어, 채널별 톤앤매너를 설계하고 일관된 커뮤니케이션 가이드라인을 운영합니다." },
+  { id: "experience", label: "Guest Experience Design", description: "F&B, 서비스, 고객 여정의 모든 접점을 설계합니다. 체험형 콘텐츠와 패키지로 전환하는 기획력의 원천이 된 취재들입니다." },
+  { id: "storytelling", label: "Brand Storytelling & Communication", description: "아트·와인·엔터테인먼트를 브랜드 내러티브로 확장합니다. 문화 콘텐츠형 캠페인 기획력의 근거가 되는 글로벌 사례들입니다." },
 ];
 
+/* ── 2) Editorial Articles ── */
 const articles = [
-  { id: 1, category: "identity", title: "LA 인터콘티넨탈 호텔", subtitle: "도시의 스카이라인을 품은 공간 브랜딩", commentary: "'도시 맥락을 공간에 내재화하는 전략'을 발견한 취재. 이후 그랜드하얏트 제주의 브랜드 아이덴티티 수립과 USP 메시지 가이드라인 설계에 직접 적용했습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #6B5B3A 0%, #8A7A5A 100%)", driveUrl: "https://drive.google.com/file/d/1xc0qKyLlbMo2iHAa1ZwJS7gjOJQU5nhy/view?usp=sharing" },
-  { id: 2, category: "identity", title: "함부르크 폰테네이 호텔", subtitle: "자연과 건축이 대화하는 럭셔리의 새 문법", commentary: "유기적 곡선이 만드는 고객 동선의 미학. 제주신화월드 복합시설 브랜드 스탠다드 수립 시 '공간-브랜드 일관성' 원칙으로 발전시켰습니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #2C4A3E 0%, #4A7A6A 100%)", driveUrl: "https://drive.google.com/file/d/1i-O6kHn8hc2CYCqHFylvXNZs9811HbpM/view?usp=sharing" },
-  { id: 3, category: "identity", title: "샌프란시스코 호텔 VIA", subtitle: "테크 시티의 부티크 호텔이 말하는 것", commentary: "기술과 호스피탈리티의 접점에서 브랜드 포지셔닝을 재정의하는 방식. 디지털 채널별 브랜드 커뮤니케이션 가이드 수립의 출발점이 된 취재입니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #4A3728 0%, #7A5F4A 100%)", driveUrl: "https://drive.google.com/file/d/1qjm48uvD_guBxE9A9uozJqgEB2GonEfg/view?usp=sharing" },
-  { id: 4, category: "identity", title: "벨기에 더 포스트 호텔", subtitle: "헤리티지를 리브랜딩하는 유럽의 방식", commentary: "역사적 자산을 현대적 브랜드 내러티브로 전환하는 과정. '전통과 현대의 결합'이라는 럭셔리 호텔의 브랜드 철학과 직결되는 인사이트를 얻은 취재입니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #5A3E28 0%, #8A6A4A 100%)", driveUrl: "https://drive.google.com/file/d/1YeFss0hPrxfgKqJLB3prMncm0SXAkltW/view?usp=sharing" },
-  { id: 5, category: "experience", title: "보스턴 더 휘트니 호텔", subtitle: "도시의 역사가 호텔의 정체성이 되는 순간", commentary: "도시 헤리티지를 호텔 브랜드에 내재화하는 방법론. 비컨 힐의 고풍스러운 문맥을 브랜드 경험으로 전환하는 과정이, 프로퍼티별 차별화 전략 설계의 참고가 되었습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #3A2E28 0%, #6A5A4A 100%)", driveUrl: "https://drive.google.com/file/d/1fvANYP5dCdMUlgc8eoEm4ZWhmz9dlzbc/view?usp=sharing" },
-  { id: 6, category: "experience", title: "빈 루비 호텔", subtitle: "린 럭셔리가 정의하는 새로운 가치", commentary: "'린 럭셔리' 전략 — 불필요를 덜어내 본질에 집중하는 접근. 타깃 세그먼트가 곧 브랜드 아이덴티티가 되는 구조를 체득한 취재로, 신규 브랜드 포지셔닝에 적용 가능한 프레임워크입니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #8B2D3A 0%, #A84A5A 100%)", driveUrl: "https://drive.google.com/file/d/1RXlmckxnozk5LHPIYlrOp18lu92CCI_U/view?usp=sharing" },
-  { id: 7, category: "experience", title: "암스테르담 트웬티세븐", subtitle: "16개 스위트가 말하는 극한의 개인화", commentary: "소수의 객실로 극대화된 개인화 경험 설계. VIP 대상 고객 경험 가이드와 럭셔리 서비스 기준 수립에 직접 참고한 취재입니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #1A3A5C 0%, #2A5A8C 100%)", driveUrl: "https://drive.google.com/file/d/1z-jgh3uf4h8HThcy42hM-1zQEydb7jg6/view?usp=sharing" },
-  { id: 8, category: "experience", title: "자그레브 아마드리아 파크 호텔", subtitle: "국가 유산을 모티프로 한 호텔 브랜딩", commentary: "크로아티아의 역사를 현대적 호텔 경험으로 재해석한 사례. 문화유산을 브랜드 자산으로 전환하는 유럽 호텔의 전략이, 브랜드 헌장 구축의 실질적 영감이 되었습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #4A3A2A 0%, #7A6A5A 100%)", driveUrl: "https://drive.google.com/file/d/1AhmwMvIvHwT60w68EQCRwAyHwQFOD4SO/view?usp=sharing" },
-  { id: 9, category: "storytelling", title: "벨기에 마그리트 뮤지엄 기획", subtitle: "예술가의 도시를 브랜드로 읽다", commentary: "마그리트의 삶과 작품이 벨기에라는 도시 브랜드와 얽히는 구조를 분석한 기획. 문화 자원을 관광·브랜드 자산으로 전환하는 유럽 사례가, 시즌별 캠페인 설계의 전략적 근거가 되었습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #3C1F5A 0%, #5C3F8A 100%)", driveUrl: "https://drive.google.com/file/d/1BSQvsbSHai2QLqPRu4a4_610boe9t4Ve/view?usp=sharing" },
-  { id: 10, category: "storytelling", title: "스티븐 손드하임 특집", subtitle: "브로드웨이 거장의 스토리텔링 구조", commentary: "손드하임의 음악극이 관객 경험을 설계하는 방식에서, 브랜드 내러티브의 구조적 원칙을 발견한 피처. 콘텐츠가 경험이 되는 메커니즘을 브랜드 커뮤니케이션에 적용하는 시각을 갖게 해준 기사입니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #2A2A2A 0%, #4A4A4A 100%)", driveUrl: "https://drive.google.com/file/d/1LBjXDqy0rZMyWtqmmFNSJrCKGooqgD4S/view?usp=sharing" },
-  { id: 11, category: "storytelling", title: "뮤지컬 \u3008컴퍼니\u3009 프로듀서 인터뷰", subtitle: "크리스 하퍼가 말하는 리브랜딩의 용기", commentary: "클래식 작품의 주인공 성별을 바꾸는 파격적 리브랜딩. '동시대에 맞는 진솔하고 의미 있는 변화'라는 프로듀서의 철학이, 브랜드 리뉴얼 시 핵심 메시지 전환 전략에 깊은 통찰을 주었습니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #5A2A1A 0%, #8A4A3A 100%)", driveUrl: "https://drive.google.com/file/d/1NswtQDcqSDz9Da8Skm0sUmwpYmtaU3_3/view?usp=sharing" },
-  { id: 12, category: "storytelling", title: "아트 전시 큐레이션", subtitle: "비야 셀민스 · 피에르 보나르 — 기억과 색채", commentary: "포토리얼리즘과 인상주의, 두 작가의 '기억을 재구성하는 방식'에서 브랜드 콘텐츠 큐레이션의 본질을 발견했습니다. 런던 테이트 모던과 SF MoMA 전시를 다룬 아트 칼럼입니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #5A4A1A 0%, #8A7A3A 100%)", driveUrl: "https://drive.google.com/file/d/192xPFjE4_6AG4sYspJ7I7qCbtBvUJGdD/view?usp=sharing" },
-  { id: 13, category: "identity", title: "뉴욕 목시 첼시", subtitle: "MZ 세대를 위한 호텔의 재정의", commentary: "타깃 세그먼트가 곧 브랜드 아이덴티티가 되는 구조. 신규 브랜드 개발 시 고객군별 포지셔닝과 네이밍 전략에 적용 가능한 프레임워크를 체득했습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #6B2D5B 0%, #9A4A7A 100%)", driveUrl: "https://drive.google.com/file/d/1th6g-XJrT2sJDdmGLipEWGkINfELlv_W/view?usp=sharing" },
-  { id: 14, category: "experience", title: "올가홀푸드 브랜드 카탈로그", subtitle: "친환경 철학을 고객 경험 언어로 시각화하다", commentary: "풀무원 올가홀푸드의 PB 브랜드 포지셔닝과 매장·패키징 비주얼 브랜딩을 총괄하며 제작한 카탈로그. 브랜드 내러티브를 상품-공간-커뮤니케이션으로 일관되게 번역한 실행 산출물입니다.", year: "2022", magazine: "Orga Whole Food", gradient: "linear-gradient(135deg, #2D5A27 0%, #4A8A3A 100%)", driveUrl: "https://drive.google.com/file/d/1qDiwixnMx1aRBe9AsxggCA9XcMncLC9B/view?usp=sharing" },
+  { id: 1, category: "identity", title: "LA 인터콘티넨탈 호텔", titleEn: "InterContinental Los Angeles", subtitle: "도시의 스카이라인을 품은 공간 브랜딩", commentary: "이 취재에서 발견한 '도시 맥락을 공간에 내재화하는 전략'이 이후 그랜드하얏트 제주의 USP 메시지 설계에 적용되었습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #8B6914 0%, #C4A265 50%, #D4B87A 100%)" },
+  { id: 2, category: "identity", title: "함부르크 폰테네이 호텔", titleEn: "The Fontenay Hamburg", subtitle: "자연과 건축이 대화하는 럭셔리의 새 문법", commentary: "유기적 곡선 건축이 만드는 고객 동선의 미학. 제주신화월드 공간 경험 설계 시 '자연 지형과 시설의 연결'이라는 콘셉트로 발전시켰습니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #2C4A3E 0%, #4A7A6A 50%, #6B9A8A 100%)" },
+  { id: 3, category: "identity", title: "샌프란시스코 호텔 VIA", titleEn: "Hotel VIA San Francisco", subtitle: "테크 시티의 부티크 호텔이 말하는 것", commentary: "기술과 호스피탈리티의 접점. 디지털 채널 기반 고객 경험 최적화 전략의 출발점이 된 취재였습니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #4A3728 0%, #7A5F4A 50%, #9A7F6A 100%)" },
+  { id: 4, category: "identity", title: "벨기에 더 포스트 호텔", titleEn: "The Post Hotel Belgium", subtitle: "헤리티지를 리브랜딩하는 유럽의 방식", commentary: "역사적 건물의 재해석이 브랜드 내러티브가 되는 과정. 올가홀푸드의 '철학 기반 브랜딩' 전략 수립에 영감을 준 사례입니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #6B4A2D 0%, #9A7A5A 50%, #BA9A7A 100%)" },
+  { id: 5, category: "identity", title: "보스톤 휘트니 호텔", titleEn: "The Whitney Hotel Boston", subtitle: "네이버후드 아이덴티티를 호텔 언어로", commentary: "지역 문화를 브랜드 자산화하는 접근. 리조트 현지 콘텐츠 기획 시 '로컬 컨텍스트 브랜딩'의 실마리가 되었습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #3A2419 0%, #6B4A32 50%, #8B6A52 100%)" },
+  { id: 6, category: "identity", title: "빈 루비 호텔", titleEn: "Ruby Hotels Vienna", subtitle: "밀레니얼 럭셔리의 공간 문법", commentary: "세대별 럭셔리 정의가 달라지는 흐름. MZ 타깃 패키지/체험 콘텐츠 기획의 전략적 근거가 되었습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #8B1A2D 0%, #BA3A4A 50%, #DA5A6A 100%)" },
+  { id: 7, category: "experience", title: "뉴욕 목시 호텔 첼시", titleEn: "Moxy Chelsea NYC", subtitle: "로비가 무대가 되는 호텔", commentary: "커뮤니티 공간으로서의 호텔 로비. Sky Pool Party 등 '공간을 이벤트화'하는 기획의 레퍼런스가 되었습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #1A3A5A 0%, #3A6A9A 50%, #5A8ABA 100%)" },
+  { id: 8, category: "experience", title: "암스테르담 트웬티세븐 호텔", titleEn: "Hotel TwentySeven Amsterdam", subtitle: "하이퍼 퍼스널라이제이션의 정수", commentary: "극소수 객실에 집중하는 초개인화 서비스. VIP 고객 경험 프로그램 설계 시 '밀도 높은 개인 서비스'의 기준이 되었습니다.", year: "2018", magazine: "Beyond", gradient: "linear-gradient(135deg, #2D1A4A 0%, #5A3A8A 50%, #7A5AAA 100%)" },
+  { id: 9, category: "experience", title: "그랜드하얏트 제주 MICE 브로슈어", titleEn: "Grand Hyatt Jeju MICE Collateral", subtitle: "프로퍼티 USP 정의 · 시설별 메시지 체계 · B2B 세일즈 콜래터럴", commentary: "직접 기획·제작한 29페이지 다국어(한/영) 브로슈어. 공간 USP 정의부터 톤앤매너, 메시지 아키텍처까지 브랜드 커뮤니케이션 산출물의 실증입니다.", year: "2023", magazine: "산출물", gradient: "linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%)" },
+  { id: 10, category: "storytelling", title: "테이트 모던 디렉터 인터뷰", titleEn: "Tate Modern Director Interview", subtitle: "문화기관이 브랜드를 만드는 법", commentary: "문화 콘텐츠가 브랜드 권위로 전환되는 메커니즘. K-컬처 아트위크 등 문화 콘텐츠형 캠페인 기획에 적용했습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #1A2D1A 0%, #3A5A3A 50%, #5A7A5A 100%)" },
+  { id: 11, category: "storytelling", title: "게티 큐레이터 인터뷰 & 아트 콘텐츠", titleEn: "Getty Museum Curator & Art Features", subtitle: "아트를 대중의 언어로 번역하는 기술", commentary: "전문 콘텐츠의 대중적 스토리텔링. 브랜드 메시지를 고객 언어로 전환하는 커뮤니케이션 역량의 근간입니다.", year: "2017–2020", magazine: "Beyond", gradient: "linear-gradient(135deg, #6B1A1A 0%, #9A3A3A 50%, #BA5A5A 100%)" },
+  { id: 12, category: "storytelling", title: "유럽 문화유산 & 관광 브랜딩", titleEn: "European Heritage & Tourism Branding", subtitle: "문화유산이 관광 브랜드가 되기까지", commentary: "문화 자원을 관광 마케팅 자산으로 전환하는 유럽 사례. '시네마 리조트 위크' 등 문화 콘텐츠형 캠페인의 전략적 근거가 되었습니다.", year: "2019", magazine: "Beyond", gradient: "linear-gradient(135deg, #4A2D1A 0%, #7A5D3A 50%, #9A7D5A 100%)" },
 ];
 
-const brandProjects = [
-  {
-    company: "글로우서울",
-    tag: "F&B 라이프스타일 브랜드 통합",
-    title: "다수 F&B·라이프스타일 브랜드 통합 마케팅 전략 수립",
-    items: ["카페·베이커리·스테이·리테일 등 복수 브랜드 포지셔닝 정리 및 통합 방향 수립", "히어로 메뉴·시즌 한정 상품 등 상품 기획 및 런칭 커뮤니케이션 브랜드 가이드 운영", "브랜드 스토리 기반 영상/SNS 콘텐츠 톤앤매너 정립, 인플루언서 UGC 확산 루프 구축", "멤버십/스탬프형 리텐션 프로모션 기획, 채널 성과 분석 기반 ROI 중심 개선"],
-    gradient: "linear-gradient(135deg, #3A5C4A 0%, #5A8C6A 100%)",
-  },
+/* ── 3) Brand Strategy Cards — repositioned for CX + Branding ── */
+const strategyCards = [
   {
     company: "제주신화월드",
-    tag: "복합리조트 통합 브랜딩",
-    title: "전사 브랜드 캠페인 전략 & 가이드 총괄",
-    items: ["숙박·워터파크·테마파크·F&B·리테일 전 부문 통합 브랜딩 전략 수립, 연간/분기 마케팅 플랜 총괄", "Sky Pool Party, Countdown Party, Latin Festival 등 공간 경험 중심 플래그십 이벤트 브랜드 가이드라인 정립", "Food & Wine Festival, 레스토랑 리브랜딩(용푸 오프닝) 등 F&B 중심 브랜드 자산화 프로젝트 리드", "부서별(F&B·운영·세일즈) 마케팅 커뮤니케이션 기준 통합 관리, 프로세스·산출물 표준화"],
-    gradient: "linear-gradient(135deg, #5A3E28 0%, #8A6A4A 100%)",
-  },
-  {
-    company: "제주신화월드",
-    tag: "파트너십 & 고객경험개발",
-    title: "전략적 파트너십 기반 브랜드 확장 & 고객 경험 설계",
-    items: ["신한카드 메인 스폰서 포지셔닝 설계 — 결제 점유율 확대 및 공동 캠페인 브랜드 가이드 수립", "Le Coq Sportif 유니폼 파트너십, 러닝크루 기반 고객 경험 프로그램으로 운영 효율+브랜드 확장 동시 달성", "글로벌 주류·패션 브랜드 콜라보레이션 시 브랜드 메시지 일관성 유지 프로세스 설계", "VIP·가족·MZ 등 타깃별 테마형 체험 패키지 브랜딩 — 운영 후 데이터 기반 객단가 상승 개선 주도"],
-    gradient: "linear-gradient(135deg, #6B2D5B 0%, #9A4A7A 100%)",
+    period: "2024–2025",
+    tag: "복합리조트 브랜드 통합 전략 & CX 설계",
+    title: "브랜드 메시지–콘텐츠–현장 경험을 일관되게 연결하는 통합 마케팅 체계 구축",
+    items: [
+      "호텔·워터파크·테마파크·리테일·F&B 등 복합리조트 연간/분기 통합마케팅 전략 수립",
+      "VIP·가족·MZ 등 타깃별 테마형 패키지 및 체험 콘텐츠 기획, 현장 실행 가이드 설계",
+      "Sky Pool Party, Countdown Party, Latin Festival 등 공간 경험 중심 시그니처 이벤트 기획·총괄",
+      "Food & Wine Festival, 레스토랑 리브랜딩(용푸) 등 F&B 중심 프로젝트 리드",
+      "신한카드 메인 스폰서 포지셔닝 설계, 글로벌 주류/패션 브랜드 콜라보레이션 운영",
+      "GA·SNS 인사이트 기반 콘텐츠 퍼포먼스 분석 및 ROI 중심 개선안 도출",
+    ],
+    gradient: "linear-gradient(135deg, #1A2D4A 0%, #2A4A6A 100%)",
   },
   {
     company: "그랜드하얏트 제주",
-    tag: "신규 호텔 브랜드 구축",
-    title: "신규 프로퍼티 브랜드 아이덴티티 수립 & 오픈 마케팅",
-    items: ["1,600실 규모 복합리조트 USP 정의, 시그니처 테마·슬로건·메시지 키워드 체계 수립", "호텔·카지노·F&B·쇼핑몰 시설별 브랜드 톤앤매너 차별화 가이드 설계", "영·중·일 다국어 브랜드 커뮤니케이션 가이드 및 글로벌 채널(Tripadvisor, Klook 등) 운영 전략", "OTA·SNS·포털 등 채널별 브랜드 메시지 일관성 모니터링 체계 구축, SEO 기반 콘텐츠 최적화"],
-    gradient: "linear-gradient(135deg, #1A3A5C 0%, #2A5A8C 100%)",
+    period: "2022–2024",
+    tag: "신규 호텔 브랜드 아이덴티티 구축 & 글로벌 CX",
+    title: "브랜드 USP 정의 → 메시지 체계 → 채널 운영 → 성과 측정의 풀사이클 실행",
+    items: [
+      "신규 호텔 브랜드 USP 정의, 시그니처 테마·슬로건·메시지 키워드 수립",
+      "영·중·일 다국어 콘텐츠 제작 및 글로벌 타깃 브랜드 캠페인 기획",
+      "OTA·SNS·유튜브 등 디지털 채널 중심 콘텐츠 기획/운영으로 브랜드 경험–전환 연결",
+      "Tripadvisor·Time Out·Klook PR 및 KOL·셀럽 UGC 기획·운영",
+      "MICE 브로슈어 29p 제작 — 공간 USP 정의, 메시지 아키텍처, B2B 세일즈 콜래터럴",
+      "캠페인 성과 분석 리포트 기반 전략 재설계 및 유연 대응 체계 운영",
+    ],
+    gradient: "linear-gradient(135deg, #2D1A3A 0%, #4A2D5A 100%)",
   },
   {
     company: "풀무원 올가홀푸드",
-    tag: "F&B 브랜드 포지셔닝",
-    title: "친환경 브랜드 아이덴티티 & 매장 브랜딩 가이드",
-    items: ["유기농·친환경 철학 기반 PB 브랜드 컨셉·포지셔닝 전략 수립, 라이프스타일×건강 내러티브 설계", "매장 디자인·POP·패키징에 일관 적용되는 비주얼 브랜딩 가이드 설계·실행", "네덜란드대사관 협업 친환경 캠페인, 공정무역협회 페어트레이드, 셰프 협업 제로 푸드웨이스트 등 ESG 브랜드 확장", "풀무원샵·네이버·카카오 등 커머스 채널별 브랜드 톤앤매너 최적화 및 UX 설계"],
+    period: "2021–2022",
+    tag: "브랜드 포지셔닝 & 체험형 커머스",
+    title: "친환경 철학을 브랜드 내러티브로 → 공간·상품·채널에 일관되게 구현",
+    items: [
+      "소비자 행동 데이터 분석 기반 PB 신상품 기획 및 브랜드 콘셉트 설계",
+      "친환경 브랜드 철학을 매장 브랜딩·체험 콘텐츠·커머스로 시각화",
+      "네이버 스마트스토어·카카오 선물하기 등 디지털 커머스 프로모션 기획·운영",
+      "네덜란드대사관 ESG 캠페인, 공정무역협회 페어트레이드 등 브랜드 가치 확장 협업",
+    ],
     gradient: "linear-gradient(135deg, #2D5A27 0%, #4A8A3A 100%)",
   },
   {
-    company: "JTBC PLUS",
-    tag: "매거진 브랜드 디지털 전환",
-    title: "매거진 브랜드 아이덴티티 재구성 & 디지털 전환 리딩",
-    items: ["ELLE·CeCi·SURE·InStyle 등 브랜드별 디지털 포지셔닝·채널 정체성 재정립, 독자 경험 저니 설계", "브랜드별 SNS 콘텐츠 스탠다드 수립 및 톤앤매너 가이드 운영, 업계 최대 팔로워·인게이지먼트 달성", "삼성페이·MCM·리복·백상예술대상 등 브랜디드 콘텐츠 브랜드 메시지 균형 설계", "CeCi 디지털 전용 채널 OOPICK 기획·론칭, 카카오 제휴 모바일 콘텐츠 포맷 개발로 디지털 광고 수익 극대화"],
+    company: "더북컴퍼니",
+    period: "2020–2021",
+    tag: "타깃 세그먼트별 브랜드 콘텐츠 전략",
+    title: "고객군별 맞춤 콘텐츠 전략 → 디지털 마케팅 → 성과 분석의 실행 사이클",
+    items: [
+      "〈전성기〉(시니어), 〈주부생활〉(주부), 〈에비뉴엘〉(프리미엄) 등 타깃별 콘텐츠 전략 수립",
+      "웹사이트·SNS·이메일 등 멀티채널 통합 콘텐츠 마케팅 기획·실행",
+      "브랜디드 콘텐츠 프로젝트 총괄, 인플루언서 공동기획으로 타깃 유입 확대",
+      "콘텐츠/캠페인 KPI 분석 기반 ROI 개선 및 퍼포먼스 중심 전략 최적화",
+    ],
+    gradient: "linear-gradient(135deg, #3A2D1A 0%, #5A4D3A 100%)",
+  },
+  {
+    company: "서울문화사 · 대한항공 비욘드",
+    period: "2017–2020",
+    tag: "글로벌 호스피탈리티 스토리텔링 & 품질관리",
+    title: "50+ 글로벌 호텔 현장 취재 → 브랜드 인사이트 → 콘텐츠 전략으로 연결",
+    items: [
+      "유럽/아시아/북미 주요 신규 호텔·리조트 현장 취재 및 고객 경험·공간 디자인 분석",
+      "호텔 GM·아트 디렉터·인테리어 디자이너 등 현장 인터뷰 기반 전문 인사이트 전달",
+      "건축·디자인·서비스 포인트의 스토리텔링 중심 해석·시각화",
+      "영문 기사 팩트체크·윤문으로 글로벌 타깃 콘텐츠 신뢰도·완성도 관리",
+    ],
+    gradient: "linear-gradient(135deg, #4A3A2D 0%, #7A6A5D 100%)",
+  },
+  {
+    company: "JTBC PLUS (중앙M&B)",
+    period: "2009–2017",
+    tag: "매거진 브랜드 디지털 전환 & 데이터 기반 최적화",
+    title: "ELLE·CeCi·SURE 등 매거진 브랜드의 디지털 아이덴티티 재수립과 채널 운영",
+    items: [
+      "주요 라이프스타일 매거진 디지털 전환 프로젝트 총괄 기획·운영",
+      "브랜드별 SNS 콘텐츠 전략 수립 및 채널 정체성 재정립",
+      "삼성페이·리복·룰루레몬 등 브랜디드 콘텐츠 기획 및 PM",
+      "GA·SEO·SNS 인사이트 기반 캠페인 KPI 측정 및 ROI 개선안 도출",
+    ],
     gradient: "linear-gradient(135deg, #4A2D1A 0%, #7A5D3A 100%)",
   },
 ];
 
-const careerData = [
-  { period: "2025.12 – 현재", company: "글로우서울", role: "마케팅팀 · 팀장", highlight: "F&B·카페·베이커리·스테이·리테일 등 라이프스타일 브랜드 그룹 — 다수 브랜드 포지셔닝 정리 및 통합 마케팅 전략, 상품 기획, 브랜드 스토리 기반 콘텐츠 톤앤매너 정립", type: "current" },
-  { period: "2024.07 – 2025.12", company: "제주신화월드", role: "마케팅 기획 · 고객경험개발 · 팀장", highlight: "연매출 2.7조 복합리조트 전사 브랜드 전략 총괄 — 부서별 브랜딩 기준 통합 관리, F&B 리브랜딩, 시그니처 이벤트 브랜드 체계 설계, 신한카드 메인 스폰서십 등 파트너십 설계", type: "past" },
-  { period: "2022.07 – 2024.07", company: "그랜드하얏트 제주", role: "S&M 마케팅 · 차장", highlight: "1,600실 규모 외국계 복합리조트 신규 브랜드 아이덴티티 구축 — USP·슬로건·메시지 체계 수립, 다국어 브랜드 커뮤니케이션 가이드, 글로벌 채널 운영 전략", type: "past" },
-  { period: "2021.09 – 2022.07", company: "풀무원 올가홀푸드", role: "IMC · 차장", highlight: "친환경 브랜드 포지셔닝 전략 수립 — PB 브랜드 컨셉 기획, 매장·패키징 비주얼 브랜딩 가이드, ESG 캠페인 브랜드 확장, 커머스 채널 UX 최적화", type: "past" },
-  { period: "2020.09 – 2021.09", company: "더북컴퍼니", role: "매거진 마케팅 · 파트장", highlight: "타깃 세그먼트별 브랜드 콘텐츠 전략 — 전성기·에비뉴엘·주부생활 스타일러 등 매거진 브랜드별 톤앤매너 기획, 브랜디드 콘텐츠·인플루언서 연계 캠페인 총괄", type: "past" },
-  { period: "2017.02 – 2020.06", company: "서울문화사 · 대한항공 비욘드", role: "시니어 에디터", highlight: "글로벌 럭셔리 호텔 현장 취재 50+ — 공간 브랜딩·서비스 혁신 분석, 호텔 GM·아트디렉터 인터뷰, 국·영문 브랜드 콘텐츠 품질 관리", type: "editorial" },
-  { period: "2009.06 – 2017.01", company: "JTBC PLUS (중앙M&B)", role: "디지털 에디터", highlight: "매거진 브랜드 디지털 전환 총괄 — 브랜드별 디지털 아이덴티티 재수립, SNS 브랜드 스탠다드 운영, 브랜디드 콘텐츠 캠페인 기획, 업계 최대 팔로워 기록 달성", type: "editorial" },
+/* ── 4) Career Timeline — Glow Seoul removed, Jeju Shinhwa World as latest ── */
+const career = [
+  { period: "2024.07 – 2025.12", company: "제주신화월드", role: "마케팅 기획 · 팀장", highlight: "복합리조트 전사 브랜드 통합 마케팅 전략 총괄, VIP·테마형 고객 경험 설계, 시그니처 이벤트 기획·운영, F&B 브랜딩 프로젝트 리드", type: "current" },
+  { period: "2022.07 – 2024.07", company: "그랜드하얏트 제주", role: "S&M 마케팅 · 차장", highlight: "신규 호텔 브랜드 USP 정립, 다국어 콘텐츠 전략, 글로벌 타깃 디지털 마케팅, MICE 브랜드 커뮤니케이션", type: "past" },
+  { period: "2021.09 – 2022.07", company: "풀무원 올가홀푸드", role: "IMC · 차장", highlight: "PB 상품 기획, 친환경 브랜드 포지셔닝, 체험형 커머스 콘텐츠, ESG 캠페인", type: "past" },
+  { period: "2020.09 – 2021.09", company: "더북컴퍼니", role: "매거진 마케팅 · 파트장", highlight: "타깃별 콘텐츠 전략, 브랜디드 캠페인 총괄, 디지털 퍼포먼스 분석", type: "past" },
+  { period: "2017.02 – 2020.06", company: "서울문화사 · 대한항공 비욘드", role: "시니어 에디터", highlight: "글로벌 호텔 현장 취재 50+, 브랜드 스토리텔링, 글로벌 콘텐츠 품질관리", type: "editorial" },
+  { period: "2009.06 – 2017.01", company: "JTBC PLUS (중앙M&B)", role: "디지털 에디터", highlight: "매거진 디지털 전환 총괄, 브랜디드 콘텐츠 캠페인, 데이터 기반 채널 최적화", type: "editorial" },
 ];
 
-/* ── Components ── */
+/* ── 5) Core Competencies — 8 areas ── */
+const competencies = [
+  { num: "01", title: "시장 분석 기반 마케팅 전략 및 실행", desc: "타깃 분석 → 가치 제안 → 캠페인 실행 전 과정 주도" },
+  { num: "02", title: "통합 브랜드 관리 및 아키텍처 설계", desc: "멀티 브랜드 환경의 메시지·톤앤매너·경험 일관성 구축" },
+  { num: "03", title: "F&B 중심 메뉴 및 포트폴리오 기획", desc: "메뉴 = 경험이라는 관점의 콘셉트–운영–브랜드 연결" },
+  { num: "04", title: "디지털 마케팅 및 CRM 기반 고객 리텐션", desc: "유입–신뢰–재이용 구조 설계, 글로벌 타깃 채널 운영" },
+  { num: "05", title: "데이터 기반 성과 측정 및 인사이트 도출", desc: "KPI 정의 → 분석 → 액션 루프로 반복 가능한 성과 구조화" },
+  { num: "06", title: "대규모 프로젝트 총괄 (PM)", desc: "예산·일정·협력사·리스크 통합 관리, 현장과 전략 동시 조율" },
+  { num: "07", title: "크로스펑셔널 협업 및 팀 리더십", desc: "프로세스·산출물 표준화로 팀 생산성 강화, 협업 문화 조성" },
+  { num: "08", title: "글로벌 커뮤니케이션 및 비즈니스 영어", desc: "해외 팀 협업, 리포팅, 글로벌 고객 응대 원활 수행" },
+];
 
+/* ── 6) AI Capability Detail ── */
+const aiCapabilities = {
+  title: "AI-Powered Marketing",
+  subtitle: "생성형 AI와 에이전시 AI를 마케팅 실무에 적극 활용합니다",
+  tools: [
+    { name: "콘텐츠 제작", tools: "Midjourney · Runway", desc: "브랜드 비주얼 콘셉트, SNS 콘텐츠 이미지, 프로모션 영상 초안 제작" },
+    { name: "기획·전략 문서", tools: "Claude · ChatGPT", desc: "마케팅 전략 문서, 브랜드 가이드라인, 리서치 리포트 초안 작성 및 구조화" },
+    { name: "데이터 분석", tools: "AI 기반 분석 툴", desc: "캠페인 성과 데이터 분석, 고객 인사이트 도출, 트렌드 리서치 자동화" },
+    { name: "워크플로우", tools: "AI 에이전시 툴", desc: "반복 업무 자동화, 콘텐츠 캘린더 관리, 크로스채널 운영 효율화" },
+  ],
+};
+
+/* ── Shared Hook ── */
+function useInView(threshold = 0.15) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { threshold });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+  return [ref, visible];
+}
+
+/* ══════════════════════════════════════════════════════
+   COMPONENTS
+   ══════════════════════════════════════════════════════ */
+
+/* ── NavBar ── */
 function NavBar({ activeSection }) {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -133,8 +219,8 @@ function NavBar({ activeSection }) {
     { id: "hero", label: "Home" },
     { id: "strategy", label: "Strategy" },
     { id: "career", label: "Career" },
+    { id: "ai", label: "AI" },
     { id: "portfolio", label: "Editorial" },
-    { id: "apply", label: "Apply" },
     { id: "contact", label: "Contact" },
   ];
   return (
@@ -146,18 +232,18 @@ function NavBar({ activeSection }) {
       borderBottom: scrolled ? "1px solid rgba(196,162,101,0.15)" : "1px solid transparent",
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "flex", justifyContent: "space-between", alignItems: "center", height: 70 }}>
-        <div style={{ width: 40 }} />
+        <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 600, color: scrolled ? COLORS.gold : "rgba(255,255,255,0.9)", transition: "color 0.5s", cursor: "pointer" }} onClick={() => scroll("hero")}>
+          Jay Moon
+        </div>
         <div style={{ display: "flex", gap: 32 }}>
           {navItems.map((item) => (
             <button key={item.id} onClick={() => scroll(item.id)} style={{
-              background: item.id === "apply" ? "rgba(196,162,101,0.12)" : "none",
-              border: item.id === "apply" ? `1px solid rgba(196,162,101,0.3)` : "none",
-              borderRadius: item.id === "apply" ? 100 : 0,
-              cursor: "pointer",
-              fontFamily: "'Outfit', sans-serif", fontSize: 12, fontWeight: item.id === "apply" ? 500 : 400, letterSpacing: "0.12em", textTransform: "uppercase",
-              color: activeSection === item.id ? COLORS.gold : (scrolled ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.8)"),
-              transition: "all 0.3s", padding: item.id === "apply" ? "6px 18px" : "4px 0",
-              borderBottom: item.id !== "apply" && activeSection === item.id ? `1px solid ${COLORS.gold}` : item.id !== "apply" ? "1px solid transparent" : "none",
+              background: "none", border: "none", cursor: "pointer",
+              fontFamily: "'Outfit', sans-serif", fontSize: 12, fontWeight: 400,
+              letterSpacing: "0.12em", textTransform: "uppercase",
+              color: activeSection === item.id ? COLORS.gold : (scrolled ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.4)"),
+              transition: "color 0.3s", padding: "4px 0",
+              borderBottom: activeSection === item.id ? `1px solid ${COLORS.gold}` : "1px solid transparent",
             }}>{item.label}</button>
           ))}
         </div>
@@ -166,495 +252,241 @@ function NavBar({ activeSection }) {
   );
 }
 
+/* ── Hero — repositioned for general Hotel/F&B marketing leader ── */
 function Hero() {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => { setTimeout(() => setLoaded(true), 100); }, []);
   return (
     <section id="hero" style={{
-      minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center",
-      background: "linear-gradient(160deg, #1A1612 0%, #2C2419 30%, #1A1612 70%, #0F0D0A 100%)",
+      minHeight: "100vh", background: COLORS.bgDark, display: "flex", alignItems: "center", justifyContent: "center",
       position: "relative", overflow: "hidden",
     }}>
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 70% 40%, rgba(196,162,101,0.08) 0%, transparent 60%)" }} />
-      <div style={{ position: "absolute", top: "10%", right: "8%", width: 300, height: 300, borderRadius: "50%", border: "1px solid rgba(196,162,101,0.08)", animation: "pulse 8s ease-in-out infinite" }} />
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600&family=Noto+Serif+KR:wght@200;300;400;500;600;700&family=Libre+Caslon+Display&display=swap');
-        @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.1); opacity: 0.6; } }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { background: ${COLORS.bg}; }
-        ::selection { background: ${COLORS.gold}; color: ${COLORS.white}; }
-      `}</style>
-      <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 40px", maxWidth: 900 }}>
-        <div style={{ opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(20px)", transition: "all 1s cubic-bezier(0.4,0,0.2,1) 0.2s" }}>
-          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, fontWeight: 300, letterSpacing: "0.5em", textTransform: "uppercase", color: "rgba(196,162,101,0.7)", marginBottom: 36 }}>Brand Architect · Hospitality Marketer</div>
-        </div>
-        <h1 style={{
-          fontFamily: "'Playfair Display', serif", fontSize: "clamp(34px, 5vw, 58px)", fontWeight: 300, lineHeight: 1.25,
-          color: COLORS.white, marginBottom: 36, letterSpacing: "0.02em",
-          opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(30px)",
-          transition: "all 1.2s cubic-bezier(0.4,0,0.2,1) 0.4s",
-        }}>
-          브랜드의 <span style={{ fontWeight: 600, color: COLORS.goldLight }}>언어</span>를 만들고,<br />
-          공간의 <span style={{ fontWeight: 600, color: COLORS.goldLight }}>경험</span>을 설계합니다
-        </h1>
-        <div style={{ width: 48, height: 0.5, background: `linear-gradient(90deg, transparent, ${COLORS.gold}, transparent)`, margin: "0 auto 36px", opacity: loaded ? 1 : 0, transition: "opacity 1.5s ease 0.8s" }} />
-        <p style={{
-          fontFamily: "'Noto Serif KR', serif", fontSize: 14, fontWeight: 200, lineHeight: 2.1,
-          color: "rgba(255,255,255,0.5)", maxWidth: 560, margin: "0 auto 56px", letterSpacing: "0.06em",
-          opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(20px)",
-          transition: "all 1s cubic-bezier(0.4,0,0.2,1) 0.8s",
-        }}>
-          매거진 에디터의 감각으로 브랜드 아이덴티티를 구축하고,<br />
-          호텔·F&B 마케터의 전략으로 고객 여정을 설계합니다.<br />
-          <span style={{ color: "rgba(196,162,101,0.5)", fontSize: 13 }}>Brand Standard · Identity · Communication Guide</span>
-        </p>
-        <div style={{ display: "flex", gap: 48, justifyContent: "center", flexWrap: "wrap", opacity: loaded ? 1 : 0, transition: "opacity 1.5s ease 1.2s" }}>
-          {[{ num: "16+", label: "Years in Branding" }, { num: "4", label: "Hotel & F&B Brands" }, { num: "50+", label: "Global Stories" }].map((s, i) => (
-            <div key={i} style={{ textAlign: "center" }}>
-              <div style={{ fontFamily: "'Libre Caslon Display', serif", fontSize: 30, fontWeight: 400, color: COLORS.gold }}>{s.num}</div>
-              <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: "0.2em", color: "rgba(255,255,255,0.3)", textTransform: "uppercase", marginTop: 6, fontWeight: 300 }}>{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div style={{ position: "absolute", bottom: 40, left: "50%", transform: "translateX(-50%)", opacity: loaded ? 1 : 0, transition: "opacity 2s ease 1.8s" }}>
-        <div style={{ width: 1, height: 48, background: `linear-gradient(to bottom, ${COLORS.gold}, transparent)`, animation: "pulse 2s ease-in-out infinite" }} />
-      </div>
-    </section>
-  );
-}
-
-/* Article card as its own component — hooks are safe here */
-function ArticleCard({ article, index }) {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-      onClick={() => window.open(article.driveUrl || "https://drive.google.com/drive/folders/149CL1AbzZR3DwMkrSmQQdhXZBPDRLMVa?usp=sharing", "_blank")}
-      style={{ cursor: "pointer", animation: `fadeUp 0.6s ease ${index * 0.08}s both` }}>
-      <style>{`@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }`}</style>
       <div style={{
-        position: "relative", height: 280, borderRadius: 4, overflow: "hidden", marginBottom: 18,
-        boxShadow: hovered ? "0 20px 60px rgba(26,22,18,0.25)" : "0 4px 20px rgba(26,22,18,0.08)",
-        transition: "all 0.5s cubic-bezier(0.4,0,0.2,1)", transform: hovered ? "translateY(-6px)" : "translateY(0)",
-      }}>
-        <div style={{ position: "absolute", inset: 0, background: article.gradient, transition: "transform 0.6s cubic-bezier(0.4,0,0.2,1)", transform: hovered ? "scale(1.05)" : "scale(1)" }} />
-        <div style={{ position: "absolute", top: 20, left: 24, fontFamily: "'Playfair Display', serif", fontSize: 48, fontWeight: 300, color: "rgba(255,255,255,0.07)", lineHeight: 1 }}>
-          {String(article.id).padStart(2, "0")}
-        </div>
-        <div style={{ position: "absolute", top: 20, right: 20, opacity: hovered ? 1 : 0, transition: "opacity 0.4s", fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: "0.1em", color: COLORS.white, background: "rgba(196,162,101,0.6)", padding: "6px 14px", borderRadius: 100, backdropFilter: "blur(4px)" }}>View Article →</div>
-        <div style={{
-          position: "absolute", inset: 0, background: hovered ? "linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%)" : "linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.05) 100%)",
-          transition: "background 0.5s", display: "flex", flexDirection: "column", justifyContent: "flex-end", padding: 24,
-        }}>
-          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: COLORS.goldLight, marginBottom: 8 }}>{article.magazine} · {article.year}</div>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 500, color: COLORS.white, lineHeight: 1.3, marginBottom: 4 }}>{article.title}</div>
-          <div style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 13, fontWeight: 300, color: "rgba(255,255,255,0.7)", lineHeight: 1.5 }}>{article.subtitle}</div>
-        </div>
-      </div>
-      <div style={{ maxHeight: hovered ? 200 : 0, overflow: "hidden", transition: "max-height 0.5s cubic-bezier(0.4,0,0.2,1)" }}>
-        <div style={{ padding: "12px 4px 0", borderTop: `1px solid ${COLORS.creamDark}` }}>
-          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 8, fontWeight: 500 }}>Brand Insight</div>
-          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 13, fontWeight: 300, lineHeight: 1.8, color: COLORS.textLight }}>{article.commentary}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState("all");
-  const filtered = activeCategory === "all" ? articles : articles.filter(a => a.category === activeCategory);
-  return (
-    <section id="portfolio" style={{ padding: "80px 40px 120px", maxWidth: 1200, margin: "0 auto" }}>
-      <div style={{ marginBottom: 64 }}>
-        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 16 }}>Editorial Portfolio</div>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 300, color: COLORS.text, lineHeight: 1.3, marginBottom: 16 }}>
-          에디터의 시선이 <span style={{ fontWeight: 600, color: COLORS.accent }}>브랜드 전략</span>이 되기까지
-        </h2>
-        <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 15, fontWeight: 300, lineHeight: 1.8, color: COLORS.textLight, maxWidth: 620 }}>
-          대한항공 기내지 &#60;비욘드&#62;에서 전 세계 럭셔리 호텔을 취재하며 체득한<br />
-          브랜드 아이덴티티 분석 감각이, 호텔 브랜드 구축 현장에서 어떤 전략적 자산이 되었는지를 보여줍니다.
-        </p>
-      </div>
-      <div style={{ display: "flex", gap: 12, marginBottom: 56, flexWrap: "wrap" }}>
-        <button onClick={() => setActiveCategory("all")} style={{ padding: "10px 24px", borderRadius: 100, cursor: "pointer", transition: "all 0.3s", fontFamily: "'Outfit', sans-serif", fontSize: 13, fontWeight: 400, background: activeCategory === "all" ? COLORS.bgDark : "transparent", color: activeCategory === "all" ? COLORS.goldLight : COLORS.textLight, border: `1px solid ${activeCategory === "all" ? COLORS.bgDark : COLORS.creamDark}` }}>전체 보기</button>
-        {categories.map((cat) => (
-          <button key={cat.id} onClick={() => setActiveCategory(cat.id)} style={{ padding: "10px 24px", borderRadius: 100, cursor: "pointer", transition: "all 0.3s", fontFamily: "'Outfit', sans-serif", fontSize: 13, fontWeight: 400, background: activeCategory === cat.id ? COLORS.bgDark : "transparent", color: activeCategory === cat.id ? COLORS.goldLight : COLORS.textLight, border: `1px solid ${activeCategory === cat.id ? COLORS.bgDark : COLORS.creamDark}` }}>{cat.label}</button>
-        ))}
-      </div>
-      {activeCategory !== "all" && (
-        <div style={{ background: COLORS.bgCard, borderRadius: 8, padding: "28px 32px", marginBottom: 48, borderLeft: `3px solid ${COLORS.gold}` }}>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 500, color: COLORS.text, marginBottom: 8 }}>{categories.find(c => c.id === activeCategory)?.label}</div>
-          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, fontWeight: 300, lineHeight: 1.7, color: COLORS.textLight }}>{categories.find(c => c.id === activeCategory)?.description}</p>
-        </div>
-      )}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 40 }}>
-        {filtered.map((article, i) => <ArticleCard key={article.id} article={article} index={i} />)}
-      </div>
-    </section>
-  );
-}
-
-/* Strategy project card — extracted as its own component for safe hooks */
-function ProjectCard({ project, index }) {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-      style={{
-        background: hovered ? "rgba(255,252,248,0.06)" : "rgba(255,252,248,0.03)",
-        border: "1px solid rgba(196,162,101,0.12)", borderRadius: 8, padding: "36px 40px",
-        position: "relative", overflow: "hidden", transition: "all 0.4s ease",
-        animation: `fadeUp 0.6s ease ${index * 0.1}s both`,
-      }}>
-      <div style={{ position: "absolute", top: 0, left: 0, width: 4, height: "100%", background: project.gradient, borderRadius: "4px 0 0 4px" }} />
-      <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 12, flexWrap: "wrap" }}>
-        <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 12, fontWeight: 500, color: COLORS.gold, letterSpacing: "0.08em" }}>{project.company}</span>
-        <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: COLORS.goldDark, background: "rgba(196,162,101,0.1)", padding: "3px 12px", borderRadius: 100 }}>{project.tag}</span>
-      </div>
-      <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 500, color: COLORS.white, lineHeight: 1.3, marginBottom: 18 }}>{project.title}</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "8px 32px" }}>
-        {project.items.map((item, j) => (
-          <div key={j} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-            <span style={{ color: COLORS.gold, fontSize: 8, marginTop: 7, flexShrink: 0 }}>◆</span>
-            <span style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 13, fontWeight: 300, lineHeight: 1.7, color: "rgba(255,255,255,0.55)" }}>{item}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function BrandStrategy() {
-  return (
-    <section id="strategy" style={{ padding: "120px 40px", background: COLORS.bgDark, position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 70% 50% at 80% 30%, rgba(196,162,101,0.05) 0%, transparent 60%)" }} />
-      <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
-        <div style={{ marginBottom: 64 }}>
-          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 16 }}>Brand Strategy Projects</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 300, color: COLORS.white, lineHeight: 1.3, marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: COLORS.goldLight }}>브랜드 체계</span>를 설계하고 운영한 프로젝트
-          </h2>
-          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, fontWeight: 200, lineHeight: 1.9, color: "rgba(255,255,255,0.45)", maxWidth: 620 }}>
-            신규 프로퍼티 브랜드 아이덴티티 구축부터 복합시설 통합 브랜딩 가이드,<br />
-            채널별 커뮤니케이션 스탠다드 수립까지 — 브랜드의 '기준'을 만들어온 실무 경험입니다.
-          </p>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-          {brandProjects.map((project, i) => <ProjectCard key={i} project={project} index={i} />)}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* Career item — extracted as its own component */
-function CareerItem({ item, index, isLast }) {
-  return (
-    <div style={{
-      paddingLeft: 40, paddingBottom: isLast ? 0 : 48, position: "relative",
-      animation: `fadeUp 0.6s ease ${index * 0.1}s both`,
-    }}>
-      <div style={{
-        position: "absolute", left: -5, top: 6, width: 11, height: 11, borderRadius: "50%",
-        background: item.type === "current" ? COLORS.gold : COLORS.bgCard,
-        border: `2px solid ${item.type === "current" ? COLORS.gold : COLORS.goldDark}`,
-        boxShadow: item.type === "current" ? "0 0 16px rgba(196,162,101,0.4)" : "none",
+        position: "absolute", inset: 0,
+        background: "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(196,162,101,0.08) 0%, transparent 70%)",
       }} />
-      <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 12, letterSpacing: "0.1em", color: item.type === "current" ? COLORS.gold : COLORS.textMuted, marginBottom: 6 }}>{item.period}</div>
-      <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 500, color: COLORS.text, marginBottom: 4, lineHeight: 1.3 }}>{item.company}</div>
-      <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, fontWeight: 400, color: COLORS.gold, marginBottom: 10 }}>{item.role}</div>
-      <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, fontWeight: 300, lineHeight: 1.7, color: COLORS.textLight }}>{item.highlight}</p>
-    </div>
-  );
-}
-
-function Career() {
-  return (
-    <section id="career" style={{ padding: "120px 40px", background: `linear-gradient(180deg, ${COLORS.bg} 0%, ${COLORS.cream} 100%)` }}>
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 16 }}>Career Journey</div>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 300, color: COLORS.text, lineHeight: 1.3, marginBottom: 64 }}>
-          <span style={{ fontWeight: 600, color: COLORS.accent }}>에디터</span>에서 <span style={{ fontWeight: 600, color: COLORS.accent }}>브랜드 리더</span>로
-        </h2>
-        <div style={{ position: "relative" }}>
-          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 1, background: `linear-gradient(to bottom, ${COLORS.gold}, ${COLORS.creamDark})` }} />
-          {careerData.map((item, i) => <CareerItem key={i} item={item} index={i} isLast={i === careerData.length - 1} />)}
+      <div style={{
+        textAlign: "center", maxWidth: 900, padding: "0 40px", position: "relative", zIndex: 1,
+        opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(30px)",
+        transition: "all 1.2s cubic-bezier(0.4,0,0.2,1)",
+      }}>
+        <div style={{
+          fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.35em", textTransform: "uppercase",
+          color: COLORS.gold, marginBottom: 32, fontWeight: 300,
+        }}>Hotel & F&B Integrated Marketing</div>
+        <h1 style={{
+          fontFamily: "'Cormorant Garamond', serif", fontSize: 52, fontWeight: 300, lineHeight: 1.2,
+          color: COLORS.white, margin: "0 0 20px",
+        }}>
+          브랜드의 이야기를<br/>
+          <span style={{ fontWeight: 600, color: COLORS.goldLight }}>콘텐츠와 고객 경험</span>으로<br/>
+          구현해온 통합 마케터
+        </h1>
+        <p style={{
+          fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 300, lineHeight: 1.8,
+          color: "rgba(255,255,255,0.5)", maxWidth: 600, margin: "0 auto 48px",
+        }}>
+          브랜드 전략을 세우고, 콘텐츠로 말하고, 고객이 경험하는 현장에서 완성합니다.<br/>
+          호텔·F&B·리테일을 아우르는 16년의 통합 마케팅 리더십.
+        </p>
+        <div style={{ display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap" }}>
+          {[
+            { num: "16+", label: "Years" },
+            { num: "6", label: "Industries" },
+            { num: "50+", label: "Global Stories" },
+          ].map((stat, i) => (
+            <div key={i} style={{ textAlign: "center" }}>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 36, fontWeight: 600, color: COLORS.gold }}>{stat.num}</div>
+              <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: "0.2em", color: "rgba(255,255,255,0.35)", textTransform: "uppercase", marginTop: 4 }}>{stat.label}</div>
+            </div>
+          ))}
+        </div>
+        {/* Core Competency Tags */}
+        <div style={{ marginTop: 56, display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
+          {["브랜딩 × CX 통합 전략", "F&B · 공간 경험 설계", "데이터 기반 퍼포먼스", "글로벌 커뮤니케이션"].map((skill, i) => (
+            <span key={i} style={{
+              fontFamily: "'Outfit', sans-serif", fontSize: 11, color: "rgba(196,162,101,0.5)",
+              background: "rgba(196,162,101,0.06)", padding: "8px 18px", borderRadius: 100, fontWeight: 300,
+              border: "1px solid rgba(196,162,101,0.1)",
+            }}>{skill}</span>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-/* ── Apply: 경력 어필 ── */
+/* ── Brand Strategy Section ── */
+function BrandStrategy() {
+  const [ref, visible] = useInView(0.05);
+  const [expandedCard, setExpandedCard] = useState(null);
 
-const applyData = {
-  intro: {
-    title: "브랜드의 '기준'을 만들고, 현장의 '실행 언어'로 번역해온 16년",
-    summary: "호텔·리조트·F&B·리테일 등 복합 비즈니스 환경에서 브랜드 아이덴티티 수립부터 가이드라인 설계, 채널 운영, 성과 관리까지 — 브랜드의 전 과정을 직접 설계하고 운영해온 통합 마케팅 리더입니다.",
-    process: [
-      { step: "01", label: "브랜드 체계 수립" },
-      { step: "02", label: "실행 기준 통합" },
-      { step: "03", label: "커뮤니케이션 가이드" },
-      { step: "04", label: "성과 모니터링" },
-      { step: "05", label: "플레이북화" },
-    ],
-    paragraphs: [
-      "제주신화월드(연매출 2.7조 복합리조트), 그랜드 하얏트 제주(1,600실 규모 신규 오픈) 등에서 전사 브랜드 전략을 총괄했고, 현재는 Glow Seoul에서 다수 F&B·라이프스타일 브랜드의 통합 마케팅을 리드하고 있습니다.",
-      "에디터 출신 마케터로서, 브랜드 내러티브를 설계하는 콘텐츠 감각과 복합시설 현장에서 부서 간 실행 기준을 조율해온 운영 역량을 함께 갖추고 있습니다.",
-    ],
-  },
-  motivation: {
-    title: "에디터에서 마케터로 — 저만의 경력 궤적",
-    paragraphs: [
-      "저는 매거진 에디터로 시작해 50개 이상의 글로벌 럭셔리 호텔을 직접 취재하며 공간 브랜딩과 호스피탈리티의 언어를 체득했습니다. '보는 사람'의 감각으로 브랜드 스토리를 발견하고, 그것을 독자의 언어로 전달하는 훈련을 8년간 이어왔습니다.",
-      "이후 호텔·리조트·F&B 마케팅 현장으로 이동하면서, 에디터가 발견한 인사이트를 직접 '만드는 사람'의 전략으로 전환했습니다. 복합리조트에서는 숙박·F&B·테마파크·리테일 등 전혀 다른 사업부가 하나의 브랜드 안에서 움직여야 합니다. 이 복잡한 환경에서 브랜드 기준을 문서화하고, 부서별 실행 언어로 번역하며, 현장에서 모니터링-개선까지 운영하는 전 사이클을 반복해왔습니다.",
-      "콘텐츠를 기획하는 감각과 현장을 운영하는 체계, 이 두 가지가 제 경력의 핵심 축입니다.",
-    ],
-  },
-  competencies: [
-    { label: "Brand Standard 설계", desc: "브랜드 메시지·톤앤매너·채널 운영 원칙을 정리하고, 산출물을 템플릿화하여 전사 실행 품질을 일관되게 관리해왔습니다." },
-    { label: "복합시설 통합 브랜딩", desc: "호텔·F&B·리테일·테마파크 등 다업종이 공존하는 환경에서 하나의 브랜드 체계로 정렬하고, 부서 간 커뮤니케이션 기준을 통합 운영했습니다." },
-    { label: "콘텐츠 기획 & 스토리텔링", desc: "에디터 경력 기반의 콘텐츠 감각으로 브랜드 내러티브를 설계하고, 채널별(SNS·PR·영상·인플루언서) 톤앤매너를 정교하게 운영합니다." },
-    { label: "고객 경험 설계 & 상품 기획", desc: "VIP·가족·MZ 등 타깃별 테마 패키지와 시그니처 이벤트를 기획하고, 현장 운영 가이드까지 설계하여 객단가 상승과 재방문율 개선을 이끌었습니다." },
-    { label: "데이터 기반 성과 관리", desc: "GA·SNS·OTA 데이터를 기반으로 채널별 성과를 모니터링하고, 인사이트 도출 → 전략 재설계 사이클을 정착시켜 ROI를 개선해왔습니다." },
-    { label: "파트너십 & 협업 오케스트레이션", desc: "신한카드 메인 스폰서십, 글로벌 브랜드 콜라보레이션 등 전략적 파트너십을 설계하고, 세일즈·RM·운영 등 유관 부서와 공동 KPI를 달성해왔습니다." },
-  ],
-  careerHighlights: [
-    { area: "신규 호텔 브랜드를 처음부터 만들었습니다", desc: "그랜드하얏트 제주 신규 오픈 시 시그니처 테마·슬로건·메시지 키워드 체계를 수립하고, 1,600실 규모 복합시설의 공간별 톤앤매너 차별화 가이드를 직접 설계했습니다." },
-    { area: "복합시설의 브랜드를 하나로 정렬했습니다", desc: "제주신화월드에서 숙박·워터파크·테마파크·F&B·리테일 전 부문의 브랜딩 전략을 통합 수립하고, 부서별(운영·세일즈·F&B·디자인) 커뮤니케이션 기준을 하나의 프레임으로 묶어 운영했습니다." },
-    { area: "고객 경험을 상품화해 매출을 만들었습니다", desc: "타깃별 테마 패키지·시그니처 이벤트(Sky Pool Party, Food & Wine Festival 등)를 기획하고 운영하며, 객단가 상승과 시즌별 매출 견인에 직접 기여했습니다." },
-    { area: "오픈/이벤트 플레이북을 체계화했습니다", desc: "그랜드하얏트 제주 신규 오픈 마케팅에서 메시지 체계·프로모션·PR·콘텐츠 플로우를 표준화하고, 영·중·일 다국어 가이드와 글로벌 채널 운영 전략을 수립했습니다." },
-    { area: "멀티 브랜드의 정체성을 각각 세웠습니다", desc: "JTBC PLUS에서 ELLE·CeCi·SURE·InStyle 등 복수 브랜드의 디지털 아이덴티티를 재정립했고, 올가홀푸드에서 PB 브랜드 내러티브를, Glow Seoul에서 다수 F&B 브랜드의 통합 포지셔닝을 리드했습니다." },
-    { area: "글로벌 호스피탈리티 현장을 경험했습니다", desc: "그랜드하얏트(글로벌 체인) + 제주신화월드(국내 최대 복합리조트)에서 현장 실무를 수행했고, 대한항공 Beyond 매거진에서 50개 이상의 글로벌 럭셔리 호텔을 직접 취재하며 영문 기사 작성·팩트체크·윤문까지 수행했습니다." },
-  ],
-  careerFit: [
-    { company: "Glow Seoul", period: "2025.12 \u2013 현재", tag: "다브랜드 통합 마케팅 & 상품 기획", items: [
-      "다수 F&B·라이프스타일 브랜드의 포지셔닝/핵심 메시지/톤앤매너를 정리해 통합 마케팅 방향 수립",
-      "IG/카카오/네이버 등 채널 역할 정의 및 고객 여정 기반 운영 기준을 잡아 전환 구조 강화",
-      "히어로 메뉴/시즌 상품/세트 구성 등 상품(메뉴) 런칭 커뮤니케이션 체계화",
-      "브랜드 스토리 기반 영상/SNS 콘텐츠 기획 기준 정립, 인플루언서 협업으로 UGC 확산 구조 구축",
-      "채널/콘텐츠 성과 분석 기반 운영 최적화(ROI 관점) 및 제휴/콜라보 기획",
-    ] },
-    { company: "제주신화월드", period: "2024.07 \u2013 2025.12", tag: "전사 브랜드 전략 & 고객 경험 설계", items: [
-      "호텔·워터파크·테마파크·리테일·F&B 등 복합리조트의 연간/분기 통합 마케팅 전략 총괄",
-      "VIP·가족·MZ 등 타깃별 테마형 패키지/체험 콘텐츠 기획·운영, 현장 실행 가이드 설계",
-      "Sky Pool Party/Countdown Party 등 시그니처 이벤트 기획 → 메시지 설계 → 채널별 통합 커뮤니케이션",
-      "신한카드 메인 스폰서십 등 전략적 파트너십 설계 및 세일즈·RM과 공동 KPI 달성",
-      "GA/SNS 인사이트 기반 성과 모니터링-개선 체계 운영, 마케팅 플랜팀 리더로 예산·일정·리스크 통합 관리",
-    ] },
-    { company: "그랜드 하얏트 제주", period: "2022.07 \u2013 2024.07", tag: "신규 오픈 브랜드 아이덴티티 구축", items: [
-      "1,600실 규모 복합시설 신규 오픈 — USP 정의, 시그니처 테마·슬로건·메시지 키워드 체계 수립",
-      "호텔·카지노·리테일 공간별 커뮤니케이션 차별화 가이드 설계",
-      "영·중·일 다국어 콘텐츠 제작·운영 및 글로벌 채널(Tripadvisor, Klook 등) 브랜드 커뮤니케이션",
-      "OTA/SNS/유튜브 등 디지털 채널 운영 체계 구축, KOL/셀럽 연계 UGC 캠페인 설계",
-      "GA/SNS/OTA 데이터 기반 성과 분석 → 리포트 기반 전략 재설계 사이클 정착",
-    ] },
-    { company: "풀무원 올가홀푸드", period: "2021.09 \u2013 2022.07", tag: "F&B 브랜드 포지셔닝 & 매장 브랜딩", items: [
-      "친환경·지속가능 트렌드 기반 PB 브랜드 콘셉트 기획 및 브랜드 내러티브 설계",
-      "매장·패키징 비주얼 브랜딩 가이드 설계, 매장 체험 콘텐츠 구성으로 브랜드 철학을 고객 언어로 시각화",
-      "네이버/카카오/자사몰 등 커머스 채널 콘텐츠 UX 최적화 및 판매 연계 운영 기준 수립",
-      "네덜란드대사관 협업 친환경 캠페인, 공정무역협회 페어트레이드 등 ESG 브랜드 확장 프로젝트 리드",
-    ] },
-    { company: "더북컴퍼니", period: "2020.09 \u2013 2021.09", tag: "매거진 브랜드 콘텐츠 마케팅", items: [
-      "전성기·에비뉴엘·주부생활 스타일러 등 매거진 브랜드별 톤앤매너 기획 및 브랜디드 콘텐츠 총괄",
-      "멀티 채널(웹/SNS/이메일) 통합 콘텐츠 마케팅 운영 및 SEO 최적화",
-      "캠페인 KPI 분석 기반 인사이트 도출 → 예산·전략 재설계, ROI 관점 성과 관리",
-    ] },
-    { company: "서울문화사 · Beyond", period: "2017.02 \u2013 2020.06", tag: "글로벌 호스피탈리티 콘텐츠 기획", items: [
-      "대한항공 기내매거진 Beyond 시니어 에디터 — 글로벌 럭셔리 호텔 50개 이상 직접 취재·기획",
-      "호텔 GM·아트디렉터·프로듀서 인터뷰 등으로 브랜드 철학-공간-서비스를 구조화하여 전달",
-      "국·영문 기사 기획·작성·팩트체크·윤문까지 수행, 글로벌 타깃 콘텐츠 품질 관리",
-    ] },
-    { company: "JTBC PLUS", period: "2009.06 \u2013 2017.01", tag: "매거진 브랜드 디지털 전환", items: [
-      "ELLE·CeCi·SURE·InStyle 등 주요 매거진 브랜드의 디지털 전환 프로젝트 리딩",
-      "브랜드별 SNS 전략 수립·운영으로 채널 정체성 재정립, 업계 최대 팔로워·인게이지먼트 달성",
-      "삼성페이·MCM·리복·백상예술대상 등 대형 브랜디드 콘텐츠 캠페인 PM",
-      "CeCi 디지털 전용 채널 OOPICK 기획·론칭, 카카오 제휴 모바일 콘텐츠 포맷 개발로 디지털 광고 수익 극대화",
-    ] },
-  ],
-  appealPoints: [
-    "매거진 에디터 8년, 마케터 8년 — 브랜드 내러티브를 설계하는 감각과 현장에서 실행 기준을 만드는 역량을 동시에 갖췄습니다.",
-    "호텔 신규 오픈부터 복합리조트 전사 전략까지, 브랜드 아이덴티티 수립 → 가이드라인 → 채널 운영 → 성과 관리 전 사이클을 직접 해왔습니다.",
-    "고객 경험을 상품으로 전환하는 기획력이 있습니다. 테마 패키지·시그니처 이벤트·파트너십을 통해 객단가 상승과 시즌 매출을 직접 만들어왔습니다.",
-    "글로벌 럭셔리 호텔 50곳 이상을 직접 취재했고, 영문 기사 작성과 다국어 브랜드 커뮤니케이션을 수행할 수 있습니다.",
-  ],
-};
-
-
-function CareerFitCard({ item, index }) {
-  const [hovered, setHovered] = useState(false);
   return (
-    <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-      style={{
-        background: hovered ? "rgba(196,162,101,0.06)" : "rgba(255,252,248,0.02)",
-        border: "1px solid rgba(196,162,101,0.1)", borderRadius: 8, padding: "28px 32px",
-        transition: "all 0.4s ease", animation: `fadeUp 0.5s ease ${index * 0.08}s both`,
-        position: "relative", overflow: "hidden",
-      }}>
-      <div style={{ position: "absolute", top: 0, left: 0, width: 4, height: "100%", background: COLORS.gold, borderRadius: "4px 0 0 4px", opacity: 0.5 }} />
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 8, flexWrap: "wrap" }}>
-        <span style={{ fontFamily: "'Playfair Display', serif", fontSize: 17, fontWeight: 500, color: COLORS.white }}>{item.company}</span>
-        <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.35)", letterSpacing: "0.05em" }}>{item.period}</span>
-      </div>
-      <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: COLORS.goldDark, background: "rgba(196,162,101,0.08)", padding: "4px 14px", borderRadius: 100, display: "inline-block", marginBottom: 16 }}>{item.tag}</div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-        {item.items.map((text, j) => (
-          <div key={j} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-            <span style={{ color: COLORS.gold, fontSize: 7, marginTop: 7, flexShrink: 0 }}>◆</span>
-            <span style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 13, fontWeight: 300, lineHeight: 1.7, color: "rgba(255,255,255,0.5)" }}>{text}</span>
+    <section id="strategy" ref={ref} style={{ background: COLORS.bgDark, padding: "120px 40px", position: "relative" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{
+          opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)",
+          transition: "all 0.8s cubic-bezier(0.4,0,0.2,1)",
+        }}>
+          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 16 }}>Brand & CX Strategy</div>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 36, fontWeight: 400, color: COLORS.white, margin: "0 0 16px" }}>
+            브랜딩과 고객 경험을 하나의 전략으로
+          </h2>
+          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, lineHeight: 1.9, color: "rgba(255,255,255,0.45)", maxWidth: 700, marginBottom: 16 }}>
+            브랜드 메시지 설계부터 콘텐츠 기획, 현장 경험 운영, 성과 측정까지 —
+            전략과 실행을 분리하지 않고 하나의 흐름으로 완성합니다.
+          </p>
+
+          {/* 8 Core Competencies Grid */}
+          <div style={{
+            display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12, marginBottom: 60, marginTop: 40,
+          }}>
+            {competencies.map((c, i) => (
+              <div key={i} style={{
+                background: "rgba(196,162,101,0.04)", border: "1px solid rgba(196,162,101,0.1)",
+                borderRadius: 8, padding: "20px 16px",
+                opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
+                transition: `all 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 0.08}s`,
+              }}>
+                <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, color: COLORS.gold, letterSpacing: "0.15em", marginBottom: 8 }}>{c.num}</div>
+                <div style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 13, color: "rgba(255,255,255,0.8)", fontWeight: 500, marginBottom: 6, lineHeight: 1.5 }}>{c.title}</div>
+                <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.35)", lineHeight: 1.5 }}>{c.desc}</div>
+              </div>
+            ))}
           </div>
-        ))}
+
+          {/* Strategy Cards */}
+          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 24 }}>Career Highlights</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {strategyCards.map((card, i) => (
+              <div key={i} onClick={() => setExpandedCard(expandedCard === i ? null : i)} style={{
+                background: card.gradient, borderRadius: 12, padding: "28px 32px", cursor: "pointer",
+                opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
+                transition: `all 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 0.1}s`,
+                border: expandedCard === i ? "1px solid rgba(196,162,101,0.3)" : "1px solid transparent",
+              }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+                  <div>
+                    <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: "0.15em", color: "rgba(255,255,255,0.5)", textTransform: "uppercase" }}>{card.period}</span>
+                    <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 500, color: COLORS.white, margin: "4px 0" }}>{card.company}</h3>
+                  </div>
+                  <span style={{
+                    fontFamily: "'Outfit', sans-serif", fontSize: 10, color: COLORS.goldLight,
+                    background: "rgba(255,255,255,0.08)", padding: "4px 12px", borderRadius: 100,
+                    whiteSpace: "nowrap",
+                  }}>{card.tag}</span>
+                </div>
+                <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 13, color: "rgba(255,255,255,0.6)", lineHeight: 1.6, margin: "0 0 8px" }}>{card.title}</p>
+                {expandedCard === i && (
+                  <ul style={{ margin: "16px 0 0", padding: "0 0 0 20px", listStyle: "none" }}>
+                    {card.items.map((item, j) => (
+                      <li key={j} style={{
+                        fontFamily: "'Noto Serif KR', serif", fontSize: 12.5, color: "rgba(255,255,255,0.55)",
+                        lineHeight: 1.7, marginBottom: 6, position: "relative", paddingLeft: 12,
+                      }}>
+                        <span style={{ position: "absolute", left: 0, color: COLORS.gold }}>·</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: 8, textAlign: "right" }}>
+                  {expandedCard === i ? "▲ 접기" : "▼ 상세 보기"}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-function Apply() {
+/* ── Career Timeline ── */
+function Career() {
+  const [ref, visible] = useInView(0.1);
   return (
-    <section id="apply" style={{ background: "linear-gradient(180deg, #F7F3EE 0%, #EDE6DB 30%, #F7F3EE 100%)", position: "relative" }}>
-      {/* Header Banner */}
-      <div style={{
-        background: "linear-gradient(135deg, #1A1612 0%, #2C2419 50%, #1A1612 100%)",
-        padding: "80px 40px 60px", position: "relative", overflow: "hidden",
-      }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 20% 50%, rgba(196,162,101,0.08) 0%, transparent 60%)" }} />
-        <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: "0.4em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 20 }}>Application Letter</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 300, color: COLORS.white, lineHeight: 1.3, marginBottom: 16 }}>
-            호텔 · F&B <span style={{ fontWeight: 600, color: COLORS.goldLight }}>브랜드 마케팅</span>
+    <section id="career" ref={ref} style={{ background: COLORS.bg, padding: "120px 40px" }}>
+      <div style={{ maxWidth: 900, margin: "0 auto" }}>
+        <div style={{
+          opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)",
+          transition: "all 0.8s cubic-bezier(0.4,0,0.2,1)",
+        }}>
+          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 16 }}>Career Timeline</div>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 36, fontWeight: 400, color: COLORS.text, margin: "0 0 48px" }}>
+            에디터에서 마케팅 리더로
           </h2>
-          <div style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, fontWeight: 200, color: "rgba(255,255,255,0.4)", lineHeight: 1.8 }}>16년차 리더급 · 콘텐츠 기획 & 스토리텔링 · 고객 경험 개발 · 매출 견인</div>
         </div>
+        {career.map((item, i) => (
+          <div key={i} style={{
+            display: "flex", gap: 32, marginBottom: 40, alignItems: "flex-start",
+            opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(-20px)",
+            transition: `all 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 0.12}s`,
+          }}>
+            <div style={{ minWidth: 160, textAlign: "right" }}>
+              <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 12, color: COLORS.textMuted, fontWeight: 300 }}>{item.period}</div>
+            </div>
+            <div style={{ position: "relative", paddingLeft: 24, borderLeft: `1px solid ${item.type === "current" ? COLORS.gold : COLORS.creamDark}`, flex: 1 }}>
+              <div style={{
+                position: "absolute", left: -5, top: 4, width: 9, height: 9, borderRadius: "50%",
+                background: item.type === "current" ? COLORS.gold : (item.type === "editorial" ? COLORS.textMuted : COLORS.goldDark),
+              }} />
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 600, color: COLORS.text, margin: "0 0 4px" }}>{item.company}</h3>
+              <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 12, color: COLORS.gold, marginBottom: 8, fontWeight: 400 }}>{item.role}</div>
+              <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 13, color: COLORS.textLight, lineHeight: 1.7, margin: 0 }}>{item.highlight}</p>
+            </div>
+          </div>
+        ))}
       </div>
+    </section>
+  );
+}
 
-      {/* 직무 연관 경력 요약 + 5단계 프로세스 */}
-      <div style={{ maxWidth: 900, margin: "0 auto", padding: "72px 40px 0" }}>
-        <div style={{ marginBottom: 56, animation: "fadeUp 0.6s ease both" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
-            <div style={{ width: 32, height: 1, background: COLORS.gold }} />
-            <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.gold }}>About Me</div>
-          </div>
-          <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, fontWeight: 500, color: COLORS.text, marginBottom: 20, lineHeight: 1.35 }}>{applyData.intro.title}</h3>
-          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 15, fontWeight: 400, lineHeight: 2, color: COLORS.text, marginBottom: 20, background: `linear-gradient(90deg, ${COLORS.gold}08, transparent)`, padding: "16px 20px", borderLeft: `3px solid ${COLORS.gold}`, borderRadius: "0 4px 4px 0" }}>{applyData.intro.summary}</p>
-
-          {/* 5단계 프로세스 */}
-          <div style={{ display: "flex", gap: 0, marginBottom: 28, flexWrap: "wrap", justifyContent: "center" }}>
-            {applyData.intro.process.map((p, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ textAlign: "center", padding: "16px 14px", minWidth: 140 }}>
-                  <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, fontWeight: 600, color: COLORS.gold, marginBottom: 4, letterSpacing: "0.1em" }}>{p.step}</div>
-                  <div style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 12, fontWeight: 400, color: COLORS.textLight, lineHeight: 1.5 }}>{p.label}</div>
-                </div>
-                {i < applyData.intro.process.length - 1 && (
-                  <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 14, color: COLORS.creamDark, flexShrink: 0 }}>→</div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {applyData.intro.paragraphs.map((p, i) => (
-            <p key={i} style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 15, fontWeight: 300, lineHeight: 2, color: COLORS.textLight, marginBottom: 14 }}>{p}</p>
-          ))}
+/* ── AI Capability Section (NEW) ── */
+function AICapability() {
+  const [ref, visible] = useInView(0.1);
+  return (
+    <section id="ai" ref={ref} style={{
+      background: "linear-gradient(180deg, #1A1612 0%, #0D0B09 100%)",
+      padding: "100px 40px", position: "relative", overflow: "hidden",
+    }}>
+      {/* Background accent */}
+      <div style={{
+        position: "absolute", top: "20%", right: "-10%", width: 400, height: 400,
+        background: "radial-gradient(circle, rgba(196,162,101,0.06) 0%, transparent 70%)",
+        borderRadius: "50%",
+      }} />
+      <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <div style={{
+          opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)",
+          transition: "all 0.8s cubic-bezier(0.4,0,0.2,1)",
+        }}>
+          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 16 }}>AI Capability</div>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 36, fontWeight: 400, color: COLORS.white, margin: "0 0 8px" }}>{aiCapabilities.title}</h2>
+          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, color: "rgba(255,255,255,0.4)", lineHeight: 1.8, marginBottom: 48 }}>{aiCapabilities.subtitle}</p>
         </div>
-
-        {/* 6대 핵심 역량 */}
-        <div style={{ marginBottom: 56, animation: "fadeUp 0.6s ease 0.1s both" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
-            <div style={{ width: 32, height: 1, background: COLORS.gold }} />
-            <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.gold }}>Core Competencies</div>
-          </div>
-          <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, fontWeight: 500, color: COLORS.text, marginBottom: 32, lineHeight: 1.35 }}>핵심 역량 6가지</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-            {applyData.competencies.map((c, i) => (
-              <div key={i} style={{ background: COLORS.bgCard, borderRadius: 8, padding: "24px 22px", borderTop: `3px solid ${COLORS.gold}`, boxShadow: "0 2px 16px rgba(26,22,18,0.05)", animation: `fadeUp 0.5s ease ${i * 0.06}s both` }}>
-                <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 12, fontWeight: 600, color: COLORS.text, marginBottom: 8, letterSpacing: "0.02em" }}>{c.label}</div>
-                <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 13, fontWeight: 300, lineHeight: 1.7, color: COLORS.textLight }}>{c.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* 지원동기 */}
-        <div style={{ marginBottom: 56, animation: "fadeUp 0.6s ease 0.15s both" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
-            <div style={{ width: 32, height: 1, background: COLORS.gold }} />
-            <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.gold }}>Career Story</div>
-          </div>
-          <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, fontWeight: 500, color: COLORS.text, marginBottom: 24, lineHeight: 1.35 }}>{applyData.motivation.title}</h3>
-          {applyData.motivation.paragraphs.map((p, i) => (
-            <p key={i} style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 15, fontWeight: 300, lineHeight: 2, color: COLORS.textLight, marginBottom: 16 }}>{p}</p>
-          ))}
-        </div>
-      </div>
-
-      {/* 경력 핵심 역량 — Dark block */}
-      <div style={{ background: COLORS.bgDark, padding: "72px 40px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 50% at 50% 30%, rgba(196,162,101,0.04) 0%, transparent 60%)" }} />
-        <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
-            <div style={{ width: 32, height: 1, background: COLORS.gold }} />
-            <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.gold }}>Career Highlights</div>
-          </div>
-          <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, fontWeight: 500, color: COLORS.white, marginBottom: 12, lineHeight: 1.3 }}>
-            제가 <span style={{ color: COLORS.goldLight }}>해온 일들</span>
-          </h3>
-          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, fontWeight: 200, color: "rgba(255,255,255,0.4)", lineHeight: 1.8, marginBottom: 40 }}>16년간의 경력에서 반복적으로 수행하며 쌓아온 핵심 업무 영역입니다.</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-            {applyData.careerHighlights.map((item, i) => (
-              <div key={i} style={{
-                background: "rgba(255,252,248,0.02)", border: "1px solid rgba(196,162,101,0.1)", borderRadius: 8, padding: "28px 32px",
-                transition: "all 0.4s ease", animation: `fadeUp 0.5s ease ${i * 0.08}s both`,
-              }}>
-                <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", color: COLORS.gold, marginBottom: 12 }}>{item.area}</div>
-                <div style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, fontWeight: 300, color: "rgba(255,255,255,0.6)", lineHeight: 1.8 }}>{item.desc}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* 경력기술(직무 관점 리프레이밍) — Dark block continued */}
-      <div style={{ background: "#1E1A15", padding: "72px 40px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 40% at 80% 60%, rgba(196,162,101,0.03) 0%, transparent 60%)" }} />
-        <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
-            <div style={{ width: 32, height: 1, background: COLORS.gold }} />
-            <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.gold }}>Career Detail</div>
-          </div>
-          <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, fontWeight: 500, color: COLORS.white, marginBottom: 12, lineHeight: 1.3 }}>
-            경력기술 — <span style={{ color: COLORS.goldLight }}>각 조직에서의 역할</span>
-          </h3>
-          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, fontWeight: 200, color: "rgba(255,255,255,0.4)", lineHeight: 1.8, marginBottom: 40 }}>각 조직에서 담당한 핵심 업무와 만들어낸 성과입니다.</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-            {applyData.careerFit.map((item, i) => <CareerFitCard key={i} item={item} index={i} />)}
-          </div>
-        </div>
-      </div>
-
-      {/* 어필 포인트 + 마무리 */}
-      <div style={{ maxWidth: 900, margin: "0 auto", padding: "72px 40px 80px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
-          <div style={{ width: 32, height: 1, background: COLORS.gold }} />
-          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.gold }}>Why Me</div>
-        </div>
-        <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, fontWeight: 500, color: COLORS.text, marginBottom: 32, lineHeight: 1.35 }}>제가 가져갈 수 있는 것</h3>
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {applyData.appealPoints.map((point, i) => (
-            <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start", animation: `fadeUp 0.5s ease ${i * 0.08}s both` }}>
-              <div style={{ width: 28, height: 28, borderRadius: "50%", background: `${COLORS.gold}15`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2 }}>
-                <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, fontWeight: 600, color: COLORS.gold }}>{i + 1}</span>
-              </div>
-              <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 15, fontWeight: 400, lineHeight: 1.8, color: COLORS.text }}>{point}</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
+          {aiCapabilities.tools.map((tool, i) => (
+            <div key={i} style={{
+              background: "rgba(196,162,101,0.04)", border: "1px solid rgba(196,162,101,0.12)",
+              borderRadius: 12, padding: "28px 24px",
+              opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
+              transition: `all 0.6s cubic-bezier(0.4,0,0.2,1) ${i * 0.12}s`,
+            }}>
+              <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.15em", color: COLORS.gold, textTransform: "uppercase", marginBottom: 8 }}>{tool.name}</div>
+              <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.7)", fontWeight: 500, marginBottom: 10 }}>{tool.tools}</div>
+              <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 12.5, color: "rgba(255,255,255,0.4)", lineHeight: 1.7, margin: 0 }}>{tool.desc}</p>
             </div>
           ))}
         </div>
-
-        {/* 마무리 */}
-        <div style={{ marginTop: 56, padding: "40px 0", borderTop: `1px solid ${COLORS.creamDark}`, textAlign: "center" }}>
-          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 16, fontWeight: 300, lineHeight: 2, color: COLORS.textLight, maxWidth: 700, margin: "0 auto" }}>
-            브랜드 기준을 만들고, 현장의 언어로 번역하며, 고객 경험으로 완성하는 전 과정을 직접 해왔습니다.<br />
-            <span style={{ fontWeight: 500, color: COLORS.accent }}>콘텐츠의 감각과 현장의 체계 — 두 가지를 함께 가진 마케터, 문수진입니다.</span>
+        <div style={{
+          marginTop: 32, padding: "20px 24px", background: "rgba(196,162,101,0.03)",
+          border: "1px solid rgba(196,162,101,0.08)", borderRadius: 8,
+          opacity: visible ? 1 : 0, transition: "opacity 0.8s 0.5s",
+        }}>
+          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 12.5, color: "rgba(255,255,255,0.35)", lineHeight: 1.8, margin: 0, textAlign: "center" }}>
+            AI를 '대체'가 아닌 '확장'으로 활용합니다. 마케터의 전략적 판단 위에 AI의 속도와 실험 가능성을 더해,
+            콘텐츠 제작·데이터 분석·운영 효율화의 품질과 속도를 동시에 높입니다.
           </p>
         </div>
       </div>
@@ -662,50 +494,154 @@ function Apply() {
   );
 }
 
-function Contact() {
+/* ── Editorial Portfolio ── */
+function Portfolio() {
+  const [ref, visible] = useInView(0.05);
+  const [activeCat, setActiveCat] = useState("all");
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const filtered = activeCat === "all" ? articles : articles.filter((a) => a.category === activeCat);
+
   return (
-    <section id="contact" style={{ padding: "120px 40px", background: COLORS.bgDark, position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 30% 60%, rgba(196,162,101,0.06) 0%, transparent 60%)" }} />
-      <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
-        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 16 }}>Get in Touch</div>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 300, color: COLORS.white, lineHeight: 1.3, marginBottom: 24 }}>
-          문수진 <span style={{ fontWeight: 600, color: COLORS.goldLight }}>Jay Moon</span>
-        </h2>
-        <div style={{ width: 40, height: 0.5, background: COLORS.gold, margin: "0 auto 44px", opacity: 0.6 }} />
-        <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, fontWeight: 200, lineHeight: 2.2, color: "rgba(255,255,255,0.4)", marginBottom: 48 }}>
-          호텔 · F&B · 복합리조트 브랜드 관리<br />
-          브랜드 아이덴티티 구축 · 가이드라인 설계 · 통합 커뮤니케이션 전략
-        </p>
-        <div style={{ display: "flex", flexDirection: "column", gap: 20, alignItems: "center" }}>
-          {[{ label: "Email", value: "versatile13@naver.com" }, { label: "Phone", value: "010-2742-9367" }].map((item, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 16 }}>
-              <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: COLORS.gold, minWidth: 60, textAlign: "right" }}>{item.label}</span>
-              <span style={{ fontFamily: "'Playfair Display', serif", fontSize: 18, fontWeight: 400, color: "rgba(255,255,255,0.8)" }}>{item.value}</span>
+    <section id="portfolio" ref={ref} style={{ background: COLORS.bg, padding: "120px 40px" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{
+          opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)",
+          transition: "all 0.8s cubic-bezier(0.4,0,0.2,1)",
+        }}>
+          <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 16 }}>Editorial Portfolio</div>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 36, fontWeight: 400, color: COLORS.text, margin: "0 0 12px" }}>
+            에디터의 눈이 만든 마케터의 깊이
+          </h2>
+          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 14, color: COLORS.textMuted, lineHeight: 1.8, maxWidth: 700, marginBottom: 40 }}>
+            대한항공 비욘드 매거진 시니어 에디터로서 50+ 글로벌 호텔을 현장 취재하며 쌓은 인사이트가,
+            이후 호텔·리조트 마케팅 실무의 전략적 기반이 되었습니다.
+          </p>
+        </div>
+        {/* Category Filter */}
+        <div style={{ display: "flex", gap: 12, marginBottom: 40, flexWrap: "wrap" }}>
+          <button onClick={() => setActiveCat("all")} style={{
+            fontFamily: "'Outfit', sans-serif", fontSize: 12, padding: "8px 20px", borderRadius: 100, cursor: "pointer",
+            background: activeCat === "all" ? COLORS.gold : "transparent", border: `1px solid ${activeCat === "all" ? COLORS.gold : COLORS.creamDark}`,
+            color: activeCat === "all" ? COLORS.white : COLORS.textMuted, transition: "all 0.3s", fontWeight: 400,
+          }}>All</button>
+          {categories.map((cat) => (
+            <button key={cat.id} onClick={() => setActiveCat(cat.id)} style={{
+              fontFamily: "'Outfit', sans-serif", fontSize: 12, padding: "8px 20px", borderRadius: 100, cursor: "pointer",
+              background: activeCat === cat.id ? COLORS.gold : "transparent", border: `1px solid ${activeCat === cat.id ? COLORS.gold : COLORS.creamDark}`,
+              color: activeCat === cat.id ? COLORS.white : COLORS.textMuted, transition: "all 0.3s", fontWeight: 400,
+            }}>{cat.label}</button>
+          ))}
+        </div>
+        {/* Active Category Description */}
+        {activeCat !== "all" && (
+          <p style={{ fontFamily: "'Noto Serif KR', serif", fontSize: 13, color: COLORS.textLight, lineHeight: 1.7, marginBottom: 32, maxWidth: 700 }}>
+            {categories.find((c) => c.id === activeCat)?.description}
+          </p>
+        )}
+        {/* Article Grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          {filtered.map((article, i) => (
+            <div key={article.id}
+              onMouseEnter={() => setHoveredCard(article.id)}
+              onMouseLeave={() => setHoveredCard(null)}
+              style={{
+                borderRadius: 12, overflow: "hidden", cursor: "pointer",
+                opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
+                transition: `all 0.5s cubic-bezier(0.4,0,0.2,1) ${i * 0.06}s`,
+                boxShadow: hoveredCard === article.id ? "0 8px 32px rgba(0,0,0,0.15)" : "0 2px 8px rgba(0,0,0,0.05)",
+              }}>
+              {/* Card Image Area */}
+              <div style={{
+                height: 180, background: article.gradient, position: "relative", overflow: "hidden",
+                display: "flex", alignItems: "flex-end", padding: 20,
+              }}>
+                <div style={{
+                  position: "absolute", inset: 0,
+                  background: hoveredCard === article.id ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0.2)",
+                  transition: "background 0.4s",
+                }} />
+                <div style={{ position: "relative", zIndex: 1 }}>
+                  <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 9, letterSpacing: "0.15em", color: "rgba(255,255,255,0.6)", textTransform: "uppercase" }}>
+                    {article.magazine} · {article.year}
+                  </span>
+                </div>
+              </div>
+              {/* Card Content */}
+              <div style={{ background: COLORS.bgCard, padding: "20px 20px 24px" }}>
+                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 18, fontWeight: 600, color: COLORS.text, margin: "0 0 4px" }}>{article.title}</h3>
+                <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, color: COLORS.textMuted, margin: "0 0 12px" }}>{article.subtitle}</p>
+                {/* Marketer's Note on Hover */}
+                <div style={{
+                  maxHeight: hoveredCard === article.id ? 120 : 0, overflow: "hidden",
+                  transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
+                }}>
+                  <div style={{
+                    fontFamily: "'Noto Serif KR', serif", fontSize: 11.5, color: COLORS.textLight, lineHeight: 1.7,
+                    padding: "12px 0 0", borderTop: `1px solid ${COLORS.cream}`,
+                  }}>
+                    <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 9, letterSpacing: "0.15em", color: COLORS.gold, textTransform: "uppercase", display: "block", marginBottom: 6 }}>Marketer's Note</span>
+                    {article.commentary}
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
-        <div style={{ marginTop: 56, display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>
-          {["브랜드×공간 IMC", "데이터 기반 퍼포먼스", "파트너십 오케스트레이션", "비즈니스 영어"].map((skill, i) => (
-            <span key={i} style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, color: "rgba(196,162,101,0.4)", background: "rgba(196,162,101,0.06)", padding: "6px 16px", borderRadius: 100, fontWeight: 300 }}>{skill}</span>
-          ))}
-        </div>
-        <div style={{ marginTop: 48, paddingTop: 40, borderTop: "1px solid rgba(196,162,101,0.1)" }}>
-          <div style={{ display: "flex", justifyContent: "center", gap: 36, flexWrap: "wrap" }}>
-            {["Brand Standard", "Identity & Positioning", "MKT Communication Guide", "IMC Strategy"].map((s, i) => (
-              <div key={i} style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.25)", fontWeight: 300 }}>{s}</div>
-            ))}
-          </div>
-        </div>
-        <div style={{ marginTop: 60, fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.15em", color: "rgba(255,255,255,0.15)", fontWeight: 300 }}>© 2025 Jay Moon. Brand Strategist & Hospitality Marketer.</div>
       </div>
     </section>
   );
 }
 
+/* ── Contact ── */
+function Contact() {
+  const [ref, visible] = useInView(0.1);
+  return (
+    <section id="contact" ref={ref} style={{ background: COLORS.bgDark, padding: "100px 40px", textAlign: "center" }}>
+      <div style={{
+        maxWidth: 700, margin: "0 auto",
+        opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
+        transition: "all 0.8s cubic-bezier(0.4,0,0.2,1)",
+      }}>
+        <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: COLORS.gold, marginBottom: 20 }}>Contact</div>
+        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 32, fontWeight: 400, color: COLORS.white, margin: "0 0 40px" }}>
+          문수진 · Jay Moon
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, alignItems: "center" }}>
+          {[
+            { label: "Position", value: "Hotel & F&B Integrated Marketing Leader" },
+            { label: "Experience", value: "16+ years · Hotels, Resorts, F&B, Retail, Media" },
+            { label: "Location", value: "Seoul, South Korea" },
+            { label: "Language", value: "Korean (Native) · English (Business)" },
+          ].map((item, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: COLORS.gold, minWidth: 90, textAlign: "right" }}>{item.label}</span>
+              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 17, fontWeight: 400, color: "rgba(255,255,255,0.8)" }}>{item.value}</span>
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: 56, display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
+          {["Branding × CX Strategy", "F&B Experience Design", "데이터 기반 퍼포먼스", "AI-Powered Marketing", "비즈니스 영어"].map((skill, i) => (
+            <span key={i} style={{
+              fontFamily: "'Outfit', sans-serif", fontSize: 11, color: "rgba(196,162,101,0.4)",
+              background: "rgba(196,162,101,0.06)", padding: "6px 16px", borderRadius: 100, fontWeight: 300,
+            }}>{skill}</span>
+          ))}
+        </div>
+        <div style={{ marginTop: 60, fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: "0.15em", color: "rgba(255,255,255,0.15)", fontWeight: 300 }}>
+          © 2026 Jay Moon. Brand Strategist & Hospitality Marketing Leader.
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════
+   APP
+   ══════════════════════════════════════════════════════ */
 function App() {
   const [activeSection, setActiveSection] = useState("hero");
   useEffect(() => {
-    const sections = ["hero", "strategy", "career", "portfolio", "apply", "contact"];
+    const sections = ["hero", "strategy", "career", "ai", "portfolio", "contact"];
     const handler = () => {
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
@@ -717,12 +653,18 @@ function App() {
   }, []);
   return (
     <div style={{ background: COLORS.bg }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@200;300;400;500;600&family=Noto+Serif+KR:wght@200;300;400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        ::selection { background: #C4A265; color: #FFFCF8; }
+      `}</style>
       <NavBar activeSection={activeSection} />
       <Hero />
       <BrandStrategy />
       <Career />
+      <AICapability />
       <Portfolio />
-      <Apply />
       <Contact />
     </div>
   );
