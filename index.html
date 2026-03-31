@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>문수진 Jay Moon — Integrated Marketing Leader</title>
-<meta name="description" content="공간을 읽고, 브랜드를 쓰고, 고객이 머무는 경험을 만듭니다. 16년차 호텔·F&B 통합 마케팅 리더.">
+<title>문수진 Jay Moon — Brand Storyteller & Marketing Strategist</title>
+<meta name="description" content="브랜드의 언어를 만들고, 고객의 경험을 설계합니다. 16년차 호텔·F&B 통합 마케팅 리더.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&family=Noto+Sans+KR:wght@200;300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
@@ -34,31 +34,70 @@ const C = {
 };
 const F = { head: "'Sora', sans-serif", body: "'Noto Sans KR', sans-serif", mono: "'DM Mono', monospace" };
 
-const impactItems = [
-  { label: "제로 베이스에서 브랜드 체계 구축", desc: "그랜드하얏트 제주 오프닝 — USP·슬로건·메시지 가이드라인·다국어 커뮤니케이션 체계를 처음부터 설계", tag: "Brand Architecture" },
-  { label: "반복 가능한 이벤트 시스템 설계", desc: "제주신화월드 — 시그니처 이벤트를 시즌별 반복 가능한 구조로 체계화, 재방문율·예약 전환율 향상", tag: "Experience Design" },
-  { label: "파트너십을 매출 구조로 전환", desc: "신한카드 메인 스폰서 포지셔닝 설계 → 결제 점유율 확대 → 고객경험 프로그램까지 연결", tag: "Revenue Impact" },
-  { label: "디지털 채널 업계 1위 달성", desc: "JTBC PLUS 매거진 브랜드 — SNS 채널 콘텐츠 전략 수립, 업계 최대 팔로워 및 인게이지먼트 기록", tag: "Digital Growth" },
+/* ═══════════════ DATA ═══════════════ */
+const heroStats = [
+  { value: "300%↑", label: "F&B 패키지 매출 성장", sub: "브랜드 콜라보레이션" },
+  { value: "110%", label: "객실 점유율 달성", sub: "시그니처 행사 기간" },
+  { value: "15–20억", label: "연간 마케팅 예산", sub: "편성·집행·성과 관리" },
 ];
-const careerStages = [
-  { phase: "01", title: "콘텐츠 기획력", period: "2009–2020", orgs: "JTBC PLUS · 대한항공 비욘드", summary: "매거진 에디터로 시작해 디지털 콘텐츠 기획과 브랜디드 캠페인을 리딩. 글로벌 호텔 50곳+ 현장 취재로 공간·브랜드 해석 역량 축적.", color: C.darkGray },
-  { phase: "02", title: "브랜드 전략 수립", period: "2021–2024", orgs: "올가홀푸드 · 그랜드하얏트 제주", summary: "PB 브랜드 포지셔닝, 신규 호텔 USP 정립, 다국어 메시지 체계 구축. '콘텐츠를 만드는 사람'에서 '브랜드 체계를 설계하는 사람'으로 전환.", color: C.charcoal },
-  { phase: "03", title: "고객경험 설계", period: "2024–현재", orgs: "제주신화월드", summary: "복합리조트 전사 마케팅 전략 총괄. 시그니처 이벤트, VIP 경험 설계, 시즌별 캠페인 체계 구축. 기획을 넘어 현장 운영까지.", color: C.dark },
-  { phase: "04", title: "상품·매출 연결", period: "전 경력 관통", orgs: "파트너십 · F&B · 패키지", summary: "신한카드 메인 스폰서십으로 결제 점유율 확대, F&B 시즌 페스티벌 기획·운영으로 객단가 증대, 패키지 상품 설계로 매출 견인.", color: C.accent },
+
+const valueProps = [
+  {
+    num: "01", title: "스토리텔링으로 브랜드를 만든다", titleEn: "Brand Storyteller",
+    thesis: "공간과 서비스에 숨은 브랜드의 본질을 발견하고, 시장이 이해하는 언어로 번역합니다.",
+    projects: [
+      { name: "그랜드하얏트 제주", desc: "신규 런칭 호텔 USP 정립, 슬로건·메시지 가이드라인 수립. 제주라는 로컬리티를 글로벌 브랜드 언어로 전환" },
+      { name: "JTBC PLUS", desc: "매거진 디지털 전환 선도, 브랜디드 콘텐츠 비즈니스 모델 개발. 업계 최대 소셜 인게이지먼트 달성" },
+    ],
+  },
+  {
+    num: "02", title: "콘텐츠를 상품으로, 상품을 매출로", titleEn: "Revenue Creator",
+    thesis: "고객 경험 프로그램이 전무하던 곳에서 연간 캠페인 체계를 세우고, 콘텐츠를 매출로 전환하는 구조를 만듭니다.",
+    projects: [
+      { name: "연간 캠페인 체계 수립", desc: "고객 경험 이벤트가 전무하던 복합리조트에서 연간 캠페인 스케줄을 정립, 분기별 시그니처 프로그램 안정화" },
+      { name: "F&B 패키지 매출 3배 성장", desc: "브랜드 콜라보레이션 마케팅을 F&B 패키지 상품으로 연결, 매출 300% 이상 성장 달성" },
+      { name: "시그니처 행사 → OCC 110%", desc: "Sky Pool Party, Countdown 등 시그니처 이벤트 브랜드 체계 설계·운영, 행사 기간 객실 점유율 110% 달성" },
+      { name: "MICE 행사의 브랜드 자산화", desc: "기관·대기업 행사 유치 시 웰컴 디너·갈라 프로그램 등 파생 이벤트 자체 기획, 일회성 대관을 브랜드 경험으로 전환" },
+    ],
+  },
+  {
+    num: "03", title: "고객 여정 전체를 설계한다", titleEn: "Experience Architect",
+    thesis: "마케팅의 역할을 홍보에서 고객경험 개발까지 확장하고, 현장과 함께 실행합니다.",
+    projects: [
+      { name: "제주신화월드", desc: "숙박·F&B·테마파크·카지노 전 시설 통합 마케팅 방향성 수립, VIP 시그니처 이벤트 및 고객 여정 기반 프로모션 설계" },
+      { name: "그랜드하얏트 제주", desc: "외국인 타깃 다국어 콘텐츠 및 글로벌 채널 커뮤니케이션 전략 설계·운영" },
+    ],
+  },
 ];
-const brandFramework = [
-  { title: "통합 마케팅 전략", desc: "시장/고객 분석 → 브랜드/경험 설계 → 성과 관리. 복합 공간에서 브랜드 메시지–콘텐츠–현장 경험을 일관되게 연결.", result: "그랜드하얏트 제주 브랜드 인지도 조기 확보" },
-  { title: "F&B 기획/마케팅", desc: "메뉴·콘셉트를 브랜드 자산으로 전환하고, 시즌 페스티벌과 프로모션을 기획·운영까지 리딩. F&B를 단순 부대시설이 아닌 집객과 매출의 핵심 콘텐츠로 설계.", result: "미쉐린 레스토랑 용푸 리브랜딩 홍보, 라틴고메페스티벌·비어가든 맥주 파티 등 시즌 F&B 페스티벌 기획·운영" },
-  { title: "디지털 콘텐츠 & 커뮤니케이션", desc: "채널 운영을 단순 노출이 아닌 고객 신뢰 확보와 재이용 구조로 설계. 스토리텔링 역량 기반.", result: "글로벌 타깃 다국어 콘텐츠 운영, OTA 최적화" },
-  { title: "데이터 기반 성과 관리", desc: "캠페인마다 목표와 KPI를 먼저 정의하고, 결과를 분석해 다음 실행에 반영.", result: "성과가 나는 구조를 반복 가능하게 체계화" },
-  { title: "대형 프로젝트 PM", desc: "예산·일정·협력사·리스크를 통합 관리. 파트너십에서 비즈니스 성과까지 연결.", result: "신한카드 메인 스폰서 → 결제 점유율 확대" },
-  { title: "리더십 & 프로세스 표준화", desc: "프로젝트가 개인에 의존하지 않도록 문서 체계와 운영 프로세스를 정리.", result: "플레이북화로 실행 품질 일관성 확보" },
+
+const editCategories = [
+  { id: "identity", label: "Brand Identity" },
+  { id: "experience", label: "Experience" },
+  { id: "storytelling", label: "Storytelling" },
 ];
-const caseStudies = [
-  { id: "hyatt", tag: "Brand Architecture", title: "그랜드하얏트 제주\nUSP 수립 & 브랜드 체계 구축", period: "2022–2024", challenge: "제주 최초 글로벌 럭셔리 체인 호텔 오프닝. 기존 리조트 시장과 차별화된 포지셔닝이 필요했고, 한/영/중 다국어 고객에 일관된 브랜드 메시지 전달 과제.", strategy: "호텔의 공간적 특성과 하얏트 글로벌 브랜드 자산을 결합한 USP 도출. 슬로건·메시지 체계·톤앤매너 가이드라인 수립, 채널별 커뮤니케이션 매뉴얼 구축.", execution: "KOL/셀럽 초청 UGC 캠페인으로 론칭 바이럴 확보. Tripadvisor·Time Out·Klook 등 글로벌 미디어 PR. 외국인 타깃 다국어 콘텐츠 운영 체계 정립.", outcome: "오프닝 초기 브랜드 인지도 조기 확보 및 글로벌 미디어 커버리지 달성. 다국어 커뮤니케이션 가이드가 이후 운영 표준으로 정착." },
-  { id: "events", tag: "Experience → Revenue", title: "제주신화월드\n시그니처 이벤트 시스템", period: "2024–현재", challenge: "복합리조트의 다양한 시설을 관통하는 통합 브랜드 경험 부재. 단발성 이벤트가 반복되어 고객 재방문 유인이 약한 상황.", strategy: "시즌별 반복 가능한 이벤트 체계를 설계. 각 이벤트를 연간 캠페인 캘린더의 모듈로 구조화. 기획–콘텐츠–현장운영–파트너십을 end-to-end로 통합.", execution: "Sky Pool Party, Countdown Party, Food & Wine Festival, Latin Festival 등 시그니처 이벤트 기획·운영 총괄. VIP 타겟 프라이빗 이벤트 설계.", outcome: "고객 재방문율 및 예약 전환율 향상. 이벤트가 브랜드 자산으로 축적되는 반복 가능한 구조 확립." },
-  { id: "shinhan", tag: "Partnership → Revenue", title: "신한카드\n메인 스폰서 파트너십 설계", period: "2024–현재", challenge: "다수의 제휴처가 산발적으로 운영되어 고객 경험 일관성이 낮고, 결제 수단 점유율 확대를 통한 매출 구조 개선 필요.", strategy: "단순 제휴를 넘어 메인 스폰서 포지셔닝으로 격상. 리조트 고객 여정 전체에 자연스럽게 통합하는 파트너십 구조 설계.", execution: "결제 혜택을 고객경험 프로그램으로 확장. 러닝 크루 스포츠 체험, Le Coq Sportif 유니폼 파트너십. 카지노·레스토랑·객실 연계 상품 구성.", outcome: "결제 점유율 확대. 고객 세그먼트 다변화. 파트너십이 단순 비용이 아닌 매출 기여 구조로 전환." },
+const DRIVE_FOLDER = "https://drive.google.com/drive/folders/1v2BouPJRHWl-rpfCBZPrN4tNIvdEqWKW?usp=sharing";
+const articles = [
+  { id: 1, category: "identity", title: "LA 인터콘티넨탈 호텔", subtitle: "도시의 스카이라인을 품은 공간 브랜딩", commentary: "도시 맥락을 공간에 내재화하는 전략. 그랜드하얏트 제주 USP 설계에 직접 적용.", year: "2019", gradient: "linear-gradient(135deg, #2a2a2a, #555)", link: "https://drive.google.com/file/d/1Mp8VJgEtSyD3CYdQHxvrajr6JAig40Tn/view?usp=sharing" },
+  { id: 2, category: "identity", title: "함부르크 폰테네이 호텔", subtitle: "자연과 건축이 대화하는 럭셔리", commentary: "유기적 곡선이 만드는 고객 동선의 미학. 복합시설 브랜드 스탠다드 수립에 영감.", year: "2018", gradient: "linear-gradient(135deg, #1a3a2a, #4a6a5a)", link: "https://drive.google.com/file/d/1vunbmnTa9_9sn42J1_cOsH41PJCnMTks/view?usp=sharing" },
+  { id: 3, category: "identity", title: "샌프란시스코 호텔 VIA", subtitle: "테크 시티의 부티크 호텔", commentary: "기술과 호스피탈리티의 접점. 디지털 기반 고객 경험 전략의 출발점.", year: "2018", gradient: "linear-gradient(135deg, #3a2a1a, #6a5a4a)", link: "https://drive.google.com/file/d/17mhYm28O07nv8krhhRdViI-dRDoRY8z6/view?usp=sharing" },
+  { id: 4, category: "identity", title: "벨기에 더 포스트 호텔", subtitle: "헤리티지를 리브랜딩하는 유럽의 방식", commentary: "역사적 건물이 브랜드 내러티브가 되는 과정.", year: "2019", gradient: "linear-gradient(135deg, #2a1a1a, #5a4a3a)", link: "https://drive.google.com/file/d/1kI0JHnZ220hz_vilfl1L8KwLvVCqw1w8/view?usp=sharing" },
+  { id: 5, category: "experience", title: "보스턴 더 휘트니 호텔", subtitle: "동네의 맥락이 서비스가 되는 호텔", commentary: "로컬 커뮤니티 연계 서비스 설계. 고객경험 프로그램 기획의 기반.", year: "2019", gradient: "linear-gradient(135deg, #1a2a3a, #4a5a6a)", link: "https://drive.google.com/file/d/1YOMIK2k-zbutORRHD0KNt_fHjSWGPCyD/view?usp=drive_link" },
+  { id: 6, category: "experience", title: "뉴욕 목시 첼시", subtitle: "밀레니얼이 원하는 호텔의 문법", commentary: "세대별 고객 경험 차별화 전략. 타깃별 패키지 기획에 적용.", year: "2019", gradient: "linear-gradient(135deg, #3a1a2a, #6a4a5a)", link: "https://drive.google.com/file/d/1aU84ngvh6swqYdkvjNvnlB7F25B8cIrk/view?usp=sharing" },
+  { id: 7, category: "experience", title: "빈 루비 호텔", subtitle: "효율과 감성의 균형점", commentary: "Lean Luxury 모델. 운영 효율과 브랜드 경험의 균형.", year: "2018", gradient: "linear-gradient(135deg, #2a2a1a, #5a5a3a)", link: "https://drive.google.com/file/d/1WJcOe71WQaBNjLlROEyF1pY-DVOe4RxD/view?usp=sharing" },
+  { id: 8, category: "experience", title: "암스테르담 트웬티세븐", subtitle: "초개인화 서비스의 정점", commentary: "VIP 고객 경험의 극단적 사례. 프라이빗 이벤트 설계 참조.", year: "2018", gradient: "linear-gradient(135deg, #1a1a2a, #3a3a5a)", link: "https://drive.google.com/file/d/1_fTXhHCOyUAhJ2hkcY-zBQyIbu55-2sz/view?usp=sharing" },
+  { id: 9, category: "storytelling", title: "Beyond 프로듀서 인터뷰", subtitle: "창작자의 철학을 브랜드 언어로", commentary: "인물 인터뷰를 통한 브랜드 스토리텔링.", year: "2017–20", gradient: "linear-gradient(135deg, #2a1a2a, #5a3a5a)", link: "https://drive.google.com/file/d/1ZDzrNK-vl2_o0WWT0T6VPW9E71er4yd4/view?usp=sharing" },
+  { id: 10, category: "storytelling", title: "Beyond 뮤지엄 시리즈", subtitle: "문화 자산을 관광 브랜드로 전환", commentary: "문화 콘텐츠형 캠페인의 전략적 근거.", year: "2018–20", gradient: "linear-gradient(135deg, #1a2a2a, #3a5a5a)", link: "https://drive.google.com/file/d/1ItpVlfdGTZiHEu8mdWAgH0oaxV3G85CZ/view?usp=sharing" },
 ];
+
+const careerData = [
+  { period: "2024.07 – 2025.12", company: "제주신화월드", role: "마케팅 기획 · 팀장", highlight: "고객 경험 이벤트 제로 상태에서 연간 캠페인 체계 구축. 브랜드 콜라보로 F&B 매출 3배 성장, 시그니처 행사 시 OCC 110% 달성. MICE 대형 행사를 브랜드 자산화하는 파생 이벤트 모델 설계." },
+  { period: "2022.07 – 2024.07", company: "그랜드하얏트 제주", role: "S&M 마케팅 · 차장", highlight: "신규 호텔 USP 정립, 슬로건·메시지 가이드라인 수립. 다국어 디지털 콘텐츠 운영 체계 구축, 글로벌 미디어 PR." },
+  { period: "2021.09 – 2022.07", company: "풀무원 올가홀푸드", role: "IMC · 차장", highlight: "PB상품 기획 및 친환경 브랜드 포지셔닝. 커머셜 플랫폼 연계 콘텐츠로 판매 전환 구조 설계." },
+  { period: "2020.09 – 2021.09", company: "더북컴퍼니", role: "매거진 마케팅 · 파트장", highlight: "타깃 세그먼트별 콘텐츠 전략, 브랜디드 콘텐츠 캠페인 총괄, 디지털 퍼포먼스 최적화." },
+  { period: "2017.02 – 2020.06", company: "서울문화사 · 비욘드", role: "시니어 에디터", highlight: "전 세계 50+ 호텔 현장 취재, 글로벌 호스피탈리티 브랜딩·서비스 전략 인사이트 축적." },
+  { period: "2009.06 – 2017.01", company: "JTBC PLUS", role: "디지털 에디터", highlight: "쎄씨·인스타일 등 매거진 디지털 전환 선도, 브랜디드 콘텐츠 캠페인 기획, 업계 최대 인게이지먼트 달성." },
+];
+
 const aiWorkflow = [
   { step: "전략 기획", tools: ["Claude", "ChatGPT"], desc: "시장 분석, 경쟁사 리서치, 전략 프레임워크 구조화" },
   { step: "콘텐츠 제작", tools: ["Midjourney", "Runway"], desc: "캠페인 비주얼 시안, 영상 콘텐츠 프로토타입" },
@@ -72,44 +111,31 @@ const aiTools = [
   { name: "Runway", level: 75, useCase: "영상 프로토타입, 숏폼 영상 편집" },
   { name: "Cursor", level: 80, useCase: "에이전트 코딩, 마케팅 자동화 툴 개발" },
 ];
-const categories = [ { id: "identity", label: "Brand Identity" }, { id: "experience", label: "Experience" }, { id: "storytelling", label: "Storytelling" } ];
-const DRIVE_FOLDER = "https://drive.google.com/drive/folders/149CL1AbzZR3DwMkrSmQQdhXZBPDRLMVa?usp=sharing";
-const articles = [
-  { id: 1, category: "identity", title: "LA 인터콘티넨탈 호텔", subtitle: "도시의 스카이라인을 품은 공간 브랜딩", commentary: "도시 맥락을 공간에 내재화하는 전략. 그랜드하얏트 제주 USP 설계에 직접 적용.", year: "2019", gradient: "linear-gradient(135deg, #2a2a2a, #555)", link: "https://drive.google.com/file/d/1xc0qKyLlbMo2iHAa1ZwJS7gjOJQU5nhy/view?usp=sharing" },
-  { id: 2, category: "identity", title: "함부르크 폰테네이 호텔", subtitle: "자연과 건축이 대화하는 럭셔리", commentary: "유기적 곡선이 만드는 고객 동선의 미학. 복합시설 브랜드 스탠다드 수립에 영감.", year: "2018", gradient: "linear-gradient(135deg, #1a3a2a, #4a6a5a)" },
-  { id: 3, category: "identity", title: "샌프란시스코 호텔 VIA", subtitle: "테크 시티의 부티크 호텔", commentary: "기술과 호스피탈리티의 접점. 디지털 기반 고객 경험 전략의 출발점.", year: "2018", gradient: "linear-gradient(135deg, #3a2a1a, #6a5a4a)" },
-  { id: 4, category: "identity", title: "벨기에 더 포스트 호텔", subtitle: "헤리티지를 리브랜딩하는 유럽의 방식", commentary: "역사적 건물이 브랜드 내러티브가 되는 과정.", year: "2019", gradient: "linear-gradient(135deg, #2a1a1a, #5a4a3a)" },
-  { id: 5, category: "experience", title: "보스턴 더 휘트니 호텔", subtitle: "동네의 맥락이 서비스가 되는 호텔", commentary: "로컬 커뮤니티 연계 서비스 설계. 고객경험 프로그램 기획의 기반.", year: "2019", gradient: "linear-gradient(135deg, #1a2a3a, #4a5a6a)" },
-  { id: 6, category: "experience", title: "뉴욕 목시 첼시", subtitle: "밀레니얼이 원하는 호텔의 문법", commentary: "세대별 고객 경험 차별화 전략. 타깃별 패키지 기획에 적용.", year: "2019", gradient: "linear-gradient(135deg, #3a1a2a, #6a4a5a)" },
-  { id: 7, category: "experience", title: "빈 루비 호텔", subtitle: "효율과 감성의 균형점", commentary: "Lean Luxury 모델. 운영 효율과 브랜드 경험의 균형.", year: "2018", gradient: "linear-gradient(135deg, #2a2a1a, #5a5a3a)" },
-  { id: 8, category: "experience", title: "암스테르담 트웬티세븐", subtitle: "초개인화 서비스의 정점", commentary: "VIP 고객 경험의 극단적 사례. 프라이빗 이벤트 설계 참조.", year: "2018", gradient: "linear-gradient(135deg, #1a1a2a, #3a3a5a)" },
-  { id: 9, category: "storytelling", title: "Beyond 프로듀서 인터뷰", subtitle: "창작자의 철학을 브랜드 언어로", commentary: "인물 인터뷰를 통한 브랜드 스토리텔링.", year: "2017–20", gradient: "linear-gradient(135deg, #2a1a2a, #5a3a5a)" },
-  { id: 10, category: "storytelling", title: "Beyond 뮤지엄 시리즈", subtitle: "문화 자산을 관광 브랜드로 전환", commentary: "문화 콘텐츠형 캠페인의 전략적 근거.", year: "2018–20", gradient: "linear-gradient(135deg, #1a2a2a, #3a5a5a)" },
-];
-const career = [
-  { period: "2024.07 – 현재", company: "제주신화월드", role: "마케팅 기획 · 팀장", highlight: "복합리조트 브랜드 통합 마케팅 전략 총괄" },
-  { period: "2022.07 – 2024.07", company: "그랜드하얏트 제주", role: "S&M 마케팅 · 차장", highlight: "신규 호텔 USP 정립, 글로벌 콘텐츠 전략" },
-  { period: "2021.09 – 2022.07", company: "풀무원 올가홀푸드", role: "IMC · 차장", highlight: "PB 상품 기획, 친환경 브랜드 포지셔닝" },
-  { period: "2020.09 – 2021.09", company: "더북컴퍼니", role: "매거진 마케팅 · 파트장", highlight: "타깃별 콘텐츠 전략, 디지털 퍼포먼스" },
-  { period: "2017.02 – 2020.06", company: "서울문화사 · 비욘드", role: "시니어 에디터", highlight: "글로벌 호텔 현장 취재, 브랜드 스토리텔링" },
-  { period: "2009.06 – 2017.01", company: "JTBC PLUS", role: "디지털 에디터", highlight: "매거진 디지털 전환, 브랜디드 콘텐츠 캠페인" },
+
+const leadershipData = [
+  { tag: "TEAM MANAGEMENT", label: "6~10명 규모 마케팅팀 빌딩 & 매니징", desc: "주니어부터 시니어까지 역할 분배, 성과 관리, 역량 개발을 리드하며 팀 전체의 실행력을 조율" },
+  { tag: "CROSS-FUNCTIONAL", label: "6개 부서 크로스펑셔널 협업", desc: "F&B · Sales · Operations · Design · IT · Global HQ와 프로젝트 단위 협업 체계 운영" },
+  { tag: "AGENCY DIRECTION", label: "에이전시 & 파트너 디렉팅", desc: "광고·디자인·영상·PR 에이전시 선정부터 브리프, 프로덕션 관리, 결과물 품질 컨트롤까지 총괄" },
+  { tag: "BUDGET OPERATION", label: "연간 15~20억 마케팅 예산 운영", desc: "연간 예산 편성, 월별 집행 관리, 캠페인별 ROI 분석을 통한 효율적 예산 재배분" },
 ];
 
+/* ═══════════════ UTILS ═══════════════ */
 function useInView(t = 0.15) { const r = useRef(null); const [v, s] = useState(false); useEffect(() => { const e = r.current; if (!e) return; const o = new IntersectionObserver(([x]) => { if (x.isIntersecting) { s(true); o.disconnect(); } }, { threshold: t }); o.observe(e); return () => o.disconnect(); }, [t]); return [r, v]; }
 function useIsMobile(bp = 768) { const [m, s] = useState(typeof window !== 'undefined' && window.innerWidth < bp); useEffect(() => { const h = () => s(window.innerWidth < bp); window.addEventListener("resize", h); return () => window.removeEventListener("resize", h); }, [bp]); return m; }
 const px = (m) => m ? "20px" : "40px";
 const sp = (m) => m ? "64px" : "100px";
 
+/* ═══════════════ NAV ═══════════════ */
 function NavBar({ activeSection, mob }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => { const h = () => setScrolled(window.scrollY > 60); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
   const go = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); setOpen(false); };
-  const items = [{ id:"impact",l:"Impact"},{id:"career-story",l:"Career"},{id:"strategy",l:"Strategy"},{id:"cases",l:"Cases"},{id:"ai",l:"AI"},{id:"editorial",l:"Editorial"},{id:"contact",l:"Contact"}];
+  const items = [{id:"value",l:"Value"},{id:"career",l:"Career"},{id:"editorial",l:"Editorial"},{id:"leadership",l:"Leadership"},{id:"ai",l:"AI"},{id:"contact",l:"Contact"}];
   return (
     <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:100,background:scrolled||open?"rgba(244,237,228,0.95)":"transparent",backdropFilter:scrolled?"blur(20px)":"none",transition:"all 0.4s",borderBottom:scrolled?`1px solid ${C.lightGray}`:"1px solid transparent" }}>
       <div style={{ maxWidth:1200,margin:"0 auto",padding:`0 ${px(mob)}`,display:"flex",justifyContent:"space-between",alignItems:"center",height:mob?56:64 }}>
-        <div onClick={()=>go("hero")} style={{ cursor:"pointer",fontFamily:F.head,fontSize:mob?14:15,fontWeight:600,color:C.dark }}>Jay</div>
+        <div onClick={()=>go("hero")} style={{ cursor:"pointer",fontFamily:F.head,fontSize:mob?14:15,fontWeight:600,color:C.dark }}>Jay Moon</div>
         {mob ? (
           <div onClick={()=>setOpen(!open)} style={{ cursor:"pointer",padding:8,fontFamily:F.mono,fontSize:11,color:C.darkGray }}>{open?"✕":"MENU"}</div>
         ) : (
@@ -123,197 +149,151 @@ function NavBar({ activeSection, mob }) {
   );
 }
 
+/* ═══════════════ 1. HERO ═══════════════ */
 function Hero({ mob }) {
   const [ref, vis] = useInView(0.1);
-  const fs = mob ? 20 : 26;
   return (
     <section id="hero" style={{ minHeight:mob?"auto":"100vh",display:"flex",alignItems:"center",background:C.white,position:"relative",overflow:"hidden" }}>
       {!mob && <><div style={{ position:"absolute",top:0,left:"50%",width:1,height:"100%",background:C.lightGray,opacity:0.4 }} /><div style={{ position:"absolute",top:0,left:"25%",width:1,height:"100%",background:C.lightGray,opacity:0.2 }} /></>}
       <div ref={ref} style={{ maxWidth:1200,margin:"0 auto",padding:mob?"100px 20px 60px":"160px 40px 100px",width:"100%",position:"relative",zIndex:1 }}>
+        {/* Top bar */}
         <div style={{ display:"flex",flexDirection:mob?"column":"row",justifyContent:"space-between",alignItems:mob?"flex-start":"flex-end",gap:mob?8:0,marginBottom:mob?40:64,paddingBottom:20,borderBottom:`1px solid ${C.lightGray}`,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(20px)",transition:"all 0.7s ease" }}>
-          <div><div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.15em",marginBottom:6 }}>PORTFOLIO</div><div style={{ fontFamily:F.head,fontSize:mob?13:14,fontWeight:600,color:C.dark }}>문수진 Moon Sujin</div></div>
-          <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.1em",textAlign:mob?"left":"right" }}>INTEGRATED MARKETING · 16YRS<br/>HOTEL · F&B · BRAND · CONTENT</div>
+          <div><div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.15em",marginBottom:6 }}>PORTFOLIO</div><div style={{ fontFamily:F.head,fontSize:mob?13:14,fontWeight:600,color:C.dark }}>문수진 Jay Moon</div></div>
+          <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.1em",textAlign:mob?"left":"right" }}>BRAND STORYTELLER · MARKETING STRATEGIST<br/>HOTEL · F&B · RETAIL · 16 YEARS</div>
         </div>
+
+        {/* Main copy */}
         <div style={{ marginBottom:mob?36:56,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.8s ease 0.15s" }}>
-          {[{n:"01",t:"공간을 읽고,",w:300,ind:0},{n:"02",t:"브랜드를 쓰고,",w:500,ind:mob?24:48},{n:"03",t:"고객이 머무는 경험을 만듭니다",w:700,ind:mob?48:96,dot:true}].map((l,i) => (
+          {[
+            {n:"01",t:"브랜드의 언어를 만들고,",w:300,ind:0},
+            {n:"02",t:"고객의 경험을 설계하고,",w:500,ind:mob?24:48},
+            {n:"03",t:"매출로 이어지는 구조를 만듭니다",w:700,ind:mob?48:96,dot:true}
+          ].map((l,i) => (
             <div key={i} style={{ display:"flex",alignItems:"baseline",gap:mob?10:16,marginBottom:i<2?8:0,paddingLeft:l.ind }}>
               <span style={{ fontFamily:F.mono,fontSize:mob?10:11,color:C.accent,letterSpacing:"0.1em" }}>{l.n}</span>
-              <span style={{ fontFamily:F.body,fontSize:fs,fontWeight:l.w,color:i===0?C.charcoal:C.dark }}>{l.t}{l.dot && <span style={{ color:C.accent }}>.</span>}</span>
+              <span style={{ fontFamily:F.body,fontSize:mob?20:26,fontWeight:l.w,color:i===0?C.charcoal:C.dark }}>{l.t}{l.dot && <span style={{ color:C.accent }}>.</span>}</span>
             </div>
           ))}
         </div>
-        <div style={{ display:"flex",flexDirection:mob?"column":"row",justifyContent:"space-between",alignItems:mob?"flex-start":"flex-end",gap:mob?20:32,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(20px)",transition:"all 0.8s ease 0.3s" }}>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:300,color:C.darkGray,lineHeight:1.8,maxWidth:420 }}>호텔·리조트·F&B·리테일을 관통하는 통합 마케팅 16년.<br/>콘텐츠 기획에서 출발해, 브랜드 체계 설계와 현장 운영,<br/>매출로 이어지는 구조를 만들어온 마케터입니다.</p>
-          <div style={{ display:"flex",gap:6,flexWrap:"wrap" }}>{["Hotel & Resort","F&B","Brand Strategy","Content","Digital"].map(t => <span key={t} style={{ fontFamily:F.mono,fontSize:10,padding:"5px 10px",border:`1px solid ${C.lightGray}`,color:C.darkGray }}>{t}</span>)}</div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
-function Impact({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  return (
-    <section id="impact" style={{ background:C.dark,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>IMPACT</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:"#fff" }}>만들어낸 변화들</h2>
+        {/* Sub text + tags */}
+        <div style={{ display:"flex",flexDirection:mob?"column":"row",justifyContent:"space-between",alignItems:mob?"flex-start":"flex-end",gap:mob?20:32,marginBottom:mob?40:64,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(20px)",transition:"all 0.8s ease 0.3s" }}>
+          <p style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:300,color:C.darkGray,lineHeight:1.8,maxWidth:440 }}>호텔·리조트·F&B·리테일을 관통하는 통합 마케팅 16년.<br/>스토리텔링에서 출발해, 브랜드 체계를 설계하고,<br/>고객 경험을 상품으로 전환해 매출을 만들어온 마케터입니다.</p>
+          <div style={{ display:"flex",gap:6,flexWrap:"wrap" }}>{["Hotel & Resort","F&B","Brand Strategy","Content","Digital","MICE"].map(t => <span key={t} style={{ fontFamily:F.mono,fontSize:10,padding:"5px 10px",border:`1px solid ${C.lightGray}`,color:C.darkGray }}>{t}</span>)}</div>
         </div>
-        <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(2, 1fr)",gap:mob?16:24 }}>
-          {impactItems.map((item,i) => { const [r,v] = useInView(0.1); return (
-            <div key={i} ref={r} style={{ padding:mob?"24px 20px":"36px 32px",border:"1px solid rgba(255,255,255,0.08)",borderRadius:4,opacity:v?1:0,transform:v?"translateY(0)":"translateY(25px)",transition:`all 0.6s ease ${i*0.1}s`,background:"rgba(255,255,255,0.02)" }}>
-              <div style={{ fontFamily:F.mono,fontSize:10,color:C.accent,letterSpacing:"0.12em",marginBottom:12 }}>{item.tag}</div>
-              <div style={{ fontFamily:F.body,fontSize:mob?15:18,fontWeight:600,color:"#fff",marginBottom:10,lineHeight:1.4 }}>{item.label}</div>
-              <div style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:300,color:"rgba(255,255,255,0.55)",lineHeight:1.7 }}>{item.desc}</div>
+
+        {/* Impact stats */}
+        <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(3, 1fr)",gap:mob?16:24,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(20px)",transition:"all 0.8s ease 0.45s" }}>
+          {heroStats.map((s,i) => (
+            <div key={i} style={{ padding:mob?"20px 16px":"28px 24px",background:C.offWhite,borderRadius:4,borderLeft:`3px solid ${C.accent}` }}>
+              <div style={{ fontFamily:F.head,fontSize:mob?28:36,fontWeight:700,color:C.accent,marginBottom:4 }}>{s.value}</div>
+              <div style={{ fontFamily:F.body,fontSize:13,fontWeight:500,color:C.dark,marginBottom:4 }}>{s.label}</div>
+              <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray }}>{s.sub}</div>
             </div>
-          ); })}
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function CareerStory({ mob }) {
+/* ═══════════════ 2. VALUE PROPOSITION ═══════════════ */
+function ValueSection({ mob }) {
   const [ref, vis] = useInView(0.1);
   return (
-    <section id="career-story" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}` }}>
+    <section id="value" style={{ background:C.dark,padding:`${sp(mob)} ${px(mob)}` }}>
       <div style={{ maxWidth:1200,margin:"0 auto" }}>
         <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>CAREER STORY</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?20:28,fontWeight:600,color:C.dark,marginBottom:8 }}>콘텐츠에서 출발해 매출로 도착하는 궤적</h2>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>에디터의 감각으로 시작해, 브랜드를 설계하고, 고객 경험을 운영하고, 성과를 만드는 사람으로 성장해왔습니다.</p>
+          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>WHAT I BRING</div>
+          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:"#fff",marginBottom:8 }}>조직에 가져다주는 가치</h2>
+          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7 }}>16년의 경험에서 반복적으로 증명해온 세 가지 핵심 역량.</p>
         </div>
+
+        {valueProps.map((vp, vi) => {
+          const [r, v] = useInView(0.1);
+          return (
+            <div key={vi} ref={r} style={{ marginBottom:vi<2?(mob?40:64):0,paddingBottom:vi<2?(mob?40:64):0,borderBottom:vi<2?"1px solid rgba(255,255,255,0.06)":"none",opacity:v?1:0,transform:v?"translateY(0)":"translateY(30px)",transition:`all 0.7s ease ${vi*0.1}s` }}>
+              {/* Header */}
+              <div style={{ display:"flex",alignItems:"flex-start",gap:mob?12:20,marginBottom:mob?16:24 }}>
+                <span style={{ fontFamily:F.mono,fontSize:mob?32:48,fontWeight:300,color:"rgba(212,160,32,0.15)",lineHeight:1 }}>{vp.num}</span>
+                <div>
+                  <div style={{ fontFamily:F.mono,fontSize:10,color:C.accent,letterSpacing:"0.15em",marginBottom:6 }}>{vp.titleEn.toUpperCase()}</div>
+                  <h3 style={{ fontFamily:F.body,fontSize:mob?18:24,fontWeight:600,color:"#fff",lineHeight:1.35 }}>{vp.title}</h3>
+                </div>
+              </div>
+
+              {/* Thesis */}
+              <div style={{ padding:mob?"12px 16px":"16px 24px",background:C.accentBg,borderLeft:`2px solid ${C.accent}`,borderRadius:2,marginBottom:mob?20:32,marginLeft:mob?0:68 }}>
+                <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.accentLight,lineHeight:1.7,fontStyle:"italic" }}>"{vp.thesis}"</p>
+              </div>
+
+              {/* Project cards */}
+              <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(2, 1fr)",gap:mob?12:16,marginLeft:mob?0:68 }}>
+                {vp.projects.map((p,pi) => (
+                  <div key={pi} style={{ padding:mob?"16px 14px":"20px 20px",background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.08)",borderRadius:4,transition:"border-color 0.3s" }}
+                    onMouseEnter={e => e.currentTarget.style.borderColor = "rgba(212,160,32,0.3)"}
+                    onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"}>
+                    <div style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:600,color:C.accent,marginBottom:8 }}>{p.name}</div>
+                    <div style={{ fontFamily:F.body,fontSize:mob?11:12,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7 }}>{p.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════ 3. CAREER TIMELINE ═══════════════ */
+function CareerSection({ mob }) {
+  const [ref, vis] = useInView(0.1);
+  return (
+    <section id="career" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}` }}>
+      <div style={{ maxWidth:1200,margin:"0 auto" }}>
+        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
+          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>CAREER TIMELINE</div>
+          <h2 style={{ fontFamily:F.body,fontSize:mob?20:28,fontWeight:600,color:C.dark,marginBottom:8 }}>에디터에서 마케팅 리더로</h2>
+          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>콘텐츠 기획에서 출발해, 브랜드를 설계하고, 고객 경험을 운영하고, 성과를 만드는 사람으로 성장해왔습니다.</p>
+        </div>
+
         <div style={{ position:"relative" }}>
           <div style={{ position:"absolute",left:mob?20:28,top:0,bottom:0,width:2,background:C.lightGray }} />
-          {careerStages.map((s,i) => { const [r,v] = useInView(0.1); return (
-            <div key={i} ref={r} style={{ display:"flex",gap:mob?20:40,marginBottom:i<careerStages.length-1?(mob?28:48):0,opacity:v?1:0,transform:v?"translateX(0)":"translateX(-20px)",transition:`all 0.6s ease ${i*0.12}s` }}>
-              <div style={{ flexShrink:0 }}><div style={{ width:mob?42:58,height:mob?42:58,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",background:s.color===C.accent?C.accent:C.white,border:`2px solid ${s.color}`,color:s.color===C.accent?"#fff":s.color,fontFamily:F.mono,fontSize:mob?12:14,fontWeight:500,position:"relative",zIndex:2 }}>{s.phase}</div></div>
-              <div style={{ flex:1 }}>
-                <div style={{ display:"flex",alignItems:"baseline",gap:12,marginBottom:4,flexWrap:"wrap" }}><h3 style={{ fontFamily:F.body,fontSize:mob?16:20,fontWeight:600,color:C.dark }}>{s.title}</h3><span style={{ fontFamily:F.mono,fontSize:11,color:C.midGray }}>{s.period}</span></div>
-                <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.05em",marginBottom:8 }}>{s.orgs}</div>
-                <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>{s.summary}</p>
+          {careerData.map((item,i) => {
+            const [r, v] = useInView(0.1);
+            const isFirst = i === 0;
+            return (
+              <div key={i} ref={r} style={{ display:"flex",gap:mob?20:40,marginBottom:i<careerData.length-1?(mob?24:40):0,opacity:v?1:0,transform:v?"translateX(0)":"translateX(-20px)",transition:`all 0.6s ease ${i*0.1}s` }}>
+                <div style={{ flexShrink:0 }}>
+                  <div style={{ width:mob?42:58,height:mob?42:58,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",background:isFirst?C.accent:C.white,border:`2px solid ${isFirst?C.accent:C.lightGray}`,fontFamily:F.mono,fontSize:mob?10:11,fontWeight:500,color:isFirst?"#fff":C.midGray,position:"relative",zIndex:2 }}>
+                    {String(i+1).padStart(2,"0")}
+                  </div>
+                </div>
+                <div style={{ flex:1 }}>
+                  <div style={{ display:"flex",alignItems:"baseline",gap:12,marginBottom:4,flexWrap:"wrap" }}>
+                    <h3 style={{ fontFamily:F.body,fontSize:mob?16:20,fontWeight:600,color:C.dark }}>{item.company}</h3>
+                    <span style={{ fontFamily:F.mono,fontSize:11,color:C.midGray }}>{item.period}</span>
+                  </div>
+                  <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.05em",marginBottom:8 }}>{item.role}</div>
+                  <p style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>{item.highlight}</p>
+                </div>
               </div>
-            </div>
-          ); })}
-        </div>
-        <div style={{ marginTop:mob?40:64,paddingTop:mob?32:48,borderTop:`1px solid ${C.lightGray}` }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.midGray,letterSpacing:"0.12em",marginBottom:20 }}>DETAILED TIMELINE</div>
-          {career.map((item,i) => (
-            <div key={i} style={{ padding:mob?"12px 0":"14px 0",borderBottom:`1px solid ${C.offWhite}` }}>
-              {mob ? (
-                <div><div style={{ display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:4 }}><span style={{ fontFamily:F.body,fontSize:14,fontWeight:600,color:C.dark }}>{item.company}</span><span style={{ fontFamily:F.mono,fontSize:10,color:C.midGray }}>{item.role}</span></div><div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,marginBottom:4 }}>{item.period}</div><div style={{ fontFamily:F.body,fontSize:12,fontWeight:300,color:C.darkGray }}>{item.highlight}</div></div>
-              ) : (
-                <div style={{ display:"grid",gridTemplateColumns:"180px 200px 1fr",gap:24,alignItems:"baseline" }}><span style={{ fontFamily:F.mono,fontSize:12,color:C.midGray }}>{item.period}</span><div><span style={{ fontFamily:F.body,fontSize:14,fontWeight:600,color:C.dark }}>{item.company}</span><span style={{ fontFamily:F.body,fontSize:12,color:C.midGray,marginLeft:8 }}>{item.role}</span></div><span style={{ fontFamily:F.body,fontSize:13,fontWeight:300,color:C.darkGray }}>{item.highlight}</span></div>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
-function BrandStrategy({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  return (
-    <section id="strategy" style={{ background:C.dark,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>STRATEGY FRAMEWORK</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:"#fff" }}>역량 프레임워크</h2>
-        </div>
-        <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(3, 1fr)",gap:mob?14:20 }}>
-          {brandFramework.map((item,i) => { const [r,v] = useInView(0.1); return (
-            <div key={i} ref={r} style={{ padding:mob?"24px 20px":"32px 28px",border:"1px solid rgba(255,255,255,0.06)",borderRadius:4,opacity:v?1:0,transform:v?"translateY(0)":"translateY(25px)",transition:`all 0.6s ease ${i*0.08}s`,background:"rgba(255,255,255,0.02)" }}>
-              <div style={{ fontFamily:F.body,fontSize:mob?14:15,fontWeight:600,color:"#fff",marginBottom:10 }}>{item.title}</div>
-              <p style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7,marginBottom:14 }}>{item.desc}</p>
-              <div style={{ padding:"8px 12px",background:C.accentBg,borderLeft:`2px solid ${C.accent}`,borderRadius:2 }}><span style={{ fontFamily:F.body,fontSize:mob?11:12,fontWeight:400,color:C.accent,lineHeight:1.5 }}>{item.result}</span></div>
-            </div>
-          ); })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function CaseStudies({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  const [ac, setAc] = useState(0);
-  const cs = caseStudies[ac];
-  const blocks = [{l:"CHALLENGE",c:cs.challenge},{l:"STRATEGY",c:cs.strategy},{l:"EXECUTION",c:cs.execution},{l:"OUTCOME",c:cs.outcome}];
-  return (
-    <section id="cases" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?28:48,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>CASE STUDIES</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:C.dark }}>대표 프로젝트</h2>
-        </div>
-        <div style={{ display:"flex",gap:mob?8:12,marginBottom:mob?24:48,flexWrap:"wrap" }}>
-          {caseStudies.map((c,i) => <button key={i} onClick={()=>setAc(i)} style={{ padding:mob?"8px 14px":"10px 20px",border:`1px solid ${ac===i?C.accent:C.lightGray}`,borderRadius:2,background:ac===i?C.accent:"transparent",color:ac===i?"#fff":C.charcoal,fontFamily:F.mono,fontSize:mob?10:11,cursor:"pointer",transition:"all 0.3s" }}>{c.tag}</button>)}
-        </div>
-        <div key={ac} style={{ animation:"fadeUp 0.5s ease" }}>
-          <div style={{ marginBottom:8 }}><h3 style={{ fontFamily:F.body,fontSize:mob?18:24,fontWeight:600,color:C.dark,whiteSpace:"pre-line",lineHeight:1.35 }}>{cs.title}</h3><span style={{ fontFamily:F.mono,fontSize:12,color:C.midGray }}>{cs.period}</span></div>
-          <div style={{ height:2,width:40,background:C.accent,marginBottom:mob?20:40 }} />
-          <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(2, 1fr)",gap:mob?12:32 }}>
-            {blocks.map((b,i) => <div key={i} style={{ padding:mob?"20px 16px":"28px 24px",background:i===3?C.accentBg:C.offWhite,borderRadius:4,borderLeft:i===3?`3px solid ${C.accent}`:"3px solid transparent" }}><div style={{ fontFamily:F.mono,fontSize:10,color:i===3?C.accent:C.midGray,letterSpacing:"0.15em",marginBottom:10 }}>{b.l}</div><p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:i===3?C.charcoal:C.darkGray,lineHeight:1.7 }}>{b.c}</p></div>)}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function AIPowered({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  return (
-    <section id="ai" style={{ background:C.dark,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>AI-POWERED MARKETING</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:"#fff",marginBottom:8 }}>AI를 실무에 통합하는 마케터</h2>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7 }}>AI는 도구가 아니라 협업 파트너입니다. 마케팅 프로세스 전 단계에 AI를 통합해 생산성과 품질을 동시에 높입니다.</p>
-        </div>
-        <div style={{ marginBottom:mob?36:64 }}>
-          <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.12em",marginBottom:20 }}>MARKETING WORKFLOW × AI</div>
-          <div style={{ display:"grid",gridTemplateColumns:mob?"1fr 1fr":"repeat(4, 1fr)",gap:mob?10:16 }}>
-            {aiWorkflow.map((item,i) => { const [r,v] = useInView(0.1); return (
-              <div key={i} ref={r} style={{ position:"relative",padding:mob?"20px 14px":"28px 20px",background:"rgba(255,255,255,0.03)",border:"1px solid rgba(255,255,255,0.08)",borderRadius:4,opacity:v?1:0,transform:v?"translateY(0)":"translateY(20px)",transition:`all 0.5s ease ${i*0.1}s` }}>
-                <div style={{ fontFamily:F.mono,fontSize:mob?24:32,fontWeight:300,color:"rgba(212,160,32,0.15)",position:"absolute",top:8,right:12 }}>0{i+1}</div>
-                <div style={{ fontFamily:F.body,fontSize:mob?13:14,fontWeight:600,color:"#fff",marginBottom:10 }}>{item.step}</div>
-                <div style={{ display:"flex",gap:4,flexWrap:"wrap",marginBottom:10 }}>{item.tools.map(t => <span key={t} style={{ fontFamily:F.mono,fontSize:9,padding:"2px 6px",background:C.accentBg2,color:C.accent,borderRadius:2 }}>{t}</span>)}</div>
-                <p style={{ fontFamily:F.body,fontSize:mob?11:12,fontWeight:300,color:"rgba(255,255,255,0.45)",lineHeight:1.6 }}>{item.desc}</p>
-              </div>
-            ); })}
-          </div>
-        </div>
-        <div style={{ padding:mob?"20px 16px":"32px",background:"linear-gradient(135deg, rgba(212,160,32,0.08), rgba(212,160,32,0.02))",border:"1px solid rgba(212,160,32,0.2)",borderRadius:4,marginBottom:mob?36:64 }}>
-          <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:10 }}><div style={{ width:8,height:8,borderRadius:"50%",background:C.accent }} /><span style={{ fontFamily:F.mono,fontSize:mob?10:11,color:C.accent,letterSpacing:"0.1em" }}>THIS PORTFOLIO = AI COLLABORATION</span></div>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:"rgba(255,255,255,0.7)",lineHeight:1.8 }}>이 포트폴리오 사이트는 Claude와의 협업으로 기획·구조 설계·코드 개발되었습니다. AI를 <span style={{ color:C.accent,fontWeight:500 }}>"지시하는 도구"가 아닌 "함께 사고하는 파트너"</span>로 활용한 결과물입니다.</p>
-        </div>
-        <div>
-          <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.12em",marginBottom:20 }}>TOOL PROFICIENCY</div>
-          {aiTools.map((tool,i) => { const [r,v] = useInView(0.05); return (
-            <div key={i} ref={r} style={{ padding:mob?"12px 0":"14px 0",borderBottom:"1px solid rgba(255,255,255,0.05)",opacity:v?1:0,transition:`opacity 0.5s ease ${i*0.08}s` }}>
-              {mob ? (
-                <div><div style={{ display:"flex",justifyContent:"space-between",marginBottom:6 }}><span style={{ fontFamily:F.mono,fontSize:12,color:"#fff" }}>{tool.name}</span></div><div style={{ position:"relative",height:4,background:"rgba(255,255,255,0.08)",borderRadius:2,marginBottom:6 }}><div style={{ position:"absolute",left:0,top:0,height:"100%",borderRadius:2,background:C.accent,width:v?`${tool.level}%`:"0%",transition:`width 1s ease ${i*0.1+0.3}s` }} /></div><span style={{ fontFamily:F.body,fontSize:11,fontWeight:300,color:"rgba(255,255,255,0.4)" }}>{tool.useCase}</span></div>
-              ) : (
-                <div style={{ display:"grid",gridTemplateColumns:"180px 80px 1fr",gap:20,alignItems:"center" }}><span style={{ fontFamily:F.mono,fontSize:13,color:"#fff" }}>{tool.name}</span><div style={{ position:"relative",height:4,background:"rgba(255,255,255,0.08)",borderRadius:2 }}><div style={{ position:"absolute",left:0,top:0,height:"100%",borderRadius:2,background:C.accent,width:v?`${tool.level}%`:"0%",transition:`width 1s ease ${i*0.1+0.3}s` }} /></div><span style={{ fontFamily:F.body,fontSize:12,fontWeight:300,color:"rgba(255,255,255,0.4)" }}>{tool.useCase}</span></div>
-              )}
-            </div>
-          ); })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
+/* ═══════════════ 4. EDITORIAL PORTFOLIO ═══════════════ */
 function Editorial({ mob }) {
   const [ref, vis] = useInView(0.1);
   const [flt, setFlt] = useState("all");
   const filtered = flt === "all" ? articles : articles.filter(a => a.category === flt);
   return (
-    <section id="editorial" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}` }}>
+    <section id="editorial" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}`,borderTop:`1px solid ${C.lightGray}` }}>
       <div style={{ maxWidth:1200,margin:"0 auto" }}>
         <div ref={ref} style={{ marginBottom:mob?28:48,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
           <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>EDITORIAL PORTFOLIO</div>
@@ -321,26 +301,132 @@ function Editorial({ mob }) {
           <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>대한항공 기내 매거진 비욘드 시니어 에디터로서 전 세계 호텔과 문화 공간을 취재한 기록.</p>
         </div>
         <div style={{ display:"flex",gap:8,marginBottom:mob?20:40,flexWrap:"wrap" }}>
-          {[{id:"all",label:"All"},...categories].map(c => <button key={c.id} onClick={()=>setFlt(c.id)} style={{ padding:"6px 14px",border:`1px solid ${flt===c.id?C.charcoal:C.lightGray}`,borderRadius:2,background:flt===c.id?C.charcoal:"transparent",color:flt===c.id?"#fff":C.darkGray,fontFamily:F.mono,fontSize:10,cursor:"pointer",transition:"all 0.3s" }}>{c.label}</button>)}
+          {[{id:"all",label:"All"},...editCategories].map(c => <button key={c.id} onClick={()=>setFlt(c.id)} style={{ padding:"6px 14px",border:`1px solid ${flt===c.id?C.charcoal:C.lightGray}`,borderRadius:2,background:flt===c.id?C.charcoal:"transparent",color:flt===c.id?"#fff":C.darkGray,fontFamily:F.mono,fontSize:10,cursor:"pointer",transition:"all 0.3s" }}>{c.label}</button>)}
         </div>
         <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(3, 1fr)",gap:mob?20:20 }}>
-          {filtered.map((a,i) => { const [r,v] = useInView(0.1); const [hov,setHov] = useState(false); return (
-            <div key={a.id} ref={r} onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)} onClick={()=>window.open(a.link||DRIVE_FOLDER,"_blank")} style={{ opacity:v?1:0,transform:v?"translateY(0)":"translateY(30px)",transition:`all 0.6s ease ${(i%3)*0.1}s`,cursor:"pointer" }}>
-              <div style={{ height:mob?160:200,borderRadius:4,overflow:"hidden",marginBottom:14,position:"relative",transform:hov?"translateY(-4px)":"translateY(0)",boxShadow:hov?"0 12px 40px rgba(0,0,0,0.12)":"0 2px 12px rgba(0,0,0,0.04)",transition:"all 0.4s ease" }}>
-                <div style={{ position:"absolute",inset:0,background:a.gradient }} />
-                <div style={{ position:"absolute",top:12,right:12,opacity:hov?1:0,transition:"opacity 0.3s",fontFamily:F.mono,fontSize:10,color:"#fff",background:"rgba(212,160,32,0.7)",padding:"4px 12px",borderRadius:2,backdropFilter:"blur(4px)" }}>View Article →</div>
-                <div style={{ position:"absolute",bottom:14,left:16,right:16 }}><div style={{ fontFamily:F.mono,fontSize:10,color:"rgba(255,255,255,0.6)",marginBottom:4 }}>{a.year} · Beyond</div><div style={{ fontFamily:F.body,fontSize:mob?14:16,fontWeight:600,color:"rgba(255,255,255,0.95)",lineHeight:1.3 }}>{a.title}</div></div>
+          {filtered.map((a,i) => {
+            const [r,v] = useInView(0.1);
+            const [hov,setHov] = useState(false);
+            return (
+              <a key={a.id} href={a.link||DRIVE_FOLDER} target="_blank" rel="noopener noreferrer" style={{ textDecoration:"none",color:"inherit" }}>
+              <div ref={r} onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)} style={{ opacity:v?1:0,transform:v?"translateY(0)":"translateY(30px)",transition:`all 0.6s ease ${(i%3)*0.1}s`,cursor:"pointer" }}>
+                <div style={{ height:mob?160:200,borderRadius:4,overflow:"hidden",marginBottom:14,position:"relative",transform:hov?"translateY(-4px)":"translateY(0)",boxShadow:hov?"0 12px 40px rgba(0,0,0,0.12)":"0 2px 12px rgba(0,0,0,0.04)",transition:"all 0.4s ease" }}>
+                  <div style={{ position:"absolute",inset:0,background:a.gradient }} />
+                  <div style={{ position:"absolute",top:12,right:12,opacity:hov?1:0,transition:"opacity 0.3s",fontFamily:F.mono,fontSize:10,color:"#fff",background:"rgba(212,160,32,0.7)",padding:"4px 12px",borderRadius:2,backdropFilter:"blur(4px)" }}>View Article →</div>
+                  <div style={{ position:"absolute",bottom:14,left:16,right:16 }}>
+                    <div style={{ fontFamily:F.mono,fontSize:10,color:"rgba(255,255,255,0.6)",marginBottom:4 }}>{a.year} · Beyond</div>
+                    <div style={{ fontFamily:F.body,fontSize:mob?14:16,fontWeight:600,color:"rgba(255,255,255,0.95)",lineHeight:1.3 }}>{a.title}</div>
+                  </div>
+                </div>
+                <div style={{ fontFamily:F.body,fontSize:13,fontWeight:500,color:C.dark,marginBottom:4 }}>{a.subtitle}</div>
+                <p style={{ fontFamily:F.body,fontSize:12,fontWeight:300,color:C.midGray,lineHeight:1.6 }}><span style={{ color:C.accent,fontWeight:500 }}>→</span> {a.commentary}</p>
               </div>
-              <div style={{ fontFamily:F.body,fontSize:13,fontWeight:500,color:C.dark,marginBottom:4 }}>{a.subtitle}</div>
-              <p style={{ fontFamily:F.body,fontSize:12,fontWeight:300,color:C.midGray,lineHeight:1.6 }}><span style={{ color:C.accent,fontWeight:500 }}>→</span> {a.commentary}</p>
-            </div>
-          ); })}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
+/* ═══════════════ 5. LEADERSHIP ═══════════════ */
+function Leadership({ mob }) {
+  const [ref, vis] = useInView(0.1);
+  return (
+    <section id="leadership" style={{ background:C.dark,padding:`${sp(mob)} ${px(mob)}` }}>
+      <div style={{ maxWidth:1200,margin:"0 auto" }}>
+        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
+          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>LEADERSHIP & COLLABORATION</div>
+          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:"#fff",marginBottom:8 }}>리더십 및 협업 범위</h2>
+          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7 }}>팀을 이끌고, 부서를 연결하고, 파트너를 조율하며, 예산을 관리합니다.</p>
+        </div>
+        <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(2, 1fr)",gap:mob?14:20 }}>
+          {leadershipData.map((item,i) => {
+            const [r,v] = useInView(0.1);
+            return (
+              <div key={i} ref={r} style={{ padding:mob?"24px 20px":"32px 28px",border:"1px solid rgba(255,255,255,0.08)",borderRadius:4,opacity:v?1:0,transform:v?"translateY(0)":"translateY(25px)",transition:`all 0.6s ease ${i*0.1}s`,background:"rgba(255,255,255,0.02)" }}>
+                <div style={{ fontFamily:F.mono,fontSize:10,color:C.accent,letterSpacing:"0.12em",marginBottom:12 }}>{item.tag}</div>
+                <div style={{ fontFamily:F.body,fontSize:mob?15:18,fontWeight:600,color:"#fff",marginBottom:10,lineHeight:1.4 }}>{item.label}</div>
+                <div style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7 }}>{item.desc}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════ 6. AI-POWERED ═══════════════ */
+function AIPowered({ mob }) {
+  const [ref, vis] = useInView(0.1);
+  return (
+    <section id="ai" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}` }}>
+      <div style={{ maxWidth:1200,margin:"0 auto" }}>
+        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
+          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>AI-POWERED MARKETING</div>
+          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:C.dark,marginBottom:8 }}>AI를 실무에 통합하는 마케터</h2>
+          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>AI는 도구가 아니라 협업 파트너입니다. 마케팅 프로세스 전 단계에 AI를 통합해 생산성과 품질을 동시에 높입니다.</p>
+        </div>
+
+        {/* Workflow */}
+        <div style={{ marginBottom:mob?36:64 }}>
+          <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.12em",marginBottom:20 }}>MARKETING WORKFLOW × AI</div>
+          <div style={{ display:"grid",gridTemplateColumns:mob?"1fr 1fr":"repeat(4, 1fr)",gap:mob?10:16 }}>
+            {aiWorkflow.map((item,i) => {
+              const [r,v] = useInView(0.1);
+              return (
+                <div key={i} ref={r} style={{ position:"relative",padding:mob?"20px 14px":"28px 20px",background:C.offWhite,border:`1px solid ${C.lightGray}`,borderRadius:4,opacity:v?1:0,transform:v?"translateY(0)":"translateY(20px)",transition:`all 0.5s ease ${i*0.1}s` }}>
+                  <div style={{ fontFamily:F.mono,fontSize:mob?24:32,fontWeight:300,color:"rgba(212,160,32,0.15)",position:"absolute",top:8,right:12 }}>0{i+1}</div>
+                  <div style={{ fontFamily:F.body,fontSize:mob?13:14,fontWeight:600,color:C.dark,marginBottom:10 }}>{item.step}</div>
+                  <div style={{ display:"flex",gap:4,flexWrap:"wrap",marginBottom:10 }}>{item.tools.map(t => <span key={t} style={{ fontFamily:F.mono,fontSize:9,padding:"2px 6px",background:C.accentBg2,color:C.accentDark,borderRadius:2 }}>{t}</span>)}</div>
+                  <p style={{ fontFamily:F.body,fontSize:mob?11:12,fontWeight:300,color:C.darkGray,lineHeight:1.6 }}>{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* AI collaboration note */}
+        <div style={{ padding:mob?"20px 16px":"32px",background:C.offWhite,border:`1px solid ${C.lightGray}`,borderRadius:4,marginBottom:mob?36:64 }}>
+          <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:10 }}>
+            <div style={{ width:8,height:8,borderRadius:"50%",background:C.accent }} />
+            <span style={{ fontFamily:F.mono,fontSize:mob?10:11,color:C.accent,letterSpacing:"0.1em" }}>THIS PORTFOLIO = AI COLLABORATION</span>
+          </div>
+          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.8 }}>이 포트폴리오 사이트는 Claude와의 협업으로 기획·구조 설계·코드 개발되었습니다. AI를 <span style={{ color:C.accent,fontWeight:500 }}>"지시하는 도구"가 아닌 "함께 사고하는 파트너"</span>로 활용한 결과물입니다.</p>
+        </div>
+
+        {/* Tool proficiency */}
+        <div>
+          <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.12em",marginBottom:20 }}>TOOL PROFICIENCY</div>
+          {aiTools.map((tool,i) => {
+            const [r,v] = useInView(0.05);
+            return (
+              <div key={i} ref={r} style={{ padding:mob?"12px 0":"14px 0",borderBottom:`1px solid ${C.offWhite}`,opacity:v?1:0,transition:`opacity 0.5s ease ${i*0.08}s` }}>
+                {mob ? (
+                  <div>
+                    <div style={{ display:"flex",justifyContent:"space-between",marginBottom:6 }}><span style={{ fontFamily:F.mono,fontSize:12,color:C.dark }}>{tool.name}</span></div>
+                    <div style={{ position:"relative",height:4,background:C.lightGray,borderRadius:2,marginBottom:6 }}><div style={{ position:"absolute",left:0,top:0,height:"100%",borderRadius:2,background:C.accent,width:v?`${tool.level}%`:"0%",transition:`width 1s ease ${i*0.1+0.3}s` }} /></div>
+                    <span style={{ fontFamily:F.body,fontSize:11,fontWeight:300,color:C.midGray }}>{tool.useCase}</span>
+                  </div>
+                ) : (
+                  <div style={{ display:"grid",gridTemplateColumns:"180px 80px 1fr",gap:20,alignItems:"center" }}>
+                    <span style={{ fontFamily:F.mono,fontSize:13,color:C.dark }}>{tool.name}</span>
+                    <div style={{ position:"relative",height:4,background:C.lightGray,borderRadius:2 }}><div style={{ position:"absolute",left:0,top:0,height:"100%",borderRadius:2,background:C.accent,width:v?`${tool.level}%`:"0%",transition:`width 1s ease ${i*0.1+0.3}s` }} /></div>
+                    <span style={{ fontFamily:F.body,fontSize:12,fontWeight:300,color:C.midGray }}>{tool.useCase}</span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════ 7. CONTACT ═══════════════ */
 function Contact({ mob }) {
   const [ref, vis] = useInView(0.1);
   const info = [{l:"NAME",v:"문수진 Jay Moon"},{l:"EMAIL",v:"ver*****@naver.com"},{l:"PHONE",v:"010-****-9367"}];
@@ -353,22 +439,38 @@ function Contact({ mob }) {
         <div style={{ display:"flex",flexDirection:mob?"column":"row",justifyContent:"center",gap:mob?20:40 }}>
           {info.map((c,i) => <div key={i}><div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.12em",marginBottom:6 }}>{c.l}</div><div style={{ fontFamily:F.body,fontSize:mob?14:15,fontWeight:400,color:"#fff" }}>{c.v}</div></div>)}
         </div>
-        <div style={{ marginTop:mob?40:64,paddingTop:24,borderTop:"1px solid rgba(255,255,255,0.06)" }}><p style={{ fontFamily:F.mono,fontSize:10,color:"rgba(255,255,255,0.2)" }}>Built with Claude AI · Designed & Directed by Jay Moon · 2026</p></div>
+        <div style={{ marginTop:mob?40:64,paddingTop:24,borderTop:"1px solid rgba(255,255,255,0.06)" }}>
+          <p style={{ fontFamily:F.mono,fontSize:10,color:"rgba(255,255,255,0.2)" }}>Built with Claude AI · Designed & Directed by Jay Moon · 2026</p>
+        </div>
       </div>
     </section>
   );
 }
 
+/* ═══════════════ APP ═══════════════ */
 function App() {
   const mob = useIsMobile();
   const [as, setAs] = useState("hero");
   useEffect(() => {
-    const secs = ["hero","impact","career-story","strategy","cases","ai","editorial","contact"];
+    const secs = ["hero","value","career","editorial","leadership","ai","contact"];
     const h = () => { for (let i = secs.length-1; i >= 0; i--) { const el = document.getElementById(secs[i]); if (el && el.getBoundingClientRect().top < window.innerHeight*0.4) { setAs(secs[i]); break; } } };
     window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h);
   }, []);
-  return (<div><NavBar activeSection={as} mob={mob} /><Hero mob={mob} /><Impact mob={mob} /><CareerStory mob={mob} /><BrandStrategy mob={mob} /><CaseStudies mob={mob} /><AIPowered mob={mob} /><Editorial mob={mob} /><Contact mob={mob} /></div>);
+  return (
+    <div>
+      <NavBar activeSection={as} mob={mob} />
+      <Hero mob={mob} />
+      <ValueSection mob={mob} />
+      <CareerSection mob={mob} />
+      <Editorial mob={mob} />
+      <Leadership mob={mob} />
+      <AIPowered mob={mob} />
+      <Contact mob={mob} />
+    </div>
+  );
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-</script></body></html>
+</script>
+</body>
+</html>
