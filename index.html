@@ -3,575 +3,768 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>문수진 Jay Moon — Brand Storyteller & Marketing Strategist</title>
-<meta name="description" content="브랜드의 언어를 만들고, 고객의 경험을 설계합니다. 16년차 호텔·F&B 통합 마케팅 리더.">
+<title>문수진 Jay Moon — Marketing Director · Hospitality &amp; F&amp;B</title>
+<meta name="description" content="호텔·F&B 마케팅 디렉터 문수진. 콘텐츠로 브랜드를 만들고, 경험으로 현장을 움직이고, 상품으로 매출을 만듭니다. 통합 마케팅 16년.">
+<meta property="og:title" content="문수진 Jay Moon — Marketing Director · Hospitality &amp; F&amp;B">
+<meta property="og:description" content="콘텐츠로 브랜드를 만들고, 경험으로 현장을 움직이고, 상품으로 매출을 만듭니다. 호텔·F&B 통합 마케팅 16년.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bylinehere-tech.github.io/portfolio_jay/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23FFFFFF'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%2320315F' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&family=Noto+Sans+KR:wght@200;300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { background: #F4EDE4; overflow-x: hidden; }
-  ::selection { background: #D4A020; color: #FFF; }
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: #2A1E14; }
-  ::-webkit-scrollbar-thumb { background: #D4A020; }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  /* 컬러 시스템: 화이트 베이스 + 딥 네이비 키컬러
+     바이올렛 전환 시 --key, --key-lt, --dk 세 값만 교체 */
+  :root{
+    --bg:#FFFFFF; --bg2:#F3F5F8; --card:#F8F9FC;
+    --ink:#181C26; --ink2:#333A4A;
+    --key:#20315F; --key-lt:#93A5D6;
+    --gray:#7E8494; --gray2:#4A5164;
+    --line:#E4E7ED; --line2:#C8CEDC;
+    --dk:#131C33; --dk-text:#EDF0F7; --dk-mut:#98A1B8; --dk-line:rgba(237,240,247,.14);
+    --serif:'Noto Serif KR','Apple Myungjo',serif;
+    --body:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+    --mono:'DM Mono','SF Mono',ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;background:none;border:none;cursor:pointer;color:inherit}
+  :focus-visible{outline:2px solid var(--key);outline-offset:3px}
+  section{scroll-margin-top:16px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rv{opacity:1;transform:none;transition:none}
+  }
+
+  /* ── 마스트헤드 ── */
+  .masthead{border-bottom:3px double var(--ink)}
+  .mast-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:13px 0 9px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--gray)}
+  .mast-top .key{color:var(--key)}
+  .nameplate{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;padding:20px 0 17px}
+  .nameplate .nm{font-family:var(--serif);font-size:clamp(23px,4vw,32px);font-weight:700;letter-spacing:-.01em}
+  .nameplate .nm span{font-weight:400;color:var(--gray);font-size:.62em;margin-left:10px;letter-spacing:.04em}
+  .menu{display:flex;flex-wrap:wrap;gap:clamp(11px,2.4vw,26px);font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--gray)}
+  .menu a{padding-bottom:2px;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+  .menu a:hover{color:var(--key);border-color:var(--key)}
+
+  /* ── 섹션 공통 ── */
+  .sec-divider{display:flex;align-items:center;gap:14px;padding:clamp(52px,8vw,92px) 0 clamp(22px,3.5vw,34px)}
+  .sec-divider::before,.sec-divider::after{content:"";height:1px;background:var(--line);flex:1}
+  .sec-divider span{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--gray);text-align:center}
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:clamp(26px,4vw,44px)}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(21px,3.2vw,30px);font-weight:600;letter-spacing:-.01em}
+  .sec-head .sub{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--key)}
+  .spread{background:var(--dk);color:var(--dk-text)}
+  .spread .sec-divider::before,.spread .sec-divider::after{background:var(--dk-line)}
+  .spread .sec-divider span{color:var(--dk-mut)}
+  .spread .sec-head .sub{color:var(--key-lt)}
+
+  /* ── 히어로 ── */
+  .hero{padding:clamp(56px,9vw,108px) 0 clamp(48px,7vw,88px)}
+  .kicker{font-family:var(--mono);font-size:clamp(9.5px,1.3vw,11px);letter-spacing:.2em;color:var(--key);margin-bottom:clamp(26px,4.5vw,44px)}
+  .h-line{display:flex;align-items:baseline;gap:clamp(10px,2vw,18px);margin-bottom:clamp(8px,1.5vw,14px)}
+  .h-line .no{font-family:var(--mono);font-size:clamp(10px,1.3vw,12px);color:var(--gray);letter-spacing:.1em;min-width:24px}
+  .h-line h1{font-family:var(--serif);font-size:clamp(26px,5.3vw,56px);font-weight:600;letter-spacing:-.015em;line-height:1.25}
+  .h-line.l1 h1{font-weight:500;color:var(--ink2)}
+  .h-line.l2{padding-left:clamp(20px,4vw,56px)}
+  .h-line.l3{padding-left:clamp(40px,8vw,112px)}
+  .h-line.l3 h1{font-weight:700}
+  .h-line .dot{color:var(--key)}
+  .byline{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:22px;margin-top:clamp(34px,5.5vw,58px);padding-top:22px;border-top:1px solid var(--line)}
+  .byline p{font-size:clamp(12.5px,1.5vw,14px);font-weight:350;color:var(--gray2);line-height:1.9;max-width:520px}
+  .chips{display:flex;gap:7px;flex-wrap:wrap}
+  .chips span{font-family:var(--mono);font-size:10px;letter-spacing:.06em;padding:6px 11px;border:1px solid var(--line2);color:var(--gray2)}
+  .figures{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,28px) clamp(14px,3vw,28px);margin-top:clamp(36px,6vw,60px);border-top:2px solid var(--ink);padding-top:clamp(18px,3vw,28px)}
+  .fig .v{font-family:var(--serif);font-size:clamp(23px,3.4vw,36px);font-weight:700;color:var(--key);letter-spacing:-.01em}
+  .fig .l{font-size:clamp(12px,1.5vw,13.5px);font-weight:600;margin-top:7px}
+  .fig .s{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--gray);margin-top:5px}
+
+  /* ── 핵심 역량 ── */
+  .vals{padding-bottom:clamp(56px,8vw,92px)}
+  .val{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:clamp(20px,4vw,56px);padding:clamp(26px,4vw,40px) 0;border-top:1px solid var(--dk-line)}
+  .val .no{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--key-lt);margin-bottom:12px}
+  .val h3{font-family:var(--serif);font-size:clamp(18px,2.6vw,24px);font-weight:600;line-height:1.45}
+  .val .en{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--dk-mut);margin-top:10px}
+  .val .thesis{font-size:clamp(13px,1.6vw,14.5px);font-weight:350;line-height:1.95;color:#CBD2E2;align-self:center}
+
+  /* ── 커리어: 차례 ── */
+  .grp{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--key);padding:clamp(22px,3.5vw,32px) 0 12px}
+  .grp:first-child{padding-top:0}
+  .index{border-top:2px solid var(--ink)}
+  .idx-row{padding:clamp(20px,3.5vw,30px) 0;border-bottom:1px solid var(--line)}
+  .idx-line{display:flex;align-items:baseline;gap:12px}
+  .idx-line .co{font-family:var(--serif);font-size:clamp(17px,2.4vw,22px);font-weight:600}
+  .idx-line .role{font-size:12px;color:var(--gray);white-space:nowrap}
+  .idx-line .leader{flex:1;border-bottom:1px dotted var(--line2);transform:translateY(-4px);min-width:24px}
+  .idx-line .period{font-family:var(--mono);font-size:clamp(10.5px,1.4vw,12px);color:var(--key);letter-spacing:.04em;white-space:nowrap}
+  .idx-row .org{margin-top:9px;font-size:clamp(11.5px,1.4vw,12.5px);font-weight:350;color:var(--gray);line-height:1.7}
+  .crows{margin-top:14px;border-top:1px solid var(--line)}
+  .crow{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:8px 22px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .crow:last-child{border-bottom:none}
+  .crow .k{font-size:12.5px;font-weight:600;color:var(--ink2);line-height:1.6}
+  .crow .v{font-size:12.5px;font-weight:350;color:var(--gray2);line-height:1.8}
+
+  /* ── 케이스 스터디 ── */
+  .sig{font-family:var(--mono);font-size:clamp(10px,1.3vw,11px);letter-spacing:.06em;color:var(--gray2);line-height:2.1;padding:clamp(14px,2.4vw,20px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:clamp(26px,4vw,40px)}
+  .sig b{color:var(--key);font-weight:500;letter-spacing:.14em;margin-right:14px}
+  .case{border-top:2px solid var(--ink);padding:clamp(26px,4.5vw,42px) 0 clamp(30px,5vw,48px)}
+  .case-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+  .case-top .tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--key)}
+  .case-top .period{font-family:var(--mono);font-size:11px;color:var(--gray)}
+  .case h3{font-family:var(--serif);font-size:clamp(19px,3vw,27px);font-weight:600;line-height:1.45;margin-bottom:16px}
+  .case .lead{font-size:clamp(12.5px,1.55vw,14px);font-weight:350;color:var(--gray2);line-height:1.9;max-width:800px}
+  .case-more{margin-top:18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--key);border:1px solid var(--line2);padding:9px 15px;transition:border-color .25s,background .25s}
+  .case-more:hover{border-color:var(--key);background:var(--card)}
+  .case-detail{display:none;margin-top:22px;border-top:1px solid var(--line)}
+  .case.open .case-detail{display:block}
+  .cd-row{display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:10px 24px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .cd-row .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--gray);padding-top:3px}
+  .cd-row .t{font-size:clamp(12px,1.5vw,13px);font-weight:350;color:var(--gray2);line-height:1.85}
+  .outcome{margin-top:22px;background:var(--card);border-left:3px solid var(--key);padding:clamp(16px,2.6vw,24px)}
+  .outcome .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--key);margin-bottom:9px}
+  .outcome .t{font-size:clamp(12.5px,1.55vw,13.5px);font-weight:400;color:var(--ink2);line-height:1.9}
+
+  /* ── 에디토리얼 아카이브 ── */
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:clamp(20px,3vw,28px)}
+  .filters button{font-family:var(--mono);font-size:10px;letter-spacing:.08em;padding:7px 13px;border:1px solid var(--line2);color:var(--gray);transition:all .25s}
+  .filters button:hover{border-color:var(--key);color:var(--key)}
+  .filters button.on{background:var(--key);border-color:var(--key);color:#fff}
+  .arts{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .art{border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;transition:border-color .25s,transform .25s}
+  .art:hover{border-color:var(--key);transform:translateY(-2px)}
+  .art .strip{height:4px}
+  .art .in{padding:18px 18px 16px;display:flex;flex-direction:column;flex:1}
+  .art .meta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--key);margin-bottom:11px}
+  .art .meta .yr{color:var(--gray)}
+  .art h4{font-family:var(--serif);font-size:16px;font-weight:600;line-height:1.5}
+  .art .st{font-size:12px;font-weight:500;color:var(--ink2);margin-top:5px}
+  .art .cm{font-size:11.5px;font-weight:350;color:var(--gray);line-height:1.7;margin-top:9px;flex:1}
+  .art .foot{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;padding-top:11px;border-top:1px solid var(--line)}
+  .art .src{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--gray)}
+  .art .read{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--key)}
+  .art .read:hover{border-bottom:1px solid var(--key)}
+  .folder-btn{display:inline-block;margin-top:clamp(20px,3vw,28px);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--key);border:1px solid var(--key);padding:11px 18px;transition:all .25s}
+  .folder-btn:hover{background:var(--key);color:#fff}
+
+  /* ── 리더십 ── */
+  .leads{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-bottom:clamp(56px,8vw,92px)}
+  .lead-card{border:1px solid var(--dk-line);padding:clamp(18px,2.8vw,26px)}
+  .lead-card .tag{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--key-lt);margin-bottom:11px}
+  .lead-card .lb{font-size:clamp(13.5px,1.7vw,15px);font-weight:600;line-height:1.55}
+  .lead-card .ds{font-size:12px;font-weight:300;color:var(--dk-mut);line-height:1.8;margin-top:9px}
+
+  /* ── AI 워크로그 ── */
+  .log-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:clamp(18px,3vw,26px)}
+  .log-head h2{font-family:var(--serif);font-size:clamp(21px,3.2vw,30px);font-weight:600}
+  .log-head .hd2{font-size:13px;font-weight:600;color:var(--key);margin-top:9px}
+  .log-head .intro{font-size:clamp(12px,1.5vw,13.5px);font-weight:350;color:var(--gray2);line-height:1.85;margin-top:8px;max-width:560px}
+  .stamp{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--key);border:1px solid var(--key);padding:8px 13px;white-space:nowrap}
+  .stack{border-top:1px solid var(--line);margin-bottom:clamp(22px,3.5vw,32px)}
+  .srow{display:grid;grid-template-columns:minmax(140px,190px) minmax(180px,300px) 1fr;gap:8px 22px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .srow .a{font-size:12.5px;font-weight:600;color:var(--ink2)}
+  .srow .t{font-family:var(--mono);font-size:10.5px;color:var(--key);line-height:1.7}
+  .srow .d{font-size:12px;font-weight:350;color:var(--gray2);line-height:1.75}
+  .feed-note{font-size:12px;font-weight:350;color:var(--gray);margin-bottom:16px}
+  .logs{display:grid;gap:14px}
+  .log-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--key);padding:clamp(20px,3.5vw,32px)}
+  .log-meta{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--gray);margin-bottom:13px}
+  .log-meta .no{color:var(--key)}
+  .log-meta .no em{font-style:normal;color:var(--gray);letter-spacing:.06em}
+  .log-card h4{font-family:var(--serif);font-size:clamp(17px,2.5vw,22px);font-weight:600;margin-bottom:10px}
+  .log-card .sum{font-size:clamp(12.5px,1.5vw,13.5px);font-weight:350;color:var(--gray2);line-height:1.85;margin-bottom:16px}
+  .points{border-top:1px solid var(--line);padding-top:15px;display:grid;gap:9px}
+  .points div{display:flex;gap:10px;font-size:12.5px;color:var(--gray2);line-height:1.65}
+  .points div::before{content:"";width:5px;height:5px;background:var(--key);margin-top:7px;flex:none}
+  .log-foot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:16px}
+  .log-tags{display:flex;gap:6px;flex-wrap:wrap}
+  .log-tags span{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;padding:4px 9px;background:var(--bg2);color:var(--gray2)}
+  .log-link{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--key)}
+  .log-link:hover{border-bottom:1px solid var(--key)}
+  .more-btn{display:block;width:100%;margin-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--gray);border:1px dashed var(--line2);padding:14px;transition:all .25s}
+  .more-btn:hover{color:var(--key);border-color:var(--key)}
+
+  /* ── 컨택트 ── */
+  .contact-in{max-width:720px;margin:0 auto;text-align:center;padding:clamp(56px,9vw,100px) 0 clamp(40px,6vw,64px)}
+  .contact-in .kick{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--key-lt);margin-bottom:16px}
+  .contact-in h2{font-family:var(--serif);font-size:clamp(21px,3.2vw,30px);font-weight:600;margin-bottom:14px}
+  .contact-in .msg{font-size:clamp(12.5px,1.5vw,14px);font-weight:300;color:var(--dk-mut);line-height:1.85;margin-bottom:clamp(30px,5vw,48px)}
+  .cinfo{display:flex;justify-content:center;gap:clamp(22px,5vw,52px);flex-wrap:wrap}
+  .cinfo .l{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--dk-mut);margin-bottom:7px}
+  .cinfo .v{font-size:clamp(13px,1.6vw,15px);font-weight:500}
+  .colophon{margin-top:clamp(40px,6vw,64px);padding-top:22px;border-top:1px solid var(--dk-line);font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:rgba(237,240,247,.35)}
+
+  .site-foot{border-top:3px double var(--ink)}
+  .site-foot .in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:16px 0 40px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--gray)}
+
+  .boot-error{display:none;max-width:720px;margin:60px auto;padding:24px;border:2px solid var(--key);background:var(--card);font-size:14px;line-height:1.8}
+  .boot-error b{color:var(--key)}
+
+  @media (max-width:760px){
+    .val{grid-template-columns:1fr;gap:14px}
+    .leads{grid-template-columns:1fr}
+    .figures{grid-template-columns:repeat(2,1fr);gap:20px 14px}
+    .idx-line{flex-wrap:wrap;gap:6px 12px}
+    .idx-line .leader{display:none}
+    .idx-line .period{width:100%;order:-1}
+    .crow{grid-template-columns:1fr;gap:4px}
+    .srow{grid-template-columns:1fr;gap:5px}
+    .cd-row{grid-template-columns:1fr;gap:5px}
+    .byline{flex-direction:column;align-items:flex-start}
+  }
 </style>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-const { useState, useEffect, useRef } = React;
 
-const C = {
-  white: "#F4EDE4", offWhite: "#EBE3D8", lightGray: "#D6CCBF", midGray: "#9A8E80",
-  darkGray: "#6B5E50", charcoal: "#3D3028", dark: "#1E1610", black: "#0F0A06",
-  accent: "#D4A020", accentLight: "#E2B430", accentDark: "#A67B15",
-  accentBg: "rgba(212,160,32,0.08)", accentBg2: "rgba(212,160,32,0.15)",
+<noscript><div style="max-width:720px;margin:40px auto;padding:0 24px;font-size:14px;line-height:1.8">문수진 Jay Moon — Marketing Director · Hospitality &amp; F&amp;B. 호텔·F&amp;B 통합 마케팅 16년. 콘텐츠로 브랜드를 만들고, 경험으로 현장을 움직이고, 상품으로 매출을 만듭니다. 이 페이지는 자바스크립트 환경에서 전체 내용이 표시됩니다.</noscript>
+
+<div class="boot-error" id="bootError">
+  <b>콘텐츠 블록을 읽지 못했습니다.</b><br>
+  방금 수정한 부분의 따옴표(" ")와 쉼표(,), 중괄호({ })가 짝이 맞는지 확인해주세요.
+  GitHub에서 직전 커밋의 History를 열어 이전 버전과 비교하면 빠르게 찾을 수 있습니다.
+</div>
+
+<!-- ════════ ▼ 콘텐츠 블록 시작: 수정은 이 안에서만 ▼ ════════ -->
+<script>
+/* ════════════════════════════════════════════════════════════
+   문수진 Jay Moon 포트폴리오 — 콘텐츠 블록 ★ 수정은 여기서만 ★
+
+   ● 사이트의 모든 글과 항목이 이 블록에 있습니다.
+   ● 업데이트는 이 블록 안에서만 합니다.
+   ● 아래 레이아웃 코드(두 번째 script부터)는 손대지 않습니다.
+
+   수정할 때 지킬 것 세 가지
+   1. 글은 반드시 따옴표 " " 안에. 글 안에 따옴표가 필요하면 ' ' 사용
+   2. 항목 { ... } 사이에는 쉼표
+   3. 저장 후 화면에 오류 안내가 뜨면, 방금 고친 부분의
+      따옴표·쉼표·중괄호를 확인
+   ════════════════════════════════════════════════════════════ */
+
+const CONTENT = {
+
+  /* ── 기본 정보 ─────────────────────────────────────────── */
+  site: {
+    title: "문수진 Jay Moon — Marketing Director · Hospitality & F&B",
+    volume: "VOL. 16",           // 연차. 해가 바뀌면 숫자만 수정
+    since: "SINCE 2009 · SEOUL",
+  },
+
+  /* ── 인트로 ───────────────────────────────────────────── */
+  hero: {
+    kicker: "MARKETING DIRECTOR · HOSPITALITY & F&B — 16 YEARS",
+    lines: ["콘텐츠로 브랜드를 만들고,", "경험으로 현장을 움직이고,", "상품으로 매출을 만듭니다"],
+    sub: "매거진 에디터로 11년, 브랜드의 이야기를 만들었습니다.\n이후 국내 최대 복합리조트에서 그 이야기를 고객 경험과 매출로 바꿔왔고,\n현재 AC 호텔 바이 메리어트 서울 강남 마케팅 디렉터로 호텔·F&B 마케팅 전반을 총괄합니다.\n보고·제작·정산의 반복 업무는 직접 설계한 AI 에이전트에 맡기고, 팀의 시간은 전략과 크리에이티브에 씁니다.",
+    chips: ["Hotel & Resort", "F&B", "Brand Content", "Partnership", "Digital", "AI Operation"],
+  },
+  stats: [
+    { value: "16년", label: "통합 마케팅 리더십", sub: "2009 — PRESENT" },
+    { value: "15~20억", label: "연간 마케팅 예산 운용", sub: "편성·집행·성과 관리" },
+    { value: "30~40건", label: "연간 파트너십 운영", sub: "10억 원+ 규모" },
+    { value: "+300%", label: "시그니처 이벤트 F&B 매출", sub: "전년 대비 성장" },
+    { value: "100%", label: "페스티벌 패키지 객실 점유율", sub: "FOOD & WINE FESTIVAL" },
+    { value: "150%", label: "콜라보 론칭 매출 목표 달성", sub: "ETF BAKERY × 한국투자증권" },
+  ],
+
+  /* ── 핵심 역량 5축 ────────────────────────────────────── */
+  values: [
+    { num: "01", title: "브랜드 콘텐츠·스토리텔링", titleEn: "Brand Content & Storytelling",
+      thesis: "대한항공 〈비욘드〉 등 매거진 에디터 11년. 전 세계 신규 호텔을 현장 취재하며 훈련한 브랜드 서사 설계력. 캠페인 메시지와 톤앤매너를 직접 쓰는 디렉터." },
+    { num: "02", title: "고객 경험 개발·현장 운영", titleEn: "Customer Experience & Operation",
+      thesis: "마케팅을 캠페인에서 현장으로 확장한 CX개발팀장 경험. 리조트 전관 페스티벌, VIP 멤버십, 시그니처 이벤트를 제로베이스에서 기획하고 운영까지 완수." },
+    { num: "03", title: "상품·파트너십 매출", titleEn: "Product & Partnership Revenue",
+      thesis: "콘텐츠와 경험을 파는 상품으로 설계. 카드사 메인 스폰서십, 글로벌 브랜드 콜라보, 패키지 상품으로 F&B와 객실 매출을 견인." },
+    { num: "04", title: "팀 매니지먼트", titleEn: "Team Management",
+      thesis: "3~9명 팀을 이끈 팀장 경력. 각 인력의 장점을 살린 업무 디렉팅으로 팀원의 역량을 키우고 우수사원을 배출. 사람이 성장해야 성과도 커진다는 원칙으로 팀을 운영." },
+    { num: "05", title: "AI 마케팅 오퍼레이션", titleEn: "AI Marketing Operation",
+      thesis: "경영 보고, 콘텐츠 제작, 문서 업무를 자동화하는 AI 에이전트를 직접 설계해 실무에 운영. 반복 업무는 시스템에, 팀 리소스는 전략에 배치." },
+  ],
+
+  /* ── 커리어 타임라인 ──────────────────────────────────────
+     이직·직책 변경 시 해당 그룹 items 맨 위에 한 항목 추가.
+     details 는 { k: "볼드 키워드", v: "설명" } 형식 */
+  career: {
+    groups: [
+      { label: "CAREER · 2009 — PRESENT",
+        items: [
+          { period: "2026.05 – 현재", duration: "재직 중", company: "AC 호텔 바이 메리어트 서울 강남", role: "마케팅 디렉터",
+            org: "㈜희앤썬 운영 · 메리어트 브랜드 호텔, F&B(AC 키친·루프탑 바 KLOUD), 웨딩·연회 마케팅 총괄",
+            details: [
+              { k: "통합 마케팅 총괄", v: "브랜드·F&B·디지털 채널(인스타그램, 카카오, 네이버, 웹사이트) 전략과 운영 리딩" },
+              { k: "경영 보고 체계 구축", v: "소셜 리스닝·광고·CRM 데이터를 통합한 월간 성과 리포트 설계, AI 에이전트로 제작 자동화" },
+              { k: "실무 자동화 에이전트 설계", v: "디지털 사이니지(DID)·프로모션 콘텐츠·결재/정산 문서·언론 모니터링 자동화, 제작 리드타임 단축" },
+              { k: "F&B·다이렉트 채널", v: "시즌 프로모션 기획, 공식 예약 채널·네이버 광고·카카오 채널 운영으로 직접 예약 강화" },
+            ] },
+          { period: "2025.12 – 2026.04", duration: "프로젝트 계약", company: "글로우서울", role: "브랜드 마케팅 리드",
+            org: "F&B·라이프스타일 브랜드 그룹 · 신규 베이커리 브랜드 론칭 프로젝트 (4개월 계약)",
+            details: [
+              { k: "ETF Bakery 안국 론칭", v: "브랜드 포지셔닝, 론칭 커뮤니케이션, 오픈 프로모션 총괄" },
+              { k: "한국투자증권 콜라보", v: "이종 업계 협업 상품 기획, 오픈 매출 목표 150% 달성" },
+              { k: "상품·콘텐츠", v: "히어로 메뉴·시즌 한정 상품 기획, 인플루언서·UGC 확산 운영" },
+            ] },
+          { period: "2024.07 – 2025.12", duration: "1년 6개월", company: "제주신화월드", role: "마케팅기획 고객경험개발팀 팀장(차장)",
+            org: "람정제주개발(연매출 2.7조) 운영 제주 최대 복합리조트 · 호텔 4개 브랜드, 테마파크, 워터파크, F&B, 리테일",
+            details: [
+              { k: "예산·팀 운용", v: "연 15~20억 마케팅 예산 운용과 팀 리딩, 복합리조트 연간·분기 통합 마케팅 전략 총괄" },
+              { k: "신한카드 메인 스폰서십", v: "공동 마케팅 펀드 유치 구조 설계, 리조트 내 카드 결제 점유율 30~40% 달성" },
+              { k: "파트너십 포트폴리오", v: "연 30~40건, 10억 원 이상 규모 운영. 금융·주류·패션·모빌리티·대사관 협력" },
+              { k: "Food & Wine Festival", v: "패키지 객실 점유율 100%, 시그니처 이벤트 기간 F&B 매출 전년 대비 300% 성장" },
+              { k: "Latin Festival", v: "페루·콜롬비아·멕시코·브라질 4개국 대사관 협력, 리조트 전관 1개월 운영" },
+              { k: "F&B 브랜딩·VIP", v: "미쉐린 레스토랑 용푸 리브랜딩 리드, 신화빌라스 VIP 멤버십 기획·운영" },
+              { k: "데이터 협업 체계", v: "F&B·호텔 마케팅 공동 대시보드 구축, 부서 간 데이터 기반 의사결정 정착" },
+            ] },
+          { period: "2022.07 – 2024.07", duration: "2년", company: "그랜드하얏트 제주", role: "S&M 마케팅팀 차장",
+            org: "롯데관광개발 운영 · 1,600실 신규 오픈 복합리조트 (호텔·카지노·F&B·리테일)",
+            details: [
+              { k: "오프닝 브랜딩", v: "신규 리조트 USP 정립, 시그니처 슬로건·메시지 체계 수립으로 초기 브랜드 인지도 구축" },
+              { k: "글로벌 채널", v: "샤오홍슈 채널 신규 구축·콘텐츠 디렉션으로 중국어권 유입 확보, 영·중·일 다국어 콘텐츠 운영" },
+              { k: "글로벌 PR·UGC", v: "Tripadvisor, Time Out, Klook 협업 PR과 KOL·셀럽 UGC 캠페인 기획" },
+              { k: "성과 관리", v: "Google Analytics·Meta 인사이트 기반 리포팅과 개선 사이클, OTA·홈쇼핑·카드사 제휴 프로모션 운영" },
+            ] },
+          { period: "2021.09 – 2022.07", duration: "11개월", company: "풀무원 올가홀푸드", role: "IMC팀 차장",
+            org: "유기농·친환경 식품 유통 브랜드 통합 마케팅",
+            details: [
+              { k: "PB 상품·브랜딩", v: "PB 신상품 기획, 상품·매장·콘텐츠를 잇는 브랜드 포지셔닝 실행" },
+              { k: "비주얼 디렉팅", v: "상품 촬영·카탈로그·영상 제작 리드, 매장 POP·패키징 브랜딩 가이드 설계" },
+              { k: "ESG·커머스", v: "네덜란드대사관 친환경 캠페인 등 제휴 기획, 풀무원샵·네이버·카카오 커머스 콘텐츠 운영" },
+            ] },
+        ] },
+      { label: "EDITORIAL & BRAND CONTENT · 2009 — 2021",
+        items: [
+          { period: "2020.09 – 2021.09", duration: "1년 1개월", company: "더북컴퍼니", role: "매거진 마케팅팀 파트장",
+            org: "출판·광고·디자인 콘텐츠 제작사 · 〈전성기〉, 〈주부생활 스타일러〉 등 타깃 매거진 커머셜 콘텐츠 총괄",
+            details: [
+              { k: "타깃 콘텐츠 전략", v: "〈전성기〉(시니어), 〈주부생활 스타일러〉(주부) 등 오디언스별 콘텐츠 전략과 포맷·톤앤매너 기획" },
+              { k: "커머셜 콘텐츠 디렉팅", v: "외주 콘텐츠 디렉팅과 브랜디드 프로젝트 총괄, 광고주 협업 캠페인 운영" },
+              { k: "온오프 통합 실행", v: "인플루언서 마케팅, 라이브 방송·커머스, 팝업·오프라인 행사 기획과 진행으로 콘텐츠를 현장 경험으로 확장" },
+            ] },
+          { period: "2017.02 – 2020.06", duration: "3년 4개월", company: "서울문화사 대한항공 〈비욘드〉", role: "시니어 에디터",
+            org: "대한항공 기내지 · 글로벌 호텔, 미술관, 건축, 문화 콘텐츠",
+            details: [
+              { k: "해외 현장 취재", v: "유럽·북미 신규 호텔을 직접 취재, 기획부터 인터뷰·촬영 디렉션·기사까지 프로젝트 단위로 완수" },
+              { k: "다큐멘터리급 피처", v: "GM·건축가·아트 디렉터 인터뷰 기반 심층 콘텐츠 제작, 런던 테이트·LA 게티 등 미술관·건축·문화 피처 기획" },
+              { k: "필진·품질 관리", v: "와인·아트 분야 필진 발굴과 섭외, 편집, 국영문 기사 팩트체크·윤문" },
+              { k: "트렌드 리서치", v: "글로벌 호텔 산업 전문가 네트워킹, 고객 경험·지속가능 관광 리서치를 콘텐츠 전략으로 연결" },
+            ] },
+          { period: "2009.06 – 2017.01", duration: "7년 8개월", company: "JTBC PLUS (중앙M&B)", role: "디지털 매거진팀 에디터",
+            org: "쎄씨, 인스타일, 슈어 등 중앙그룹 매거진 디지털 전환",
+            details: [
+              { k: "디지털 콘텐츠·광고 수익", v: "채널별 콘텐츠 기획과 브랜디드 캠페인으로 광고 수익 창출. 삼성페이 디저트로드, 쎄씨 x MCM, 슈어 피트니스 채널(광고 상품 연계 매출)" },
+              { k: "온오프 IMC 연결", v: "백상예술대상 사전·실시간·사후 콘텐츠 등 디지털을 오프라인 이벤트와 연결하는 IMC 콘텐츠 제작" },
+              { k: "디지털 전환 리드", v: "쎄씨디지털, OOPICK 등 신규 채널 런칭과 웹·모바일 개편 TF 참여, CPC·CTR 기반 콘텐츠 최적화" },
+              { k: "플랫폼 제휴 운영", v: "카카오 플러스친구, 네이버 포스트·매거진 등 외부 플랫폼 콘텐츠 운영" },
+            ] },
+        ] },
+    ],
+  },
+
+  /* ── 시그니처 프로젝트 한 줄 ─────────────────────────── */
+  signature: ["Food & Wine Festival", "Latin Festival", "Sky Pool Party", "Countdown Party", "미쉐린 용푸 리브랜딩", "ETF Bakery 안국 론칭", "그랜드하얏트 제주 오프닝", "신한카드 메인 스폰서십"],
+
+  /* ── 프로젝트 케이스 스터디 ─────────────────────────────
+     before 는 없어도 됩니다(해당 줄 생략 가능) */
+  cases: [
+    { tag: "Brand Launch", title: "ETF Bakery 안국\n브랜드 론칭 & 콜라보 상품화", period: "2025–2026",
+      challenge: "신규 베이커리 브랜드의 제로베이스 론칭. 브랜드 포지셔닝 수립부터 오픈 프로모션까지 4개월 프로젝트로 완수해야 하는 과제.",
+      strategy: "브랜드 포지셔닝과 론칭 커뮤니케이션을 설계하고, 이종 업계 협업으로 화제성과 매출을 동시에 만드는 구조를 수립.",
+      execution: "한국투자증권 콜라보 상품 기획. 히어로 메뉴·시즌 한정 상품 기획, 인플루언서·UGC 확산 운영. 오픈 프로모션 총괄.",
+      outcome: "오픈 매출 목표 150% 달성. 브랜드 포지셔닝부터 론칭 커뮤니케이션, 오픈 프로모션까지 4개월 내 완수." },
+    { tag: "Experience → Revenue", title: "제주신화월드\n시그니처 이벤트 시스템", period: "2024–2025",
+      challenge: "복합리조트의 다양한 시설을 관통하는 통합 브랜드 경험 부재. 고객 경험 이벤트가 전무하여 단발성 프로모션만 반복, 재방문 유인이 약한 상황.",
+      before: "고객 경험 이벤트 제로, 연간 캠페인 캘린더 부재, 시설별 마케팅 산발적 운영",
+      strategy: "시즌별 반복 가능한 이벤트 체계를 설계. 각 이벤트를 연간 캠페인 캘린더의 모듈로 구조화. 기획–콘텐츠–현장운영–파트너십을 end-to-end로 통합.",
+      execution: "Sky Pool Party, Countdown Party 등 시그니처 이벤트 기획·운영 총괄. VIP 타깃 프라이빗 이벤트 설계. 분기별 시그니처 프로그램 안정화.",
+      outcome: "이벤트 제로 상태에서 연간 캠페인 체계 구축 완료. 이벤트가 단발성이 아닌 반복 가능한 브랜드 자산으로 축적되는 구조 확립." },
+    { tag: "Partnership → Revenue", title: "신한카드\n메인 스폰서 파트너십 설계", period: "2024–2025",
+      challenge: "다수의 제휴처가 산발적으로 운영되어 고객 경험 일관성이 낮고, 결제 수단 점유율 확대를 통한 매출 구조 개선 필요.",
+      before: "다수 제휴처 산발적 운영, 결제 수단별 점유율 분산, 파트너십이 단순 할인 제공에 머무는 구조",
+      strategy: "단순 제휴를 넘어 메인 스폰서 포지셔닝으로 격상. 공동 마케팅 펀드 유치 구조를 설계하고, 리조트 고객 여정 전체에 자연스럽게 통합하는 파트너십 구조 수립.",
+      execution: "결제 혜택을 고객경험 프로그램으로 확장. 러닝 크루 스포츠 체험, Le Coq Sportif 유니폼 파트너십. 카지노·레스토랑·객실 연계 상품 구성.",
+      outcome: "리조트 내 카드 결제 점유율 30~40% 달성. 고객 세그먼트 다변화. 파트너십이 단순 비용이 아닌 매출 기여 구조로 전환. 스폰서십 → 고객경험 → 매출의 선순환 모델 구축." },
+    { tag: "F&B → Revenue", title: "제주신화월드\nF&B 페스티벌 기획·운영", period: "2024–2025",
+      challenge: "복합리조트 내 F&B 시설이 단순 부대시설로 인식되어 집객과 매출 기여가 제한적. F&B를 활용한 체험형 프로그램이 전무한 상태.",
+      before: "F&B 체험형 프로그램 전무, 레스토랑이 부대시설로만 기능, F&B 자체의 마케팅 콘텐츠·이벤트 부재",
+      strategy: "F&B를 단순 부대시설이 아닌 집객과 매출의 핵심 콘텐츠로 재정의. 마케팅팀이 콘셉트·기획·프로모션을 단독 설계하고, F&B팀이 메뉴·현장 운영을 실행하는 협업 구조 수립.",
+      execution: "Food & Wine Festival, Latin Festival(페루·콜롬비아·멕시코·브라질 4개국 대사관 협력, 리조트 전관 1개월) 등 시즌별 F&B 테마 이벤트를 기획·론칭. 브랜드 콜라보레이션을 통한 패키지 상품화. 객실+F&B 연계 프로모션 설계.",
+      outcome: "Food & Wine Festival 패키지 객실 점유율 100%, 시그니처 이벤트 기간 F&B 매출 전년 대비 300% 성장. 제로 베이스에서 시즌별 F&B 페스티벌 프로그램을 반복 운영 구조로 확립." },
+    { tag: "Brand Architecture", title: "그랜드하얏트 제주\nUSP 수립 & 브랜드 체계 구축", period: "2022–2024",
+      challenge: "제주 최초 글로벌 럭셔리 체인 호텔 오프닝. 기존 리조트 시장과 차별화된 포지셔닝이 필요했고, 한/영/중 다국어 고객에 일관된 브랜드 메시지 전달 과제.",
+      before: "브랜드 메시지 체계 부재, 채널별 톤앤매너 비일관, 글로벌 고객 대상 커뮤니케이션 가이드 없음",
+      strategy: "호텔의 공간적 특성과 하얏트 글로벌 브랜드 자산을 결합한 USP 도출. 슬로건·메시지 체계·톤앤매너 가이드라인 수립, 채널별 커뮤니케이션 매뉴얼 구축.",
+      execution: "KOL/셀럽 초청 UGC 캠페인으로 론칭 바이럴 확보. Tripadvisor·Time Out·Klook 등 글로벌 미디어 PR. 샤오홍슈 채널 신규 구축, 외국인 타깃 다국어 콘텐츠 운영 체계 정립.",
+      outcome: "오프닝 초기 브랜드 인지도 조기 확보 및 글로벌 미디어 커버리지 달성. 다국어 커뮤니케이션 가이드가 이후 운영 표준으로 정착. 제로 베이스에서 브랜드 체계를 수립하고 안정적 운영 궤도에 올린 케이스." },
+    { tag: "Digital Transformation", title: "JTBC PLUS\n매거진 디지털 전환", period: "2009–2017",
+      challenge: "스마트폰 보급과 모바일 인터넷 확산으로 매거진 산업이 급변하는 시기. 기존 인쇄 중심 수익 모델의 한계를 극복하고 디지털 채널에서의 새로운 수익 구조가 필요.",
+      before: "디지털 전용 콘텐츠 채널 부재, 소셜미디어 운영 체계 미비, 디지털 광고 수익 모델 미확립",
+      strategy: "쎄씨·인스타일 등 중앙그룹 매거진 브랜드의 디지털 전환 전략 수립. 매거진 콘텐츠를 디지털 네이티브 포맷으로 재설계하고, 브랜디드 콘텐츠 비즈니스 모델 개발.",
+      execution: "쎄씨 디지털 전용 플랫폼 'OOPICK' 기획·론칭. 카카오플러스친구 제휴 모바일 콘텐츠 포맷 개발. 삼성페이 디저트로드·백상예술대상·쎄씨 x MCM 등 브랜드 협업 디지털 캠페인 기획. SNS 채널 운영 전략 수립 및 GA 기반 데이터 분석 체계 구축.",
+      outcome: "업계 최대 소셜 팔로워 및 인게이지먼트 달성. 디지털 광고 수익 신규 확보. 매거진 브랜드의 디지털 전환을 성공적으로 리드하며 콘텐츠 마케터로서의 기반 역량 확립." },
+  ],
+
+  /* ── 에디토리얼 아카이브 ──────────────────────────────── */
+  editorial: {
+    folder: "https://drive.google.com/drive/folders/1v2BouPJRHWl-rpfCBZPrN4tNIvdEqWKW?usp=sharing",
+    categories: [
+      { id: "identity", label: "Brand Identity" },
+      { id: "experience", label: "Experience" },
+      { id: "storytelling", label: "Storytelling" },
+      { id: "brand", label: "Brand & Retail" },
+    ],
+    articles: [
+      { category: "identity", title: "LA 인터콘티넨탈 호텔", subtitle: "도시의 스카이라인을 품은 공간 브랜딩", commentary: "도시 맥락을 공간에 내재화하는 전략. 그랜드하얏트 제주 USP 설계에 직접 적용.", year: "2019", source: "Beyond", gradient: "linear-gradient(135deg, #2a2a2a, #555)", link: "https://drive.google.com/file/d/1Mp8VJgEtSyD3CYdQHxvrajr6JAig40Tn/view?usp=sharing" },
+      { category: "identity", title: "함부르크 폰테네이 호텔", subtitle: "자연과 건축이 대화하는 럭셔리", commentary: "유기적 곡선이 만드는 고객 동선의 미학. 복합시설 브랜드 스탠다드 수립에 영감.", year: "2018", source: "Beyond", gradient: "linear-gradient(135deg, #1a3a2a, #4a6a5a)", link: "https://drive.google.com/file/d/1vunbmnTa9_9sn42J1_cOsH41PJCnMTks/view?usp=sharing" },
+      { category: "identity", title: "샌프란시스코 호텔 VIA", subtitle: "테크 시티의 부티크 호텔", commentary: "기술과 호스피탈리티의 접점. 디지털 기반 고객 경험 전략의 출발점.", year: "2018", source: "Beyond", gradient: "linear-gradient(135deg, #3a2a1a, #6a5a4a)", link: "https://drive.google.com/file/d/17mhYm28O07nv8krhhRdViI-dRDoRY8z6/view?usp=sharing" },
+      { category: "identity", title: "벨기에 더 포스트 호텔", subtitle: "헤리티지를 리브랜딩하는 유럽의 방식", commentary: "역사적 건물이 브랜드 내러티브가 되는 과정.", year: "2019", source: "Beyond", gradient: "linear-gradient(135deg, #2a1a1a, #5a4a3a)", link: "https://drive.google.com/file/d/1kI0JHnZ220hz_vilfl1L8KwLvVCqw1w8/view?usp=sharing" },
+      { category: "experience", title: "보스턴 더 휘트니 호텔", subtitle: "동네의 맥락이 서비스가 되는 호텔", commentary: "로컬 커뮤니티 연계 서비스 설계. 고객경험 프로그램 기획의 기반.", year: "2019", source: "Beyond", gradient: "linear-gradient(135deg, #1a2a3a, #4a5a6a)", link: "https://drive.google.com/file/d/1YOMIK2k-zbutORRHD0KNt_fHjSWGPCyD/view?usp=drive_link" },
+      { category: "experience", title: "뉴욕 목시 첼시", subtitle: "밀레니얼이 원하는 호텔의 문법", commentary: "세대별 고객 경험 차별화 전략. 타깃별 패키지 기획에 적용.", year: "2019", source: "Beyond", gradient: "linear-gradient(135deg, #3a1a2a, #6a4a5a)", link: "https://drive.google.com/file/d/1aU84ngvh6swqYdkvjNvnlB7F25B8cIrk/view?usp=sharing" },
+      { category: "experience", title: "빈 루비 호텔", subtitle: "효율과 감성의 균형점", commentary: "Lean Luxury 모델. 운영 효율과 브랜드 경험의 균형.", year: "2018", source: "Beyond", gradient: "linear-gradient(135deg, #2a2a1a, #5a5a3a)", link: "https://drive.google.com/file/d/1WJcOe71WQaBNjLlROEyF1pY-DVOe4RxD/view?usp=sharing" },
+      { category: "experience", title: "암스테르담 트웬티세븐", subtitle: "초개인화 서비스의 정점", commentary: "VIP 고객 경험의 극단적 사례. 프라이빗 이벤트 설계 참조.", year: "2018", source: "Beyond", gradient: "linear-gradient(135deg, #1a1a2a, #3a3a5a)", link: "https://drive.google.com/file/d/1_fTXhHCOyUAhJ2hkcY-zBQyIbu55-2sz/view?usp=sharing" },
+      { category: "storytelling", title: "Beyond 프로듀서 인터뷰", subtitle: "창작자의 철학을 브랜드 언어로", commentary: "인물 인터뷰를 통한 브랜드 스토리텔링.", year: "2017–20", source: "Beyond", gradient: "linear-gradient(135deg, #2a1a2a, #5a3a5a)", link: "https://drive.google.com/file/d/1ZDzrNK-vl2_o0WWT0T6VPW9E71er4yd4/view?usp=sharing" },
+      { category: "storytelling", title: "Beyond 뮤지엄 시리즈", subtitle: "문화 자산을 관광 브랜드로 전환", commentary: "문화 콘텐츠형 캠페인의 전략적 근거.", year: "2018–20", source: "Beyond", gradient: "linear-gradient(135deg, #1a2a2a, #3a5a5a)", link: "https://drive.google.com/file/d/1ItpVlfdGTZiHEu8mdWAgH0oaxV3G85CZ/view?usp=sharing" },
+      { category: "brand", title: "올가홀푸드 브랜드 카탈로그", subtitle: "친환경 브랜드 철학을 상품 콘텐츠로", commentary: "PB상품 기획과 브랜드 포지셔닝을 카탈로그로 구현. 호텔 외 리테일 업종에서의 브랜드 콘텐츠 역량 증명.", year: "2022", source: "Orga Whole Foods", gradient: "linear-gradient(135deg, #2a3a1a, #5a6a3a)", link: "https://drive.google.com/file/d/1OROd6epTM9F_GNqhueGWhgtz6Y3ndx5e/view?usp=sharing" },
+    ],
+  },
+
+  /* ── 리더십 ───────────────────────────────────────────── */
+  leadership: [
+    { tag: "TEAM MANAGEMENT", label: "3~9명 규모 마케팅팀 빌딩 & 매니징", desc: "주니어부터 시니어까지 역할 분배, 성과 관리, 역량 개발을 리드하며 팀 전체의 실행력을 조율" },
+    { tag: "CROSS-FUNCTIONAL", label: "6개 부서 크로스펑셔널 협업", desc: "F&B · Sales · Operations · Design · IT · Global HQ와 프로젝트 단위 협업 체계 운영" },
+    { tag: "AGENCY DIRECTION", label: "에이전시 & 파트너 디렉팅", desc: "광고·디자인·영상·PR 에이전시 선정부터 브리프, 프로덕션 관리, 결과물 품질 컨트롤까지 총괄" },
+    { tag: "BUDGET OPERATION", label: "연간 15~20억 마케팅 예산 운영", desc: "연간 예산 편성, 월별 집행 관리, 캠페인별 ROI 분석을 통한 효율적 예산 재배분" },
+    { tag: "DATA-DRIVEN", label: "데이터 기반 성과 관리", desc: "캠페인마다 목표와 KPI를 먼저 정의하고, GA·SNS 인사이트·OTA 데이터 분석으로 결과를 해석해 다음 실행에 반영. 성과가 나는 구조를 반복 가능하게 체계화" },
+    { tag: "PROJECT PM", label: "대형 프로젝트 PM", desc: "호텔 오프닝, 시그니처 이벤트, 스폰서십 등 복합 프로젝트의 예산·일정·협력사·리스크를 통합 관리. 기획에서 현장 운영까지 end-to-end 총괄" },
+    { tag: "PROCESS STANDARD", label: "프로세스 표준화 & 플레이북", desc: "프로젝트가 개인에 의존하지 않도록 캠페인 운영 매뉴얼, 브랜드 가이드라인, 콘텐츠 제작 프로세스를 문서화. 실행 품질의 일관성 확보" },
+  ],
+
+  /* ── AI 워크로그 ──────────────────────────────────────────
+     ★ 정기 업데이트 구역. 새 작업이 생기면 entries 맨 위에
+       아래 형식으로 한 항목 추가하면 끝입니다.
+       날짜는 "YYYY.MM" 형식. 최신순 정렬과 Last Updated 표기는 자동.
+
+     { date: "2026.08",
+       title: "작업 제목",
+       summary: "무엇을 만들었는지 한두 문장.",
+       points: ["핵심 성과 1", "핵심 성과 2", "핵심 성과 3"],
+       tags: ["자동화", "콘텐츠"],
+       link: "" },   ← 자료 링크 없으면 "" 그대로 */
+  ailog: {
+    heading: "AI 마케팅 오퍼레이션",
+    intro: "도구로 쓰는 수준이 아니라, 팀의 운영 시스템으로 설계해 씁니다. 에디터의 품질 기준으로 결과물을 관리합니다.",
+    feedNote: "AI를 실무에 통합해 만든 작업을 요약과 핵심만 남겨 기록합니다. 새 항목이 위로 쌓입니다.",
+    stack: [
+      { area: "에이전트 설계·운영", tools: "Claude 커스텀 에이전트/스킬 · Claude Code · Cursor", desc: "경영 보고 자동 생성, 디지털 사이니지 제작, 결재·정산 문서, 언론 클리핑, 멀티채널 콘텐츠 파이프라인을 실무에 적용" },
+      { area: "생성형 콘텐츠", tools: "Midjourney · Runway · Kling", desc: "키비주얼·영상 시안 제작, 에디터 기준의 디렉션과 품질 관리" },
+      { area: "리서치·문서", tools: "ChatGPT · Claude · Gemini · NotebookLM", desc: "시장 리서치, 문서 자동화, 데이터 정리" },
+      { area: "웹·자동화", tools: "HTML/CSS/JS · React · Node.js", desc: "포트폴리오 사이트 2종 직접 구축·운영, 문서 자동화 파이프라인 제작" },
+      { area: "디지털·데이터", tools: "Meta·Google Ads · GA · 네이버 광고 · 카카오비즈니스", desc: "광고 운용과 인사이트 리포팅, 채널 운영" },
+    ],
+    entries: [
+      { date: "2026.07", title: "월간 경영 보고 자동 생성 체계",
+        summary: "소셜 리스닝, 광고, CRM 데이터를 통합한 월간 성과 리포트를 AI 에이전트가 자동 작성하는 구조를 설계해 운영하고 있다.",
+        points: ["데이터 취합부터 차트·인사이트 구성까지 한 흐름 처리", "매월 반복되던 보고 수작업을 시스템으로 전환", "에디터 기준의 검수 단계로 품질 관리"],
+        tags: ["자동화", "리포트"], link: "" },
+      { date: "2026.06", title: "디지털 사이니지(DID) 제작 자동화",
+        summary: "프로모션 문구만 입력하면 브랜드 규격에 맞는 디지털 안내판이 완성되는 도구를 설계했다. 디자인 의뢰 없이 당일 제작과 게시가 가능하다.",
+        points: ["제작 리드타임 단축", "브랜드 서체·레이아웃 규격 자동 적용", "시즌 프로모션 대응 속도 개선"],
+        tags: ["디자인", "자동화"], link: "" },
+      { date: "2026.06", title: "결재·정산 문서 자동화",
+        summary: "매월 반복되는 결재와 정산 문서를 항목 입력만으로 완성하는 에이전트를 만들었다.",
+        points: ["정해진 양식에 맞춘 문서 자동 완성", "반복 정산 업무의 실수 여지 축소", "월말 마감 리소스를 기획 업무로 전환"],
+        tags: ["자동화", "운영"], link: "" },
+      { date: "2026.05", title: "언론 모니터링·클리핑 자동화",
+        summary: "브랜드와 업계 보도를 정기 수집·분류하고 브리프로 정리하는 모니터링 체계를 구축했다.",
+        points: ["기사 수집·분류·태깅 자동 처리", "주간 브리프 형식으로 요약", "업계 트렌드 파악 주기 단축"],
+        tags: ["자동화", "PR"], link: "" },
+      { date: "2026.05", title: "멀티채널 프로모션 콘텐츠 파이프라인",
+        summary: "프로모션 개요를 입력하면 기획, 채널별 카피, 시안까지 단계별로 만들어지는 제작 라인을 구축했다. 단계마다 검수를 거쳐 품질을 유지한다.",
+        points: ["인스타그램·네이버·카카오 등 채널별 콘텐츠 일괄 제작", "기획부터 시안까지 제작 시간 단축", "톤앤매너 검수 단계 내장"],
+        tags: ["콘텐츠", "자동화"], link: "" },
+    ],
+  },
+
+  /* ── 컨택트 ───────────────────────────────────────────── */
+  contact: {
+    heading: "함께 이야기 나눠요",
+    message: "브랜드의 다음 이야기를 함께 만들어갈 기회를 찾고 있습니다.",
+    info: [
+      { label: "NAME", value: "문수진 Jay Moon" },
+      { label: "EMAIL", value: "ver*****@naver.com" },
+      { label: "PHONE", value: "010-****-9367" },
+    ],
+    colophon: "Built with Claude AI · Designed & Directed by Jay Moon · 2026",
+  },
 };
-const F = { head: "'Sora', sans-serif", body: "'Noto Sans KR', sans-serif", mono: "'DM Mono', monospace" };
+</script>
+<!-- ════════ ▲ 콘텐츠 블록 끝 ▲ 아래는 레이아웃 코드: 수정 금지 ════════ -->
 
-/* ═══════════════ DATA ═══════════════ */
-const heroStats = [
-  { value: "300%↑", label: "F&B 패키지 매출 성장", sub: "브랜드 콜라보레이션" },
-  { value: "110%", label: "객실 점유율 달성", sub: "시그니처 행사 기간" },
-  { value: "15–20억", label: "연간 마케팅 예산", sub: "편성·집행·성과 관리" },
-];
-
-const valueProps = [
-  {
-    num: "01", title: "스토리텔링으로 브랜드를 만든다", titleEn: "Brand Storyteller",
-    thesis: "공간과 서비스에 숨은 브랜드의 본질을 발견하고, 시장이 이해하는 언어로 번역합니다.",
-    projects: [
-      { name: "그랜드하얏트 제주", desc: "신규 런칭 호텔 USP 정립, 슬로건·메시지 가이드라인 수립. 제주라는 로컬리티를 글로벌 브랜드 언어로 전환" },
-      { name: "JTBC PLUS", desc: "매거진 디지털 전환 선도, 브랜디드 콘텐츠 비즈니스 모델 개발. 업계 최대 소셜 인게이지먼트 달성" },
-    ],
-  },
-  {
-    num: "02", title: "콘텐츠를 상품으로, 상품을 매출로", titleEn: "Revenue Creator",
-    thesis: "고객 경험 프로그램이 전무하던 곳에서 연간 캠페인 체계를 세우고, 콘텐츠를 매출로 전환하는 구조를 만듭니다.",
-    projects: [
-      { name: "연간 캠페인 체계 수립", desc: "고객 경험 이벤트가 전무하던 복합리조트에서 연간 캠페인 스케줄을 정립, 분기별 시그니처 프로그램 안정화" },
-      { name: "F&B 패키지 매출 3배 성장", desc: "브랜드 콜라보레이션 마케팅을 F&B 패키지 상품으로 연결, 매출 300% 이상 성장 달성" },
-      { name: "시그니처 행사 → OCC 110%", desc: "Sky Pool Party, Countdown 등 시그니처 이벤트 브랜드 체계 설계·운영, 행사 기간 객실 점유율 110% 달성" },
-      { name: "MICE 행사의 브랜드 자산화", desc: "기관·대기업 행사 유치 시 웰컴 디너·갈라 프로그램 등 파생 이벤트 자체 기획, 일회성 대관을 브랜드 경험으로 전환" },
-    ],
-  },
-  {
-    num: "03", title: "고객 여정 전체를 설계한다", titleEn: "Experience Architect",
-    thesis: "마케팅의 역할을 홍보에서 고객경험 개발까지 확장하고, 현장과 함께 실행합니다.",
-    projects: [
-      { name: "제주신화월드", desc: "숙박·F&B·테마파크·카지노 전 시설 통합 마케팅 방향성 수립, VIP 시그니처 이벤트 및 고객 여정 기반 프로모션 설계" },
-      { name: "그랜드하얏트 제주", desc: "외국인 타깃 다국어 콘텐츠 및 글로벌 채널 커뮤니케이션 전략 설계·운영" },
-    ],
-  },
-];
-
-const editCategories = [
-  { id: "identity", label: "Brand Identity" },
-  { id: "experience", label: "Experience" },
-  { id: "storytelling", label: "Storytelling" },
-  { id: "brand", label: "Brand & Retail" },
-];
-const DRIVE_FOLDER = "https://drive.google.com/drive/folders/1v2BouPJRHWl-rpfCBZPrN4tNIvdEqWKW?usp=sharing";
-const articles = [
-  { id: 1, category: "identity", title: "LA 인터콘티넨탈 호텔", subtitle: "도시의 스카이라인을 품은 공간 브랜딩", commentary: "도시 맥락을 공간에 내재화하는 전략. 그랜드하얏트 제주 USP 설계에 직접 적용.", year: "2019", gradient: "linear-gradient(135deg, #2a2a2a, #555)", link: "https://drive.google.com/file/d/1Mp8VJgEtSyD3CYdQHxvrajr6JAig40Tn/view?usp=sharing" },
-  { id: 2, category: "identity", title: "함부르크 폰테네이 호텔", subtitle: "자연과 건축이 대화하는 럭셔리", commentary: "유기적 곡선이 만드는 고객 동선의 미학. 복합시설 브랜드 스탠다드 수립에 영감.", year: "2018", gradient: "linear-gradient(135deg, #1a3a2a, #4a6a5a)", link: "https://drive.google.com/file/d/1vunbmnTa9_9sn42J1_cOsH41PJCnMTks/view?usp=sharing" },
-  { id: 3, category: "identity", title: "샌프란시스코 호텔 VIA", subtitle: "테크 시티의 부티크 호텔", commentary: "기술과 호스피탈리티의 접점. 디지털 기반 고객 경험 전략의 출발점.", year: "2018", gradient: "linear-gradient(135deg, #3a2a1a, #6a5a4a)", link: "https://drive.google.com/file/d/17mhYm28O07nv8krhhRdViI-dRDoRY8z6/view?usp=sharing" },
-  { id: 4, category: "identity", title: "벨기에 더 포스트 호텔", subtitle: "헤리티지를 리브랜딩하는 유럽의 방식", commentary: "역사적 건물이 브랜드 내러티브가 되는 과정.", year: "2019", gradient: "linear-gradient(135deg, #2a1a1a, #5a4a3a)", link: "https://drive.google.com/file/d/1kI0JHnZ220hz_vilfl1L8KwLvVCqw1w8/view?usp=sharing" },
-  { id: 5, category: "experience", title: "보스턴 더 휘트니 호텔", subtitle: "동네의 맥락이 서비스가 되는 호텔", commentary: "로컬 커뮤니티 연계 서비스 설계. 고객경험 프로그램 기획의 기반.", year: "2019", gradient: "linear-gradient(135deg, #1a2a3a, #4a5a6a)", link: "https://drive.google.com/file/d/1YOMIK2k-zbutORRHD0KNt_fHjSWGPCyD/view?usp=drive_link" },
-  { id: 6, category: "experience", title: "뉴욕 목시 첼시", subtitle: "밀레니얼이 원하는 호텔의 문법", commentary: "세대별 고객 경험 차별화 전략. 타깃별 패키지 기획에 적용.", year: "2019", gradient: "linear-gradient(135deg, #3a1a2a, #6a4a5a)", link: "https://drive.google.com/file/d/1aU84ngvh6swqYdkvjNvnlB7F25B8cIrk/view?usp=sharing" },
-  { id: 7, category: "experience", title: "빈 루비 호텔", subtitle: "효율과 감성의 균형점", commentary: "Lean Luxury 모델. 운영 효율과 브랜드 경험의 균형.", year: "2018", gradient: "linear-gradient(135deg, #2a2a1a, #5a5a3a)", link: "https://drive.google.com/file/d/1WJcOe71WQaBNjLlROEyF1pY-DVOe4RxD/view?usp=sharing" },
-  { id: 8, category: "experience", title: "암스테르담 트웬티세븐", subtitle: "초개인화 서비스의 정점", commentary: "VIP 고객 경험의 극단적 사례. 프라이빗 이벤트 설계 참조.", year: "2018", gradient: "linear-gradient(135deg, #1a1a2a, #3a3a5a)", link: "https://drive.google.com/file/d/1_fTXhHCOyUAhJ2hkcY-zBQyIbu55-2sz/view?usp=sharing" },
-  { id: 9, category: "storytelling", title: "Beyond 프로듀서 인터뷰", subtitle: "창작자의 철학을 브랜드 언어로", commentary: "인물 인터뷰를 통한 브랜드 스토리텔링.", year: "2017–20", gradient: "linear-gradient(135deg, #2a1a2a, #5a3a5a)", link: "https://drive.google.com/file/d/1ZDzrNK-vl2_o0WWT0T6VPW9E71er4yd4/view?usp=sharing" },
-  { id: 10, category: "storytelling", title: "Beyond 뮤지엄 시리즈", subtitle: "문화 자산을 관광 브랜드로 전환", commentary: "문화 콘텐츠형 캠페인의 전략적 근거.", year: "2018–20", gradient: "linear-gradient(135deg, #1a2a2a, #3a5a5a)", link: "https://drive.google.com/file/d/1ItpVlfdGTZiHEu8mdWAgH0oaxV3G85CZ/view?usp=sharing" },
-  { id: 11, category: "brand", title: "올가홀푸드 브랜드 카탈로그", subtitle: "친환경 브랜드 철학을 상품 콘텐츠로", commentary: "PB상품 기획과 브랜드 포지셔닝을 카탈로그로 구현. 호텔 외 리테일 업종에서의 브랜드 콘텐츠 역량 증명.", year: "2022", gradient: "linear-gradient(135deg, #2a3a1a, #5a6a3a)", link: "https://drive.google.com/file/d/1OROd6epTM9F_GNqhueGWhgtz6Y3ndx5e/view?usp=sharing" },
-];
-
-const careerData = [
-  { period: "2024.07 – 2025.12", company: "제주신화월드", role: "마케팅 기획 · 팀장", highlight: "고객 경험 이벤트 제로 상태에서 연간 캠페인 체계 구축. 브랜드 콜라보로 F&B 매출 3배 성장, 시그니처 행사 시 OCC 110% 달성. MICE 대형 행사를 브랜드 자산화하는 파생 이벤트 모델 설계." },
-  { period: "2022.07 – 2024.07", company: "그랜드하얏트 제주", role: "S&M 마케팅 · 차장", highlight: "신규 호텔 USP 정립, 슬로건·메시지 가이드라인 수립. 다국어 디지털 콘텐츠 운영 체계 구축, 글로벌 미디어 PR." },
-  { period: "2021.09 – 2022.07", company: "풀무원 올가홀푸드", role: "IMC · 차장", highlight: "PB상품 기획 및 친환경 브랜드 포지셔닝. 커머셜 플랫폼 연계 콘텐츠로 판매 전환 구조 설계." },
-  { period: "2020.09 – 2021.09", company: "더북컴퍼니", role: "매거진 마케팅 · 파트장", highlight: "타깃 세그먼트별 콘텐츠 전략, 브랜디드 콘텐츠 캠페인 총괄, 디지털 퍼포먼스 최적화." },
-  { period: "2017.02 – 2020.06", company: "서울문화사 · 비욘드", role: "시니어 에디터", highlight: "전 세계 50+ 호텔 현장 취재, 글로벌 호스피탈리티 브랜딩·서비스 전략 인사이트 축적." },
-  { period: "2009.06 – 2017.01", company: "JTBC PLUS", role: "디지털 에디터", highlight: "쎄씨·인스타일 등 매거진 디지털 전환 선도, 브랜디드 콘텐츠 캠페인 기획, 업계 최대 인게이지먼트 달성." },
-];
-
-const aiWorkflow = [
-  { step: "전략 기획", tools: ["Claude", "ChatGPT"], desc: "시장 분석, 경쟁사 리서치, 전략 프레임워크 구조화" },
-  { step: "콘텐츠 제작", tools: ["Midjourney", "Runway"], desc: "캠페인 비주얼 시안, 영상 콘텐츠 프로토타입" },
-  { step: "실행 & 자동화", tools: ["Claude Code", "Cursor"], desc: "마케팅 자동화, 데이터 분석, 리포트 생성" },
-  { step: "성과 분석", tools: ["Claude", "ChatGPT"], desc: "KPI 대시보드, 캠페인 성과 해석, 인사이트 도출" },
-];
-const aiTools = [
-  { name: "Claude / Claude Code", level: 95, useCase: "전략 기획, 문서 구조화, 워크플로우 자동화, 이 사이트 제작" },
-  { name: "ChatGPT", level: 90, useCase: "리서치, 카피라이팅, 다국어 콘텐츠, 데이터 분석" },
-  { name: "Midjourney", level: 85, useCase: "캠페인 비주얼 시안, 무드보드, 브랜드 에셋" },
-  { name: "Runway", level: 75, useCase: "영상 프로토타입, 숏폼 영상 편집" },
-  { name: "Cursor", level: 80, useCase: "에이전트 코딩, 마케팅 자동화 툴 개발" },
-];
-
-const leadershipData = [
-  { tag: "TEAM MANAGEMENT", label: "6~10명 규모 마케팅팀 빌딩 & 매니징", desc: "주니어부터 시니어까지 역할 분배, 성과 관리, 역량 개발을 리드하며 팀 전체의 실행력을 조율" },
-  { tag: "CROSS-FUNCTIONAL", label: "6개 부서 크로스펑셔널 협업", desc: "F&B · Sales · Operations · Design · IT · Global HQ와 프로젝트 단위 협업 체계 운영" },
-  { tag: "AGENCY DIRECTION", label: "에이전시 & 파트너 디렉팅", desc: "광고·디자인·영상·PR 에이전시 선정부터 브리프, 프로덕션 관리, 결과물 품질 컨트롤까지 총괄" },
-  { tag: "BUDGET OPERATION", label: "연간 15~20억 마케팅 예산 운영", desc: "연간 예산 편성, 월별 집행 관리, 캠페인별 ROI 분석을 통한 효율적 예산 재배분" },
-  { tag: "DATA-DRIVEN", label: "데이터 기반 성과 관리", desc: "캠페인마다 목표와 KPI를 먼저 정의하고, GA·SNS 인사이트·OTA 데이터 분석으로 결과를 해석해 다음 실행에 반영. 성과가 나는 구조를 반복 가능하게 체계화" },
-  { tag: "PROJECT PM", label: "대형 프로젝트 PM", desc: "호텔 오프닝, 시그니처 이벤트, 스폰서십 등 복합 프로젝트의 예산·일정·협력사·리스크를 통합 관리. 기획에서 현장 운영까지 end-to-end 총괄" },
-  { tag: "PROCESS STANDARD", label: "프로세스 표준화 & 플레이북", desc: "프로젝트가 개인에 의존하지 않도록 캠페인 운영 매뉴얼, 브랜드 가이드라인, 콘텐츠 제작 프로세스를 문서화. 실행 품질의 일관성 확보" },
-];
-
-const caseStudies = [
-  { id: "hyatt", tag: "Brand Architecture", title: "그랜드하얏트 제주\nUSP 수립 & 브랜드 체계 구축", period: "2022–2024",
-    challenge: "제주 최초 글로벌 럭셔리 체인 호텔 오프닝. 기존 리조트 시장과 차별화된 포지셔닝이 필요했고, 한/영/중 다국어 고객에 일관된 브랜드 메시지 전달 과제.",
-    before: "브랜드 메시지 체계 부재, 채널별 톤앤매너 비일관, 글로벌 고객 대상 커뮤니케이션 가이드 없음",
-    strategy: "호텔의 공간적 특성과 하얏트 글로벌 브랜드 자산을 결합한 USP 도출. 슬로건·메시지 체계·톤앤매너 가이드라인 수립, 채널별 커뮤니케이션 매뉴얼 구축.",
-    execution: "KOL/셀럽 초청 UGC 캠페인으로 론칭 바이럴 확보. Tripadvisor·Time Out·Klook 등 글로벌 미디어 PR. 외국인 타깃 다국어 콘텐츠 운영 체계 정립.",
-    outcome: "오프닝 초기 브랜드 인지도 조기 확보 및 글로벌 미디어 커버리지 달성. 다국어 커뮤니케이션 가이드가 이후 운영 표준으로 정착. 제로 베이스에서 브랜드 체계를 수립하고 안정적 운영 궤도에 올린 케이스." },
-  { id: "events", tag: "Experience → Revenue", title: "제주신화월드\n시그니처 이벤트 시스템", period: "2024–2025",
-    challenge: "복합리조트의 다양한 시설을 관통하는 통합 브랜드 경험 부재. 고객 경험 이벤트가 전무하여 단발성 프로모션만 반복, 재방문 유인이 약한 상황.",
-    before: "고객 경험 이벤트 제로, 연간 캠페인 캘린더 부재, 시설별 마케팅 산발적 운영",
-    strategy: "시즌별 반복 가능한 이벤트 체계를 설계. 각 이벤트를 연간 캠페인 캘린더의 모듈로 구조화. 기획–콘텐츠–현장운영–파트너십을 end-to-end로 통합.",
-    execution: "Sky Pool Party, Countdown Party 등 시그니처 이벤트 기획·운영 총괄. VIP 타깃 프라이빗 이벤트 설계. 분기별 시그니처 프로그램 안정화.",
-    outcome: "이벤트 제로 상태에서 연간 캠페인 체계 구축 완료. 시그니처 행사 기간 객실 점유율 110% 달성. 이벤트가 단발성이 아닌 반복 가능한 브랜드 자산으로 축적되는 구조 확립." },
-  { id: "shinhan", tag: "Partnership → Revenue", title: "신한카드\n메인 스폰서 파트너십 설계", period: "2024–2025",
-    challenge: "다수의 제휴처가 산발적으로 운영되어 고객 경험 일관성이 낮고, 결제 수단 점유율 확대를 통한 매출 구조 개선 필요.",
-    before: "다수 제휴처 산발적 운영, 결제 수단별 점유율 분산, 파트너십이 단순 할인 제공에 머무는 구조",
-    strategy: "단순 제휴를 넘어 메인 스폰서 포지셔닝으로 격상. 리조트 고객 여정 전체에 자연스럽게 통합하는 파트너십 구조 설계.",
-    execution: "결제 혜택을 고객경험 프로그램으로 확장. 러닝 크루 스포츠 체험, Le Coq Sportif 유니폼 파트너십. 카지노·레스토랑·객실 연계 상품 구성.",
-    outcome: "결제 점유율 확대 달성. 고객 세그먼트 다변화. 파트너십이 단순 비용이 아닌 매출 기여 구조로 전환. 스폰서십 → 고객경험 → 매출의 선순환 모델 구축." },
-  { id: "fnb", tag: "F&B → Revenue", title: "제주신화월드\nF&B 페스티벌 기획·운영", period: "2024–2025",
-    challenge: "복합리조트 내 F&B 시설이 단순 부대시설로 인식되어 집객과 매출 기여가 제한적. F&B를 활용한 체험형 프로그램이 전무한 상태.",
-    before: "F&B 체험형 프로그램 전무, 레스토랑이 부대시설로만 기능, F&B 자체의 마케팅 콘텐츠·이벤트 부재",
-    strategy: "F&B를 단순 부대시설이 아닌 집객과 매출의 핵심 콘텐츠로 재정의. 마케팅팀이 콘셉트·기획·프로모션을 단독 설계하고, F&B팀이 메뉴·현장 운영을 실행하는 협업 구조 수립.",
-    execution: "라틴고메 페스티벌(중남미 음식 축제) 등 시즌별 F&B 테마 이벤트를 기획·론칭. 브랜드 콜라보레이션을 통한 패키지 상품화. 객실+F&B 연계 프로모션 설계.",
-    outcome: "페스티벌 기간 F&B 매출 20~50% 증가. 브랜드 콜라보 F&B 패키지 매출 300% 성장. 제로 베이스에서 시즌별 F&B 페스티벌 프로그램을 자산화하여 반복 운영 구조 확립." },
-  { id: "jtbc", tag: "Digital Transformation", title: "JTBC PLUS\n매거진 디지털 전환", period: "2009–2017",
-    challenge: "스마트폰 보급과 모바일 인터넷 확산으로 매거진 산업이 급변하는 시기. 기존 인쇄 중심 수익 모델의 한계를 극복하고 디지털 채널에서의 새로운 수익 구조가 필요.",
-    before: "디지털 전용 콘텐츠 채널 부재, 소셜미디어 운영 체계 미비, 디지털 광고 수익 모델 미확립",
-    strategy: "쎄씨·인스타일 등 중앙그룹 매거진 브랜드의 디지털 전환 전략 수립. 매거진 콘텐츠를 디지털 네이티브 포맷으로 재설계하고, 브랜디드 콘텐츠 비즈니스 모델 개발.",
-    execution: "쎄씨 디지털 전용 플랫폼 'OOPICK' 기획·론칭. 카카오플러스친구 제휴 모바일 콘텐츠 포맷 개발. 삼성페이·백상예술대상·MCM 등 브랜드 협업 디지털 캠페인 기획. SNS 채널 운영 전략 수립 및 GA 기반 데이터 분석 체계 구축.",
-    outcome: "업계 최대 소셜 팔로워 및 인게이지먼트 달성. 디지털 광고 수익 신규 확보. 매거진 브랜드의 디지털 전환을 성공적으로 리드하며 콘텐츠 마케터로서의 기반 역량 확립." },
-];
-
-/* ═══════════════ UTILS ═══════════════ */
-function useInView(t = 0.15) { const r = useRef(null); const [v, s] = useState(false); useEffect(() => { const e = r.current; if (!e) return; const o = new IntersectionObserver(([x]) => { if (x.isIntersecting) { s(true); o.disconnect(); } }, { threshold: t }); o.observe(e); return () => o.disconnect(); }, [t]); return [r, v]; }
-function useIsMobile(bp = 768) { const [m, s] = useState(typeof window !== 'undefined' && window.innerWidth < bp); useEffect(() => { const h = () => s(window.innerWidth < bp); window.addEventListener("resize", h); return () => window.removeEventListener("resize", h); }, [bp]); return m; }
-const px = (m) => m ? "20px" : "40px";
-const sp = (m) => m ? "64px" : "100px";
-
-/* ═══════════════ NAV ═══════════════ */
-function NavBar({ activeSection, mob }) {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-  useEffect(() => { const h = () => setScrolled(window.scrollY > 60); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
-  const go = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); setOpen(false); };
-  const items = [{id:"value",l:"Value"},{id:"cases",l:"Cases"},{id:"career",l:"Career"},{id:"editorial",l:"Editorial"},{id:"leadership",l:"Leadership"},{id:"ai",l:"AI"},{id:"contact",l:"Contact"}];
-  return (
-    <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:100,background:scrolled||open?"rgba(244,237,228,0.95)":"transparent",backdropFilter:scrolled?"blur(20px)":"none",transition:"all 0.4s",borderBottom:scrolled?`1px solid ${C.lightGray}`:"1px solid transparent" }}>
-      <div style={{ maxWidth:1200,margin:"0 auto",padding:`0 ${px(mob)}`,display:"flex",justifyContent:"space-between",alignItems:"center",height:mob?56:64 }}>
-        <div onClick={()=>go("hero")} style={{ cursor:"pointer",fontFamily:F.head,fontSize:mob?14:15,fontWeight:600,color:C.dark }}>Jay Moon</div>
-        {mob ? (
-          <div onClick={()=>setOpen(!open)} style={{ cursor:"pointer",padding:8,fontFamily:F.mono,fontSize:11,color:C.darkGray }}>{open?"✕":"MENU"}</div>
-        ) : (
-          <div style={{ display:"flex",gap:24 }}>
-            {items.map(i => <span key={i.id} onClick={()=>go(i.id)} style={{ fontFamily:F.mono,fontSize:11,color:activeSection===i.id?C.accent:C.darkGray,cursor:"pointer",borderBottom:activeSection===i.id?`1px solid ${C.accent}`:"1px solid transparent",paddingBottom:2,transition:"color 0.3s" }}>{i.l}</span>)}
-          </div>
-        )}
-      </div>
-      {mob && open && <div style={{ padding:"8px 20px 16px",display:"flex",flexWrap:"wrap",gap:8,borderTop:`1px solid ${C.lightGray}` }}>{items.map(i => <span key={i.id} onClick={()=>go(i.id)} style={{ fontFamily:F.mono,fontSize:12,color:activeSection===i.id?C.accent:C.darkGray,cursor:"pointer",padding:"6px 14px",border:`1px solid ${activeSection===i.id?C.accent:C.lightGray}`,borderRadius:2 }}>{i.l}</span>)}</div>}
-    </nav>
-  );
-}
-
-/* ═══════════════ 1. HERO ═══════════════ */
-function Hero({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  return (
-    <section id="hero" style={{ minHeight:mob?"auto":"100vh",display:"flex",alignItems:"center",background:C.white,position:"relative",overflow:"hidden" }}>
-      {!mob && <><div style={{ position:"absolute",top:0,left:"50%",width:1,height:"100%",background:C.lightGray,opacity:0.4 }} /><div style={{ position:"absolute",top:0,left:"25%",width:1,height:"100%",background:C.lightGray,opacity:0.2 }} /></>}
-      <div ref={ref} style={{ maxWidth:1200,margin:"0 auto",padding:mob?"100px 20px 60px":"160px 40px 100px",width:"100%",position:"relative",zIndex:1 }}>
-        {/* Top bar */}
-        <div style={{ display:"flex",flexDirection:mob?"column":"row",justifyContent:"space-between",alignItems:mob?"flex-start":"flex-end",gap:mob?8:0,marginBottom:mob?40:64,paddingBottom:20,borderBottom:`1px solid ${C.lightGray}`,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(20px)",transition:"all 0.7s ease" }}>
-          <div><div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.15em",marginBottom:6 }}>PORTFOLIO</div><div style={{ fontFamily:F.head,fontSize:mob?13:14,fontWeight:600,color:C.dark }}>문수진 Jay Moon</div></div>
-          <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.1em",textAlign:mob?"left":"right" }}>BRAND STORYTELLER · MARKETING STRATEGIST<br/>HOTEL · F&B · RETAIL · 16 YEARS</div>
-        </div>
-
-        {/* Main copy */}
-        <div style={{ marginBottom:mob?36:56,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.8s ease 0.15s" }}>
-          {[
-            {n:"01",t:"브랜드의 언어를 만들고,",w:300,ind:0},
-            {n:"02",t:"고객의 경험을 설계하고,",w:500,ind:mob?24:48},
-            {n:"03",t:"매출로 이어지는 구조를 만듭니다",w:700,ind:mob?48:96,dot:true}
-          ].map((l,i) => (
-            <div key={i} style={{ display:"flex",alignItems:"baseline",gap:mob?10:16,marginBottom:i<2?8:0,paddingLeft:l.ind }}>
-              <span style={{ fontFamily:F.mono,fontSize:mob?10:11,color:C.accent,letterSpacing:"0.1em" }}>{l.n}</span>
-              <span style={{ fontFamily:F.body,fontSize:mob?20:26,fontWeight:l.w,color:i===0?C.charcoal:C.dark }}>{l.t}{l.dot && <span style={{ color:C.accent }}>.</span>}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Sub text + tags */}
-        <div style={{ display:"flex",flexDirection:mob?"column":"row",justifyContent:"space-between",alignItems:mob?"flex-start":"flex-end",gap:mob?20:32,marginBottom:mob?40:64,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(20px)",transition:"all 0.8s ease 0.3s" }}>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:300,color:C.darkGray,lineHeight:1.8,maxWidth:440 }}>호텔·리조트·F&B·리테일을 관통하는 통합 마케팅 16년.<br/>스토리텔링에서 출발해, 브랜드 체계를 설계하고,<br/>고객 경험을 상품으로 전환해 매출을 만들어온 마케터입니다.</p>
-          <div style={{ display:"flex",gap:6,flexWrap:"wrap" }}>{["Hotel & Resort","F&B","Brand Strategy","Content","Digital","MICE"].map(t => <span key={t} style={{ fontFamily:F.mono,fontSize:10,padding:"5px 10px",border:`1px solid ${C.lightGray}`,color:C.darkGray }}>{t}</span>)}</div>
-        </div>
-
-        {/* Impact stats */}
-        <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(3, 1fr)",gap:mob?16:24,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(20px)",transition:"all 0.8s ease 0.45s" }}>
-          {heroStats.map((s,i) => (
-            <div key={i} style={{ padding:mob?"20px 16px":"28px 24px",background:C.offWhite,borderRadius:4,borderLeft:`3px solid ${C.accent}` }}>
-              <div style={{ fontFamily:F.head,fontSize:mob?28:36,fontWeight:700,color:C.accent,marginBottom:4 }}>{s.value}</div>
-              <div style={{ fontFamily:F.body,fontSize:13,fontWeight:500,color:C.dark,marginBottom:4 }}>{s.label}</div>
-              <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray }}>{s.sub}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════ 2. VALUE PROPOSITION ═══════════════ */
-function ValueSection({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  return (
-    <section id="value" style={{ background:C.dark,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>WHAT I BRING</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:"#fff",marginBottom:8 }}>조직에 가져다주는 가치</h2>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7 }}>16년의 경험에서 반복적으로 증명해온 세 가지 핵심 역량.</p>
-        </div>
-
-        {valueProps.map((vp, vi) => {
-          const [r, v] = useInView(0.1);
-          return (
-            <div key={vi} ref={r} style={{ marginBottom:vi<2?(mob?40:64):0,paddingBottom:vi<2?(mob?40:64):0,borderBottom:vi<2?"1px solid rgba(255,255,255,0.06)":"none",opacity:v?1:0,transform:v?"translateY(0)":"translateY(30px)",transition:`all 0.7s ease ${vi*0.1}s` }}>
-              {/* Header */}
-              <div style={{ display:"flex",alignItems:"flex-start",gap:mob?12:20,marginBottom:mob?16:24 }}>
-                <span style={{ fontFamily:F.mono,fontSize:mob?32:48,fontWeight:300,color:"rgba(212,160,32,0.15)",lineHeight:1 }}>{vp.num}</span>
-                <div>
-                  <div style={{ fontFamily:F.mono,fontSize:10,color:C.accent,letterSpacing:"0.15em",marginBottom:6 }}>{vp.titleEn.toUpperCase()}</div>
-                  <h3 style={{ fontFamily:F.body,fontSize:mob?18:24,fontWeight:600,color:"#fff",lineHeight:1.35 }}>{vp.title}</h3>
-                </div>
-              </div>
-
-              {/* Thesis */}
-              <div style={{ padding:mob?"12px 16px":"16px 24px",background:C.accentBg,borderLeft:`2px solid ${C.accent}`,borderRadius:2,marginBottom:mob?20:32,marginLeft:mob?0:68 }}>
-                <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.accentLight,lineHeight:1.7,fontStyle:"italic" }}>"{vp.thesis}"</p>
-              </div>
-
-              {/* Project cards */}
-              <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(2, 1fr)",gap:mob?12:16,marginLeft:mob?0:68 }}>
-                {vp.projects.map((p,pi) => (
-                  <div key={pi} style={{ padding:mob?"16px 14px":"20px 20px",background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.08)",borderRadius:4,transition:"border-color 0.3s" }}
-                    onMouseEnter={e => e.currentTarget.style.borderColor = "rgba(212,160,32,0.3)"}
-                    onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"}>
-                    <div style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:600,color:C.accent,marginBottom:8 }}>{p.name}</div>
-                    <div style={{ fontFamily:F.body,fontSize:mob?11:12,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7 }}>{p.desc}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════ 2.5 CASE STUDIES ═══════════════ */
-function CaseStudies({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  const [ac, setAc] = useState(0);
-  const cs = caseStudies[ac];
-  const blocks = [
-    {l:"BEFORE",c:cs.before,accent:false},
-    {l:"CHALLENGE",c:cs.challenge,accent:false},
-    {l:"STRATEGY",c:cs.strategy,accent:false},
-    {l:"EXECUTION",c:cs.execution,accent:false},
-    {l:"OUTCOME",c:cs.outcome,accent:true},
-  ];
-  return (
-    <section id="cases" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?28:48,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>CASE STUDIES</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:C.dark,marginBottom:8 }}>대표 프로젝트</h2>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>어떤 상황에서, 어떤 판단을 해서, 어떤 결과를 만들었는가.</p>
-        </div>
-        <div style={{ display:"flex",gap:mob?8:12,marginBottom:mob?24:48,flexWrap:"wrap" }}>
-          {caseStudies.map((c,i) => <button key={i} onClick={()=>setAc(i)} style={{ padding:mob?"8px 14px":"10px 20px",border:`1px solid ${ac===i?C.accent:C.lightGray}`,borderRadius:2,background:ac===i?C.accent:"transparent",color:ac===i?"#fff":C.charcoal,fontFamily:F.mono,fontSize:mob?10:11,cursor:"pointer",transition:"all 0.3s" }}>{c.tag}</button>)}
-        </div>
-        <div key={ac} style={{ animation:"fadeUp 0.5s ease" }}>
-          <div style={{ marginBottom:8 }}>
-            <h3 style={{ fontFamily:F.body,fontSize:mob?18:24,fontWeight:600,color:C.dark,whiteSpace:"pre-line",lineHeight:1.35 }}>{cs.title}</h3>
-            <span style={{ fontFamily:F.mono,fontSize:12,color:C.midGray }}>{cs.period}</span>
-          </div>
-          <div style={{ height:2,width:40,background:C.accent,marginBottom:mob?20:40 }} />
-          <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(2, 1fr)",gap:mob?12:20 }}>
-            {/* Before - full width */}
-            <div style={{ gridColumn:mob?"1":"1 / -1",padding:mob?"16px 14px":"20px 24px",background:C.offWhite,borderRadius:4,borderLeft:`3px solid ${C.midGray}`,marginBottom:mob?4:8 }}>
-              <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.15em",marginBottom:8 }}>BEFORE</div>
-              <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>{cs.before}</p>
-            </div>
-            {/* Challenge, Strategy, Execution, Outcome */}
-            {[
-              {l:"CHALLENGE",c:cs.challenge,a:false},
-              {l:"STRATEGY",c:cs.strategy,a:false},
-              {l:"EXECUTION",c:cs.execution,a:false},
-              {l:"OUTCOME",c:cs.outcome,a:true},
-            ].map((b,i) => (
-              <div key={i} style={{ padding:mob?"20px 16px":"28px 24px",background:b.a?C.accentBg:C.offWhite,borderRadius:4,borderLeft:b.a?`3px solid ${C.accent}`:"3px solid transparent" }}>
-                <div style={{ fontFamily:F.mono,fontSize:10,color:b.a?C.accent:C.midGray,letterSpacing:"0.15em",marginBottom:10 }}>{b.l}</div>
-                <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:b.a?C.charcoal:C.darkGray,lineHeight:1.7 }}>{b.c}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════ 3. CAREER TIMELINE ═══════════════ */
-function CareerSection({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  return (
-    <section id="career" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>CAREER TIMELINE</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?20:28,fontWeight:600,color:C.dark,marginBottom:8 }}>에디터에서 마케팅 리더로</h2>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>콘텐츠 기획에서 출발해, 브랜드를 설계하고, 고객 경험을 운영하고, 성과를 만드는 사람으로 성장해왔습니다.</p>
-        </div>
-
-        <div style={{ position:"relative" }}>
-          <div style={{ position:"absolute",left:mob?20:28,top:0,bottom:0,width:2,background:C.lightGray }} />
-          {careerData.map((item,i) => {
-            const [r, v] = useInView(0.1);
-            const isFirst = i === 0;
-            return (
-              <div key={i} ref={r} style={{ display:"flex",gap:mob?20:40,marginBottom:i<careerData.length-1?(mob?24:40):0,opacity:v?1:0,transform:v?"translateX(0)":"translateX(-20px)",transition:`all 0.6s ease ${i*0.1}s` }}>
-                <div style={{ flexShrink:0 }}>
-                  <div style={{ width:mob?42:58,height:mob?42:58,borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",background:isFirst?C.accent:C.white,border:`2px solid ${isFirst?C.accent:C.lightGray}`,fontFamily:F.mono,fontSize:mob?10:11,fontWeight:500,color:isFirst?"#fff":C.midGray,position:"relative",zIndex:2 }}>
-                    {String(i+1).padStart(2,"0")}
-                  </div>
-                </div>
-                <div style={{ flex:1 }}>
-                  <div style={{ display:"flex",alignItems:"baseline",gap:12,marginBottom:4,flexWrap:"wrap" }}>
-                    <h3 style={{ fontFamily:F.body,fontSize:mob?16:20,fontWeight:600,color:C.dark }}>{item.company}</h3>
-                    <span style={{ fontFamily:F.mono,fontSize:11,color:C.midGray }}>{item.period}</span>
-                  </div>
-                  <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.05em",marginBottom:8 }}>{item.role}</div>
-                  <p style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>{item.highlight}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════ 4. EDITORIAL PORTFOLIO ═══════════════ */
-function ArticleCard({ a, i, mob }) {
-  const [r, v] = useInView(0.1);
-  const [hov, setHov] = useState(false);
-  return (
-    <a href={a.link||DRIVE_FOLDER} target="_blank" rel="noopener noreferrer" style={{ textDecoration:"none",color:"inherit" }}>
-    <div ref={r} onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)} style={{ opacity:v?1:0,transform:v?"translateY(0)":"translateY(30px)",transition:`all 0.6s ease ${(i%3)*0.1}s`,cursor:"pointer" }}>
-      <div style={{ height:mob?160:200,borderRadius:4,overflow:"hidden",marginBottom:14,position:"relative",transform:hov?"translateY(-4px)":"translateY(0)",boxShadow:hov?"0 12px 40px rgba(0,0,0,0.12)":"0 2px 12px rgba(0,0,0,0.04)",transition:"all 0.4s ease" }}>
-        <div style={{ position:"absolute",inset:0,background:a.gradient }} />
-        <div style={{ position:"absolute",top:12,right:12,opacity:hov?1:0,transition:"opacity 0.3s",fontFamily:F.mono,fontSize:10,color:"#fff",background:"rgba(212,160,32,0.7)",padding:"4px 12px",borderRadius:2,backdropFilter:"blur(4px)" }}>View Article →</div>
-        <div style={{ position:"absolute",bottom:14,left:16,right:16 }}>
-          <div style={{ fontFamily:F.mono,fontSize:10,color:"rgba(255,255,255,0.6)",marginBottom:4 }}>{a.year} · {a.category === "brand" ? "Orga Whole Foods" : "Beyond"}</div>
-          <div style={{ fontFamily:F.body,fontSize:mob?14:16,fontWeight:600,color:"rgba(255,255,255,0.95)",lineHeight:1.3 }}>{a.title}</div>
-        </div>
-      </div>
-      <div style={{ fontFamily:F.body,fontSize:13,fontWeight:500,color:C.dark,marginBottom:4 }}>{a.subtitle}</div>
-      <p style={{ fontFamily:F.body,fontSize:12,fontWeight:300,color:C.midGray,lineHeight:1.6 }}><span style={{ color:C.accent,fontWeight:500 }}>→</span> {a.commentary}</p>
+<header class="masthead" id="intro">
+  <div class="wrap">
+    <div class="mast-top"><span>PORTFOLIO · <span class="key" id="mVol"></span></span><span id="mSince"></span></div>
+    <div class="nameplate">
+      <div class="nm">문수진<span>Jay Moon</span></div>
+      <nav class="menu">
+        <a href="#intro">INTRO</a><a href="#career">CAREER</a><a href="#projects">PROJECTS</a><a href="#ailog">AI LOG</a><a href="#contact">CONTACT</a>
+      </nav>
     </div>
-    </a>
-  );
-}
+  </div>
+</header>
 
-function Editorial({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  const [flt, setFlt] = useState("all");
-  const filtered = flt === "all" ? articles : articles.filter(a => a.category === flt);
-  return (
-    <section id="editorial" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}`,borderTop:`1px solid ${C.lightGray}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?28:48,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>EDITORIAL PORTFOLIO</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:C.dark,marginBottom:8 }}>에디터의 눈, 마케터의 해석</h2>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>대한항공 기내 매거진 비욘드 시니어 에디터로서 전 세계 호텔과 문화 공간을 취재한 기록.</p>
-        </div>
-        <div style={{ display:"flex",gap:8,marginBottom:mob?20:40,flexWrap:"wrap" }}>
-          {[{id:"all",label:"All"},...editCategories].map(c => <button key={c.id} onClick={()=>setFlt(c.id)} style={{ padding:"6px 14px",border:`1px solid ${flt===c.id?C.charcoal:C.lightGray}`,borderRadius:2,background:flt===c.id?C.charcoal:"transparent",color:flt===c.id?"#fff":C.darkGray,fontFamily:F.mono,fontSize:10,cursor:"pointer",transition:"all 0.3s" }}>{c.label}</button>)}
-        </div>
-        <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(3, 1fr)",gap:mob?20:20 }}>
-          {filtered.map((a,i) => <ArticleCard key={a.id} a={a} i={i} mob={mob} />)}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════ 5. LEADERSHIP & CAPABILITY ═══════════════ */
-function LeadershipCard({ item, i, mob }) {
-  const [r, v] = useInView(0.1);
-  return (
-    <div ref={r} style={{ padding:mob?"24px 20px":"32px 28px",border:"1px solid rgba(255,255,255,0.08)",borderRadius:4,opacity:v?1:0,transform:v?"translateY(0)":"translateY(25px)",transition:`all 0.6s ease ${i*0.08}s`,background:"rgba(255,255,255,0.02)" }}>
-      <div style={{ fontFamily:F.mono,fontSize:10,color:C.accent,letterSpacing:"0.12em",marginBottom:12 }}>{item.tag}</div>
-      <div style={{ fontFamily:F.body,fontSize:mob?15:17,fontWeight:600,color:"#fff",marginBottom:10,lineHeight:1.4 }}>{item.label}</div>
-      <div style={{ fontFamily:F.body,fontSize:mob?12:13,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7 }}>{item.desc}</div>
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker rv" id="hKicker"></div>
+    <div id="hLines"></div>
+    <div class="byline rv">
+      <p id="hSub"></p>
+      <div class="chips" id="hChips"></div>
     </div>
-  );
-}
+    <div class="figures rv" id="hFigs"></div>
+  </div>
+</section>
 
-function Leadership({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  return (
-    <section id="leadership" style={{ background:C.dark,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>LEADERSHIP & CAPABILITY</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:"#fff",marginBottom:8 }}>리더십 · 운영 역량</h2>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.7 }}>팀을 이끌고, 부서를 연결하고, 성과를 관리하며, 반복 가능한 구조를 만듭니다.</p>
-        </div>
-        <div style={{ display:"grid",gridTemplateColumns:mob?"1fr":"repeat(2, 1fr)",gap:mob?14:20 }}>
-          {leadershipData.slice(0,6).map((item,i) => <LeadershipCard key={i} item={item} i={i} mob={mob} />)}
-        </div>
-        {/* Last card full width */}
-        <div style={{ marginTop:mob?14:20 }}>
-          <LeadershipCard item={leadershipData[6]} i={6} mob={mob} />
-        </div>
+<section class="spread">
+  <div class="wrap">
+    <div class="sec-divider"><span>CORE COMPETENCIES</span></div>
+    <div class="sec-head rv"><h2>핵심 역량</h2><span class="sub">CONTENT · EXPERIENCE · REVENUE · TEAM · AI</span></div>
+    <div class="vals" id="vals"></div>
+  </div>
+</section>
+
+<section id="career">
+  <div class="wrap">
+    <div class="sec-divider"><span>CAREER TIMELINE</span></div>
+    <div class="sec-head rv"><h2>경력사항</h2><span class="sub">2009 — PRESENT</span></div>
+    <div id="career-list"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-divider"><span>FEATURED PROJECTS</span></div>
+    <div class="sec-head rv"><h2>프로젝트</h2><span class="sub" id="caseCount"></span></div>
+    <div class="sig rv" id="sig"></div>
+    <div id="cases"></div>
+  </div>
+</section>
+
+<section id="archive">
+  <div class="wrap">
+    <div class="sec-divider"><span>EDITORIAL ARCHIVE</span></div>
+    <div class="sec-head rv"><h2>에디토리얼 아카이브</h2><span class="sub">FIELD NOTES · BEYOND &amp; MORE</span></div>
+    <div class="filters rv" id="artFilters"></div>
+    <div class="arts" id="arts"></div>
+    <a class="folder-btn rv" id="folderBtn" target="_blank" rel="noopener">전체 아카이브 폴더 ↗</a>
+  </div>
+</section>
+
+<section class="spread" id="leadership">
+  <div class="wrap">
+    <div class="sec-divider"><span>LEADERSHIP</span></div>
+    <div class="sec-head rv"><h2>리더십</h2><span class="sub">TEAM · BUDGET · PROCESS</span></div>
+    <div class="leads" id="leads"></div>
+  </div>
+</section>
+
+<section id="ailog">
+  <div class="wrap">
+    <div class="sec-divider"><span>AI WORK LOG — LIVE FEED</span></div>
+    <div class="log-head rv">
+      <div>
+        <h2>AI Work Log</h2>
+        <div class="hd2" id="logHd"></div>
+        <p class="intro" id="logIntro"></p>
       </div>
-    </section>
-  );
-}
-
-/* ═══════════════ 6. AI-POWERED ═══════════════ */
-function AIPowered({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  return (
-    <section id="ai" style={{ background:C.white,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div style={{ maxWidth:1200,margin:"0 auto" }}>
-        <div ref={ref} style={{ marginBottom:mob?36:60,opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-          <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:12 }}>AI-POWERED MARKETING</div>
-          <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:C.dark,marginBottom:8 }}>AI를 실무에 통합하는 마케터</h2>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.7 }}>AI는 도구가 아니라 협업 파트너입니다. 마케팅 프로세스 전 단계에 AI를 통합해 생산성과 품질을 동시에 높입니다.</p>
-        </div>
-
-        {/* Workflow */}
-        <div style={{ marginBottom:mob?36:64 }}>
-          <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.12em",marginBottom:20 }}>MARKETING WORKFLOW × AI</div>
-          <div style={{ display:"grid",gridTemplateColumns:mob?"1fr 1fr":"repeat(4, 1fr)",gap:mob?10:16 }}>
-            {aiWorkflow.map((item,i) => {
-              const [r,v] = useInView(0.1);
-              return (
-                <div key={i} ref={r} style={{ position:"relative",padding:mob?"20px 14px":"28px 20px",background:C.offWhite,border:`1px solid ${C.lightGray}`,borderRadius:4,opacity:v?1:0,transform:v?"translateY(0)":"translateY(20px)",transition:`all 0.5s ease ${i*0.1}s` }}>
-                  <div style={{ fontFamily:F.mono,fontSize:mob?24:32,fontWeight:300,color:"rgba(212,160,32,0.15)",position:"absolute",top:8,right:12 }}>0{i+1}</div>
-                  <div style={{ fontFamily:F.body,fontSize:mob?13:14,fontWeight:600,color:C.dark,marginBottom:10 }}>{item.step}</div>
-                  <div style={{ display:"flex",gap:4,flexWrap:"wrap",marginBottom:10 }}>{item.tools.map(t => <span key={t} style={{ fontFamily:F.mono,fontSize:9,padding:"2px 6px",background:C.accentBg2,color:C.accentDark,borderRadius:2 }}>{t}</span>)}</div>
-                  <p style={{ fontFamily:F.body,fontSize:mob?11:12,fontWeight:300,color:C.darkGray,lineHeight:1.6 }}>{item.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* AI collaboration note */}
-        <div style={{ padding:mob?"20px 16px":"32px",background:C.offWhite,border:`1px solid ${C.lightGray}`,borderRadius:4,marginBottom:mob?36:64 }}>
-          <div style={{ display:"flex",alignItems:"center",gap:10,marginBottom:10 }}>
-            <div style={{ width:8,height:8,borderRadius:"50%",background:C.accent }} />
-            <span style={{ fontFamily:F.mono,fontSize:mob?10:11,color:C.accent,letterSpacing:"0.1em" }}>THIS PORTFOLIO = AI COLLABORATION</span>
-          </div>
-          <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:C.darkGray,lineHeight:1.8 }}>이 포트폴리오 사이트는 Claude와의 협업으로 기획·구조 설계·코드 개발되었습니다. AI를 <span style={{ color:C.accent,fontWeight:500 }}>"지시하는 도구"가 아닌 "함께 사고하는 파트너"</span>로 활용한 결과물입니다.</p>
-        </div>
-
-        {/* Tool proficiency */}
-        <div>
-          <div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.12em",marginBottom:20 }}>TOOL PROFICIENCY</div>
-          {aiTools.map((tool,i) => {
-            const [r,v] = useInView(0.05);
-            return (
-              <div key={i} ref={r} style={{ padding:mob?"12px 0":"14px 0",borderBottom:`1px solid ${C.offWhite}`,opacity:v?1:0,transition:`opacity 0.5s ease ${i*0.08}s` }}>
-                {mob ? (
-                  <div>
-                    <div style={{ display:"flex",justifyContent:"space-between",marginBottom:6 }}><span style={{ fontFamily:F.mono,fontSize:12,color:C.dark }}>{tool.name}</span></div>
-                    <div style={{ position:"relative",height:4,background:C.lightGray,borderRadius:2,marginBottom:6 }}><div style={{ position:"absolute",left:0,top:0,height:"100%",borderRadius:2,background:C.accent,width:v?`${tool.level}%`:"0%",transition:`width 1s ease ${i*0.1+0.3}s` }} /></div>
-                    <span style={{ fontFamily:F.body,fontSize:11,fontWeight:300,color:C.midGray }}>{tool.useCase}</span>
-                  </div>
-                ) : (
-                  <div style={{ display:"grid",gridTemplateColumns:"180px 80px 1fr",gap:20,alignItems:"center" }}>
-                    <span style={{ fontFamily:F.mono,fontSize:13,color:C.dark }}>{tool.name}</span>
-                    <div style={{ position:"relative",height:4,background:C.lightGray,borderRadius:2 }}><div style={{ position:"absolute",left:0,top:0,height:"100%",borderRadius:2,background:C.accent,width:v?`${tool.level}%`:"0%",transition:`width 1s ease ${i*0.1+0.3}s` }} /></div>
-                    <span style={{ fontFamily:F.body,fontSize:12,fontWeight:300,color:C.midGray }}>{tool.useCase}</span>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════ 7. CONTACT ═══════════════ */
-function Contact({ mob }) {
-  const [ref, vis] = useInView(0.1);
-  const info = [{l:"NAME",v:"문수진 Jay Moon"},{l:"EMAIL",v:"ver*****@naver.com"},{l:"PHONE",v:"010-****-9367"}];
-  return (
-    <section id="contact" style={{ background:C.dark,padding:`${sp(mob)} ${px(mob)}` }}>
-      <div ref={ref} style={{ maxWidth:700,margin:"0 auto",textAlign:"center",opacity:vis?1:0,transform:vis?"translateY(0)":"translateY(30px)",transition:"all 0.7s ease" }}>
-        <div style={{ fontFamily:F.mono,fontSize:11,color:C.accent,letterSpacing:"0.15em",marginBottom:16 }}>CONTACT</div>
-        <h2 style={{ fontFamily:F.body,fontSize:mob?22:28,fontWeight:600,color:"#fff",marginBottom:16 }}>함께 이야기 나눠요</h2>
-        <p style={{ fontFamily:F.body,fontSize:mob?12:14,fontWeight:300,color:"rgba(255,255,255,0.5)",lineHeight:1.8,marginBottom:mob?28:40 }}>브랜드의 다음 이야기를 함께 만들어갈 기회를 찾고 있습니다.</p>
-        <div style={{ display:"flex",flexDirection:mob?"column":"row",justifyContent:"center",gap:mob?20:40 }}>
-          {info.map((c,i) => <div key={i}><div style={{ fontFamily:F.mono,fontSize:10,color:C.midGray,letterSpacing:"0.12em",marginBottom:6 }}>{c.l}</div><div style={{ fontFamily:F.body,fontSize:mob?14:15,fontWeight:400,color:"#fff" }}>{c.v}</div></div>)}
-        </div>
-        <div style={{ marginTop:mob?40:64,paddingTop:24,borderTop:"1px solid rgba(255,255,255,0.06)" }}>
-          <p style={{ fontFamily:F.mono,fontSize:10,color:"rgba(255,255,255,0.2)" }}>Built with Claude AI · Designed & Directed by Jay Moon · 2026</p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════ APP ═══════════════ */
-function App() {
-  const mob = useIsMobile();
-  const [as, setAs] = useState("hero");
-  useEffect(() => {
-    const secs = ["hero","value","cases","career","editorial","leadership","ai","contact"];
-    const h = () => { for (let i = secs.length-1; i >= 0; i--) { const el = document.getElementById(secs[i]); if (el && el.getBoundingClientRect().top < window.innerHeight*0.4) { setAs(secs[i]); break; } } };
-    window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h);
-  }, []);
-  return (
-    <div>
-      <NavBar activeSection={as} mob={mob} />
-      <Hero mob={mob} />
-      <ValueSection mob={mob} />
-      <CaseStudies mob={mob} />
-      <CareerSection mob={mob} />
-      <Editorial mob={mob} />
-      <Leadership mob={mob} />
-      <AIPowered mob={mob} />
-      <Contact mob={mob} />
+      <div class="stamp" id="stamp"></div>
     </div>
-  );
-}
+    <div class="stack rv" id="stack"></div>
+    <p class="feed-note rv" id="feedNote"></p>
+    <div class="filters rv" id="logFilters"></div>
+    <div class="logs" id="logs"></div>
+    <button class="more-btn" id="moreBtn" hidden></button>
+  </div>
+</section>
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+<section class="spread" id="contact">
+  <div class="wrap contact-in">
+    <div class="kick rv">CONTACT</div>
+    <h2 class="rv" id="cHead"></h2>
+    <p class="msg rv" id="cMsg"></p>
+    <div class="cinfo rv" id="cInfo"></div>
+    <div class="colophon" id="colophon"></div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap in"><span>MOON SOOJIN © 2026</span><span id="fVol"></span></div>
+</footer>
+
+<script>
+(function(){
+  if (typeof CONTENT === "undefined") {
+    document.getElementById("bootError").style.display = "block";
+    return;
+  }
+  const $ = (id) => document.getElementById(id);
+  const br = (s) => String(s).replace(/\n/g, "<br>");
+
+  /* ── 마스트헤드 · 푸터 ── */
+  $("mVol").textContent = CONTENT.site.volume;
+  $("mSince").textContent = CONTENT.site.since;
+  $("fVol").textContent = CONTENT.site.volume + " · MARKETING DIRECTOR";
+  document.title = CONTENT.site.title;
+
+  /* ── 히어로 ── */
+  $("hKicker").textContent = CONTENT.hero.kicker;
+  $("hLines").innerHTML = CONTENT.hero.lines.map((t, i) => {
+    const last = i === CONTENT.hero.lines.length - 1;
+    return '<div class="h-line l' + (i + 1) + ' rv"><span class="no">0' + (i + 1) + '</span><h1>' + t + (last ? '<span class="dot">.</span>' : "") + "</h1></div>";
+  }).join("");
+  $("hSub").innerHTML = br(CONTENT.hero.sub);
+  $("hChips").innerHTML = CONTENT.hero.chips.map((c) => "<span>" + c + "</span>").join("");
+  $("hFigs").innerHTML = CONTENT.stats.map((s) =>
+    '<div class="fig"><div class="v">' + s.value + '</div><div class="l">' + s.label + '</div><div class="s">' + s.sub + "</div></div>"
+  ).join("");
+
+  /* ── 핵심 역량 ── */
+  $("vals").innerHTML = CONTENT.values.map((v) =>
+    '<div class="val rv"><div><div class="no">' + v.num + '</div><h3>' + v.title + '</h3><div class="en">' + v.titleEn + '</div></div>' +
+    '<p class="thesis">' + v.thesis + "</p></div>"
+  ).join("");
+
+  /* ── 커리어: 그룹 + 상세 ── */
+  $("career-list").innerHTML = CONTENT.career.groups.map((g) =>
+    '<div class="grp rv">' + g.label + '</div><div class="index">' +
+    g.items.map((c) =>
+      '<div class="idx-row rv"><div class="idx-line"><span class="co">' + c.company + '</span><span class="role">' + c.role + '</span><span class="leader"></span><span class="period">' + c.period + (c.duration ? " · " + c.duration : "") + "</span></div>" +
+      (c.org ? '<p class="org">' + c.org + "</p>" : "") +
+      (c.details && c.details.length ? '<div class="crows">' + c.details.map((d) => '<div class="crow"><div class="k">' + d.k + '</div><div class="v">' + d.v + "</div></div>").join("") + "</div>" : "") +
+      "</div>"
+    ).join("") + "</div>"
+  ).join("");
+
+  /* ── 케이스 스터디 ── */
+  $("caseCount").textContent = "CASE STUDIES · " + CONTENT.cases.length;
+  $("sig").innerHTML = "<b>SIGNATURE</b>" + CONTENT.signature.join(" · ");
+  $("cases").innerHTML = CONTENT.cases.map((cs, i) =>
+    '<article class="case rv" id="case' + i + '">' +
+    '<div class="case-top"><span class="tag">' + cs.tag + '</span><span class="period">' + cs.period + "</span></div>" +
+    "<h3>" + br(cs.title) + "</h3>" +
+    '<p class="lead">' + cs.challenge + "</p>" +
+    '<button class="case-more" data-i="' + i + '" aria-expanded="false">과정 펼치기 +</button>' +
+    '<div class="case-detail">' +
+    (cs.before ? '<div class="cd-row"><div class="k">BEFORE</div><div class="t">' + cs.before + "</div></div>" : "") +
+    '<div class="cd-row"><div class="k">STRATEGY</div><div class="t">' + cs.strategy + "</div></div>" +
+    '<div class="cd-row"><div class="k">EXECUTION</div><div class="t">' + cs.execution + "</div></div>" +
+    "</div>" +
+    '<div class="outcome"><div class="k">OUTCOME — 성과</div><div class="t">' + cs.outcome + "</div></div>" +
+    "</article>"
+  ).join("");
+  document.querySelectorAll(".case-more").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const el = $("case" + btn.dataset.i);
+      const open = el.classList.toggle("open");
+      btn.textContent = open ? "과정 접기 –" : "과정 펼치기 +";
+      btn.setAttribute("aria-expanded", open);
+    });
+  });
+
+  /* ── 에디토리얼 아카이브 ── */
+  const E = CONTENT.editorial;
+  $("folderBtn").href = E.folder;
+  const renderArts = (cat) => {
+    const list = cat === "all" ? E.articles : E.articles.filter((a) => a.category === cat);
+    $("arts").innerHTML = list.map((a) =>
+      '<div class="art"><div class="strip" style="background:' + a.gradient + '"></div><div class="in">' +
+      '<div class="meta"><span>' + (E.categories.find((c) => c.id === a.category) || { label: a.category }).label + '</span><span class="yr">' + a.year + "</span></div>" +
+      "<h4>" + a.title + '</h4><div class="st">' + a.subtitle + '</div><div class="cm">' + a.commentary + "</div>" +
+      '<div class="foot"><span class="src">' + a.source + '</span><a class="read" href="' + a.link + '" target="_blank" rel="noopener">READ ↗</a></div>' +
+      "</div></div>"
+    ).join("");
+  };
+  $("artFilters").innerHTML = '<button data-c="all" class="on">전체 ' + E.articles.length + "</button>" +
+    E.categories.map((c) => '<button data-c="' + c.id + '">' + c.label + "</button>").join("");
+  $("artFilters").querySelectorAll("button").forEach((b) => {
+    b.addEventListener("click", () => {
+      $("artFilters").querySelectorAll("button").forEach((x) => x.classList.remove("on"));
+      b.classList.add("on");
+      renderArts(b.dataset.c);
+    });
+  });
+  renderArts("all");
+
+  /* ── 리더십 ── */
+  $("leads").innerHTML = CONTENT.leadership.map((l) =>
+    '<div class="lead-card rv"><div class="tag">' + l.tag + '</div><div class="lb">' + l.label + '</div><div class="ds">' + l.desc + "</div></div>"
+  ).join("");
+
+  /* ── AI 워크로그 ── */
+  const A = CONTENT.ailog;
+  $("logHd").textContent = A.heading;
+  $("logIntro").textContent = A.intro;
+  $("feedNote").textContent = A.feedNote;
+  $("stack").innerHTML = A.stack.map((s) =>
+    '<div class="srow"><div class="a">' + s.area + '</div><div class="t">' + s.tools + '</div><div class="d">' + s.desc + "</div></div>"
+  ).join("");
+
+  const entries = A.entries.slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+  const total = entries.length;
+  $("stamp").textContent = total ? "LAST UPDATED · " + entries[0].date : "COMING SOON";
+
+  let logTag = "all";
+  let shown = 4;
+  const logCard = (e) => {
+    const no = String(total - entries.indexOf(e)).padStart(3, "0");
+    return '<div class="log-card rv in"><div class="log-meta"><span class="no">LOG. ' + no + (e.sample ? " <em>— 샘플 항목</em>" : "") + '</span><span>' + e.date + "</span></div>" +
+      "<h4>" + e.title + '</h4><p class="sum">' + e.summary + "</p>" +
+      '<div class="points">' + e.points.map((p) => "<div>" + p + "</div>").join("") + "</div>" +
+      '<div class="log-foot"><div class="log-tags">' + (e.tags || []).map((t) => "<span>" + t + "</span>").join("") + "</div>" +
+      (e.link ? '<a class="log-link" href="' + e.link + '" target="_blank" rel="noopener">자료 보기 ↗</a>' : "") + "</div></div>";
+  };
+  const renderLogs = () => {
+    const list = logTag === "all" ? entries : entries.filter((e) => (e.tags || []).includes(logTag));
+    $("logs").innerHTML = list.slice(0, shown).map(logCard).join("");
+    const rest = list.length - shown;
+    $("moreBtn").hidden = rest <= 0;
+    $("moreBtn").textContent = "이전 로그 더 보기 + " + Math.max(rest, 0);
+  };
+  const allTags = [...new Set(entries.flatMap((e) => e.tags || []))];
+  $("logFilters").innerHTML = '<button data-t="all" class="on">전체</button>' +
+    allTags.map((t) => '<button data-t="' + t + '">' + t + "</button>").join("");
+  $("logFilters").querySelectorAll("button").forEach((b) => {
+    b.addEventListener("click", () => {
+      $("logFilters").querySelectorAll("button").forEach((x) => x.classList.remove("on"));
+      b.classList.add("on");
+      logTag = b.dataset.t;
+      shown = 4;
+      renderLogs();
+    });
+  });
+  $("moreBtn").addEventListener("click", () => { shown += 4; renderLogs(); });
+  renderLogs();
+
+  /* ── 컨택트 ── */
+  $("cHead").textContent = CONTENT.contact.heading;
+  $("cMsg").textContent = CONTENT.contact.message;
+  $("cInfo").innerHTML = CONTENT.contact.info.map((c) =>
+    '<div><div class="l">' + c.label + '</div><div class="v">' + c.value + "</div></div>"
+  ).join("");
+  $("colophon").textContent = CONTENT.contact.colophon;
+
+  /* ── 스크롤 리빌 ── */
+  const reveal = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((es) => {
+      es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveal.forEach((el) => io.observe(el));
+  } else {
+    reveal.forEach((el) => el.classList.add("in"));
+  }
+})();
 </script>
 </body>
 </html>
